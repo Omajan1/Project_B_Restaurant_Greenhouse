@@ -10,6 +10,7 @@ namespace Greenhouse
             bool running = true;
             do
             {
+                Console.Clear();
                 Console.WriteLine("Welcome to the GreenHouse Reservation Application\n");
 
                 Console.WriteLine("These are the avalable options:\n");
@@ -58,6 +59,7 @@ namespace Greenhouse
 
         public static void MenuPage0() //voor nu void 
         {
+            Console.Clear();
             Console.WriteLine("Welcome to the Menu Page\n");
 
             Console.WriteLine("Choose the catagory you want to view\n");
@@ -87,6 +89,9 @@ namespace Greenhouse
         static void Main(string[] args)
         {
             //Eerste page standaard open
+            
+            Console.SetWindowSize(160, 35);
+
             Pages.FirstPage0();
 
 
