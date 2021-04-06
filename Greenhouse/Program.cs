@@ -7,7 +7,7 @@ namespace Greenhouse
         public static void FirstPage0()
         {
 
-            bool running = true;
+            
             do
             {
                 Console.Clear();
@@ -21,10 +21,27 @@ namespace Greenhouse
 
                 Console.Write("Put down your option here: ");
                 string result = Console.ReadLine();
+
+
+                /*
+                switch (result)
+                {
+                    case "3":
+                        {
+
+                        }
+                }
+                */
+
+
                 if (result == "3") //rules
                 {
                     var page = new ShowPage();
                     page.show();
+                }
+                else if(result == "4")
+                {
+                    break;
                 }
                 /*
                 if (result == "1") //reservation
@@ -54,7 +71,7 @@ namespace Greenhouse
                     return null;
                 }
                 */
-            } while (running);
+            } while (true);
         }
 
         public static void MenuPage0() //voor nu void 
