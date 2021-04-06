@@ -1,15 +1,16 @@
 ﻿using System;
-namespace Rules{
-	
+namespace Rules
+{
+
 	public class ShowPage
 	{
-        public void show()
-        {
+		public void show()
+		{
 			// Changes colors of the app
 			Console.ForegroundColor = ConsoleColor.Black;
 			Console.BackgroundColor = ConsoleColor.White;
 			// Lets program run until user types home
-			bool running = true;
+
 			do
 			{
 				Console.Clear();
