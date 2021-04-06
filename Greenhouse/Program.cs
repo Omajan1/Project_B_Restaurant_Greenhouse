@@ -106,7 +106,8 @@ namespace Greenhouse
         static void Main(string[] args)
         {
             //Eerste page standaard open
-            
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.SetWindowSize(160, 35);
 
             Pages.FirstPage0();

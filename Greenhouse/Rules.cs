@@ -6,13 +6,6 @@ namespace Rules
 	{
 		public void show()
 		{
-			// Changes colors of the app
-			Console.ForegroundColor = ConsoleColor.Black;
-			Console.BackgroundColor = ConsoleColor.White;
-			// Lets program run until user types home
-
-			do
-			{
 				Console.Clear();
 				Console.WriteLine("\t\t\t\t\t\t---HUISREGELS---\n\n");
 				Console.WriteLine("Wij willen graag voor iedereen een zo gastvrij mogelijke ervaring creëren in ons restaurant.\n\nDaarom hebben we een aantal huisregels opgesteld om het restaurant voor zoveel mogelijk mensen te accommoderen.\n");
@@ -34,7 +27,6 @@ namespace Rules
 				Console.WriteLine("16. Het netjes achterlaten van je tafel is niet verplicht, maar laat het acceptabel.\n");
 				Console.WriteLine("\t\t\t---Druk om een toets om terug te gaan.---\n");
 
-			} while (Console.ReadLine() != "home");
 		}
 
 
