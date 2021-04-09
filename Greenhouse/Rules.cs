@@ -1,17 +1,11 @@
 ﻿using System;
-namespace Rules{
-	
-	public class ShowPage
+namespace Rules
+{
+
+	public class rules
 	{
-        public void show()
-        {
-			// Changes colors of the app
-			Console.ForegroundColor = ConsoleColor.Black;
-			Console.BackgroundColor = ConsoleColor.White;
-			// Lets program run until user types home
-			bool running = true;
-			do
-			{
+		public static void show()
+		{
 				Console.Clear();
 				Console.WriteLine("\t\t\t\t\t\t---HUISREGELS---\n\n");
 				Console.WriteLine("Wij willen graag voor iedereen een zo gastvrij mogelijke ervaring creëren in ons restaurant.\n\nDaarom hebben we een aantal huisregels opgesteld om het restaurant voor zoveel mogelijk mensen te accommoderen.\n");
@@ -32,8 +26,8 @@ namespace Rules{
 				Console.WriteLine("15. Het smokkelen van eigen voedingsmiddelen en dranken is ten strengste verboden.\n");
 				Console.WriteLine("16. Het netjes achterlaten van je tafel is niet verplicht, maar laat het acceptabel.\n");
 				Console.WriteLine("\t\t\t---Druk om een toets om terug te gaan.---\n");
+				Console.ReadLine();
 
-			} while (Console.ReadLine() != "home");
 		}
 
 
