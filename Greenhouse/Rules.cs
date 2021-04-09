@@ -2,9 +2,9 @@
 namespace Rules
 {
 
-	public class ShowPage
+	public class rules
 	{
-		public void show()
+		public static void show()
 		{
 				Console.Clear();
 				Console.WriteLine("\t\t\t\t\t\t---HUISREGELS---\n\n");
@@ -26,6 +26,7 @@ namespace Rules
 				Console.WriteLine("15. Het smokkelen van eigen voedingsmiddelen en dranken is ten strengste verboden.\n");
 				Console.WriteLine("16. Het netjes achterlaten van je tafel is niet verplicht, maar laat het acceptabel.\n");
 				Console.WriteLine("\t\t\t---Druk om een toets om terug te gaan.---\n");
+				Console.ReadLine();
 
 		}
 

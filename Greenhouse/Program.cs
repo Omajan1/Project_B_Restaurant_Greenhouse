@@ -1,104 +1,56 @@
 ﻿using System;
 using Rules;
+using Reservering;
+using MenuPage0;
+using Contact;
 namespace Greenhouse
 {
     class Pages
     {
-        public static void FirstPage0()
+        public static void Home()
         {
-
-            
-            do
+            bool running = true;
+            while (running)
             {
                 Console.Clear();
-                Console.WriteLine("Welcome to the GreenHouse Reservation Application\n");
-
-                Console.WriteLine("These are the avalable options:\n");
-                Console.WriteLine("1. Reservation");
+                Console.WriteLine("--Welkom bij de Reserverings Applicatie van GreenHouse--\n");
+                Console.WriteLine("Dit zijn de opties:\n");
+                Console.WriteLine("1. Reserveren");
                 Console.WriteLine("2. Menu");
-                Console.WriteLine("3. Rules");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("3. Regels");
+                Console.WriteLine("4. Contact Opnemen?");
+                Console.WriteLine("5. Exit");
 
-                Console.Write("Put down your option here: ");
+                Console.Write("Zet hier uw keuze neer: ");
                 string result = Console.ReadLine();
-
-
-                /*
                 switch (result)
                 {
+                    case "1":
+                        reservering.show();
+                        break;
+                    case "2":
+                        menuPage0.show();
+                        break;
                     case "3":
-                        {
+                        rules.show();
+                        break;
+                    case "4":
+                        contact.show();
+                        break;
+                    case "5":
+                        running = false;
+                        break;
+                    default:
+                        Console.Clear();
+                        break;
 
-                        }
-                }
-                */
 
 
-                if (result == "3") //rules
-                {
-                    var page = new ShowPage();
-                    page.show();
                 }
-                else if(result == "4")
-                {
-                    break;
-                }
-                /*
-                if (result == "1") //reservation
-                {
-                    return "1";
-                }
-                else if (result == "2") //menu
-                {
-                    return "2";
-                }
-                else if (result == "3") //rules
-                {
-                    var page = new ShowPage();
-                    page.show();
-                    return null;
-                }
-                else if (result == "4") //exit
-                {
-                    Environment.Exit(1);
-                    return null;
-                }
-                else
-                {
-                    Console.Clear();
-                    Console.WriteLine("\n ----This is not a valid option, try again.----\n");
-                    FirstPage0();
-                    return null;
-                }
-                */
-            } while (true);
-        }
-
-        public static void MenuPage0() //voor nu void 
-        {
-            Console.Clear();
-            Console.WriteLine("Welcome to the Menu Page\n");
-
-            Console.WriteLine("Choose the catagory you want to view\n");
-            Console.WriteLine("1. Appitizer");
-            Console.WriteLine("2. Main");
-            Console.WriteLine("3. Dessert");
-            Console.WriteLine("4. Fish");
-            Console.WriteLine("5. Vegan");
-            Console.WriteLine("6. Vega");
-            Console.WriteLine("7. All options listed above (you can also type 'all')");
-
-            Console.Write("What would you want to see: ");
-            string result = Console.ReadLine();
-
-            //check wat er is geinput
-            if (result == "7" || result == "all")
-            {
-                //test cuz i dont got notin
-                Console.Clear();
-                Console.WriteLine("All options and stuff");
             }
         }
+
+
     }
     
     class Program
@@ -109,8 +61,8 @@ namespace Greenhouse
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
             Console.SetWindowSize(160, 35);
+            Pages.Home(); 
 
-            Pages.FirstPage0();
 
 
         }
