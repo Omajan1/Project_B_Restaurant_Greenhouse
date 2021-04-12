@@ -14,6 +14,12 @@ namespace Greenhouse
             {
                 Console.Clear();
                 Console.WriteLine("--Welkom bij de Reserverings Applicatie van GreenHouse--\n");
+                Console.WriteLine("--Duurzaamheid en Sustainability met Lokale Leveranciers!--");
+                Console.WriteLine("\t--Voor elke portomonee en altijd lekker!--\n");
+                Console.WriteLine("-----------------------------------------");
+                Console.WriteLine("| Elke dag open, vannaf 13:00 tot 22:00 |");
+                Console.WriteLine("| De bar is open van 13:00 tot 01:00    |");
+                Console.WriteLine("-----------------------------------------\n");
                 Console.WriteLine("Dit zijn de opties:\n");
                 Console.WriteLine("1. Reserveren");
                 Console.WriteLine("2. Menu");
@@ -57,9 +63,8 @@ namespace Greenhouse
     {
         static void Main(string[] args)
         {
-            //Eerste page standaard open
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.SetWindowSize(160, 35);
             Pages.Home(); 
 
