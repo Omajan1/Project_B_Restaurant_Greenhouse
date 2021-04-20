@@ -32,7 +32,7 @@ namespace Greenhouse
                 switch (result)
                 {
                     case "1":
-                        reservering.show();
+                        PageReservering.show();
                         break;
                     case "2":
                         menuPage0.show();
@@ -63,8 +63,9 @@ namespace Greenhouse
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.Black;
+            // Omdat het greenhouse is deze kleuren
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Green;
             Console.SetWindowSize(160, 35);
             Pages.Home(); 
 
