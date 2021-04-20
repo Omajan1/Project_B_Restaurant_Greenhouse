@@ -3,6 +3,7 @@ using Rules;
 using Reservering;
 using MenuPage0;
 using Contact;
+using Test;
 namespace Greenhouse
 {
     class Pages
@@ -45,6 +46,9 @@ namespace Greenhouse
                         break;
                     case "5":
                         running = false;
+                        break;
+                    case "6":
+                        test.run();
                         break;
                     default:
                         Console.Clear();
