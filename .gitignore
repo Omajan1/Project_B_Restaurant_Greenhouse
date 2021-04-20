@@ -31,3 +31,5 @@ Greenhouse/obj/Greenhouse.csproj.nuget.dgspec.json
 Greenhouse/obj/Greenhouse.csproj.nuget.g.props
 Greenhouse/obj/project.assets.json
 Greenhouse/obj/project.nuget.cache
+Greenhouse/bin/
+Greenhouse/obj/
