@@ -55,15 +55,16 @@ namespace Reservering
 			Console.Clear();
 			Console.WriteLine("Wat is je Achternaam?");
 			string achternaam = Console.ReadLine();
-			Console.Clear();
+			
 			int aantalMensen;
 			while (true)
 			{
+				Console.Clear();
 				Console.WriteLine("Voor hoeveel mensen is deze reservering?");
 				aantalMensen = Convert.ToInt32(Console.ReadLine());
 				if (aantalMensen > 6)
 				{
-					Console.WriteLine("Voor het reserveren van groepen boven de 6 kunt u bellen naar : 0800-0432");
+					Console.WriteLine("Voor het reserveren van groepen boven de 6 kunt u bellen naar : 0800-0432\n Bij het reserveren van grote groepen kunnen extra kosten worden gerekend, dit ligt aan het aantal mensen en de dag waarop de reservering staat.");
 
 				}
 				else
@@ -72,17 +73,49 @@ namespace Reservering
 				}
 			}
 
+			string tijd;
 
 			Console.Clear();
+			while (true)
+			{
+				
+				Console.WriteLine("Hoelaat wilt u komen eten? Typ eerst het uur, druk op enter, en typ vervolgens het aantal minuten:");
+				int tijd1 = Convert.ToInt32(Console.ReadLine());
+				int tijd2 = Convert.ToInt32(Console.ReadLine());
+				if (tijd1 > 22)
+				{
+					Console.WriteLine("Dit is geen geldige tijd: Het restaurant stopt met serveren om 22:00, kies een tijd voor dit");
 
-			Console.WriteLine("Hoelaat wilt u komen eten? Typ eerst het uur, druk op enter, en typ vervolgens het aantal minuten:");
-			int tijd1 = Convert.ToInt32(Console.ReadLine());
-			int tijd2 = Convert.ToInt32(Console.ReadLine());
-			int[] tijd = new int[2] { tijd1, tijd2 };
+				}
+				else
+				{
+					tijd = (tijd1.ToString() + " : " +  tijd2.ToString());
+					break;
+
+				}
+			}
+
+
+			string klantid;
 			Console.Clear();
+			while (true)
+			{
+				
+				Console.WriteLine("Wat is je KlantenID?");
+				klantid = Console.ReadLine();
+				if (klantid.Length == 4)
+				{
+					break;
 
-			Console.WriteLine("Wat is je KlantenID?");
-			string klantid = Console.ReadLine();
+				}
+				else
+				{
+					Console.WriteLine("Dit is geen geldig ID, probeer het opnieuw, druk enter om opnieuw te proberen");
+
+				}
+			}
+			
+			
 			Console.Clear();
 			Console.WriteLine("Hoe wilt u betalen? Contant , Pinnen of ApplePay");
 			string betaalmethode = Console.ReadLine();
@@ -122,7 +155,7 @@ namespace Reservering
 		public int AantalMensen { get; set; }
 		public int TafelNummer { get; set; }
 		public int Res_ID { get; set; }
-		public int[] Tijd { get; set; }
+		public string Tijd { get; set; }
 		public string Datum { get; set; }
 		public string KlantID { get; set; }
 		public string Betaalmethode { get; set; }
@@ -131,7 +164,7 @@ namespace Reservering
         {
 			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd[0]}:{this.Tijd[1]} uur");
         }
-		public Reservering(string naam, string achternaam, int aantalmensen, int tafelnummer, int[] tijd, string datum, string klantid, string betaalmethode)
+		public Reservering(string naam, string achternaam, int aantalmensen, int tafelnummer, string tijd, string datum, string klantid, string betaalmethode)
         {
 			Random r = new Random();
 			this.Naam = naam;
@@ -143,7 +176,7 @@ namespace Reservering
 			this.KlantID = klantid;
 			this.Betaalmethode = betaalmethode;
 			this.Res_ID = r.Next(1000, 9999);
-			Console.WriteLine($"Er is succesvol een reservering geplaatst op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd[0]}:{this.Tijd[1]} uur met ID {this.Res_ID}");
+			Console.WriteLine($"Er is succesvol een reservering geplaatst op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur met ID {this.Res_ID}");
 		}
 	}
 }
