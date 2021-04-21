@@ -69,7 +69,7 @@ namespace Greenhouse
         {
             // Omdat het greenhouse is deze kleuren
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.SetWindowSize(160, 35);
             Pages.Home(); 
 

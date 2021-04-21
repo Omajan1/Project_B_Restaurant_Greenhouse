@@ -27,6 +27,8 @@ namespace Reservering
 				}
 			}
 
+			//check komen
+
 			Console.Clear();
 
 
