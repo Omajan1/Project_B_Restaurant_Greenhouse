@@ -41,7 +41,7 @@ namespace Reservering
 				if (tafelNummer > 100) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 				{
 					Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
-					Console.Clear();
+					
 				}
 				else
 				{
@@ -59,7 +59,7 @@ namespace Reservering
 			int aantalMensen;
 			while (true)
 			{
-				Console.Clear();
+				
 				Console.WriteLine("Voor hoeveel mensen is deze reservering?");
 				aantalMensen = Convert.ToInt32(Console.ReadLine());
 				if (aantalMensen > 6)
@@ -89,7 +89,7 @@ namespace Reservering
 				}
 				else
 				{
-					tijd = (tijd1.ToString() + " : " +  tijd2.ToString());
+					tijd = (tijd1.ToString() + ":" +  tijd2.ToString());
 					break;
 
 				}
@@ -162,7 +162,7 @@ namespace Reservering
 
 		public void Info()
         {
-			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd[0]}:{this.Tijd[1]} uur");
+			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
         }
 		public Reservering(string naam, string achternaam, int aantalmensen, int tafelnummer, string tijd, string datum, string klantid, string betaalmethode)
         {
