@@ -68,5 +68,19 @@
     "Datum": "29-12-2002",
     "KlantID": "4444",
     "Betaalmethode": "Contant"
+  },
+  {
+    "Naam": "opel",
+    "Achternaam": "mercedes",
+    "AantalMensen": 2,
+    "TafelNummer": 12,
+    "Res_ID": 5820,
+    "Tijd": [
+      9,
+      12
+    ],
+    "Datum": "09-11-2003",
+    "KlantID": "911",
+    "Betaalmethode": "aliexpress"
   }
 ]
