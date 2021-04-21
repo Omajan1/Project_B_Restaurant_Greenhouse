@@ -1,11 +1,14 @@
 ﻿using System;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.IO;
+using System.Text.Json;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 namespace Reservering
 {
 	public class PageReservering
 	{
+		public static string path = @"../../../../Data/reservering.json";
+
 		public static void show()
 		{
 			Console.Clear();
@@ -87,31 +90,59 @@ namespace Reservering
 			Console.WriteLine("Hoe wilt u betalen? Contant , Pinnen of ApplePay");
 			string betaalmethode = Console.ReadLine();
 			Console.Clear();
-			Reservering klant1 = new Reservering(naam, achternaam, aantalMensen, tafelNummer, tijd, datum, klantid, betaalmethode);
+
+
+			Reservering klant = new Reservering(naam, achternaam, aantalMensen, tafelNummer, tijd, datum, klantid, betaalmethode);
+
+			// Laad het json bestand naar een string
+			string initialJson = File.ReadAllText(path);
+
+			// zet de string naar een array
+			var array = JArray.Parse(initialJson);
+
+			// Maakt het object om toetevoegen naar een object voor json
+			JObject jsonObject = JObject.FromObject(klant);
+
+			// Voegt het json object toe aan de array
+			array.Add(jsonObject);
+
+			// Slaat het op in JSON
+			File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
+
 			Console.WriteLine("Typ INFO om informatie te zien over deze reservering, anders druk op enter om terug te gaan:");
 			string t = Console.ReadLine();
 			if(t == "INFO")
             {
-				klant1.Info();
+
+				// Laad het json bestand naar een string
+				string innit = File.ReadAllText(path);
+
+				// zet de string naar een array
+				var Count = JArray.Parse(innit);
+
+
+
+
+
+				foreach (JObject item in Count)
+				{
+					Console.WriteLine(item);
+					string name = item.GetValue("Naam").ToString();
+					Console.WriteLine(name);
+					
+				}
+
 				Console.WriteLine("Druk op enter om terug te gaan");
 				Console.ReadLine();
             }
-			JsonSerializerOptions options = new JsonSerializerOptions
-			{
-				WriteIndented = true
-
-			};
-			//string jsonStringRead = File.ReadAllText("../../../../Data/reservering.json");
-
-			//var res1 = JsonSerializer.Deserialize<Reservering>(jsonStringRead);
-			//Console.WriteLine(res1);
-			//string jsonString = JsonSerializer.Serialize(klant1, options);
-			//File.WriteAllText("../../../../Data/reservering.json", jsonString);
 
 
 
-			
-			
+
+
+
+
+
 		}
 	}
 	

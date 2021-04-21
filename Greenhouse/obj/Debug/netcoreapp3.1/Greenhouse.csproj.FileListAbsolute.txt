@@ -24,3 +24,5 @@ C:\Users\snell\Desktop\Github\Project_B_Restaurant_Greenhouse\Greenhouse\obj\Deb
 C:\Users\snell\Desktop\Github\Project_B_Restaurant_Greenhouse\Greenhouse\obj\Debug\netcoreapp3.1\Greenhouse.dll
 C:\Users\snell\Desktop\Github\Project_B_Restaurant_Greenhouse\Greenhouse\obj\Debug\netcoreapp3.1\Greenhouse.pdb
 C:\Users\snell\Desktop\Github\Project_B_Restaurant_Greenhouse\Greenhouse\obj\Debug\netcoreapp3.1\Greenhouse.genruntimeconfig.cache
+C:\Users\jjjoo\Documents\GitHub\Project_B_Restaurant_Greenhouse\Greenhouse\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\jjjoo\Documents\GitHub\Project_B_Restaurant_Greenhouse\Greenhouse\obj\Debug\netcoreapp3.1\Greenhouse.csproj.CopyComplete

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wjoXOKs86+v8X9JE1TOZjVjmO4QgOMDsnrzZoEuo3+3cPhPNswwhoMg71BPpQsU118sfJNFjX+lzdT1EBrF5zQ==",
+  "dgSpecHash": "ZIvWm/xdD5Jv0+6LRUPHtTy32ghcimq/HYJk9cOuBhew5t1xHT5OCEXQ1VaQhxI+f+DgTzFHi3Qvzex400s1iQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jjjoo\\Documents\\GitHub\\Project_B_Restaurant_Greenhouse\\Greenhouse\\Greenhouse.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jjjoo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

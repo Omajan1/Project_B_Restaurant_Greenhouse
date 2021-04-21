@@ -1,9 +1,72 @@
 [
-  null,
-  null,
   {
-    "Date": "1",
-    "TemperatureCelsius": "1",
-    "Summary": "1"
+    "Naam": "Levi",
+    "Achternaam": "Reijns",
+    "AantalMensen": 4,
+    "TafelNummer": 5,
+    "Res_ID": 7699,
+    "Tijd": [
+      19,
+      19
+    ],
+    "Datum": "29-12-2002",
+    "KlantID": "4433",
+    "Betaalmethode": "Contant"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Jlll",
+    "AantalMensen": 2,
+    "TafelNummer": 4,
+    "Res_ID": 8549,
+    "Tijd": [
+      20,
+      20
+    ],
+    "Datum": "29-29-2999",
+    "KlantID": "4332",
+    "Betaalmethode": "cO"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Ja",
+    "AantalMensen": 4,
+    "TafelNummer": 3,
+    "Res_ID": 2612,
+    "Tijd": [
+      19,
+      19
+    ],
+    "Datum": "29-12-2002",
+    "KlantID": "4444",
+    "Betaalmethode": "Co"
+  },
+  {
+    "Naam": "le",
+    "Achternaam": "op",
+    "AantalMensen": 2,
+    "TafelNummer": 3,
+    "Res_ID": 9947,
+    "Tijd": [
+      19,
+      20
+    ],
+    "Datum": "29-12-2002",
+    "KlantID": "3333",
+    "Betaalmethode": "codl"
+  },
+  {
+    "Naam": "LEv",
+    "Achternaam": "dwdaw",
+    "AantalMensen": 3,
+    "TafelNummer": 2,
+    "Res_ID": 2671,
+    "Tijd": [
+      19,
+      19
+    ],
+    "Datum": "29-12-2002",
+    "KlantID": "4444",
+    "Betaalmethode": "Contant"
   }
 ]
