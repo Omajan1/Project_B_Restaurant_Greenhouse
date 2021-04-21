@@ -363,3 +363,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+*.v2
+Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
+Greenhouse/.vs/Greenhouse/v16/.suo
