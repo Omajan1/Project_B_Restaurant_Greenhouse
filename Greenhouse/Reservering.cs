@@ -14,16 +14,16 @@ namespace Reservering
 
 			while (true)
 			{
-				Console.WriteLine("Op welke datum wilt u deze reservering plaatsen? Typ het in het format DD-MM-YYYY, zoals dit: 29-12-2001");
+				Console.WriteLine("Op welke datum wilt u deze reservering plaatsen? Typ het in het format DD-MM-YYYY, zoals dit: 21-04-2021");
 				datum = Console.ReadLine();
-				if (datum.Length != 10)
+				if (datum.Length == 10)
 				{
-					Console.WriteLine("Deze datum is volgeboekt of het is niet in het geldige format DD-MM-YYYY");
+					break;
 
 				}
 				else
 				{
-					break;
+					Console.WriteLine("Deze datum is volgeboekt of het is niet in het geldige format DD-MM-YYYY");
 				}
 			}
 
@@ -47,7 +47,7 @@ namespace Reservering
 				}
 			}
 
-
+			Console.Clear();
 			Console.WriteLine("Wat is je Naam?");
 			string naam = Console.ReadLine();
 			Console.Clear();
@@ -73,9 +73,6 @@ namespace Reservering
 
 			Console.Clear();
 
-
-
-			Console.Clear();
 			Console.WriteLine("Hoelaat wilt u komen eten? Typ eerst het uur, druk op enter, en typ vervolgens het aantal minuten:");
 			int tijd1 = Convert.ToInt32(Console.ReadLine());
 			int tijd2 = Convert.ToInt32(Console.ReadLine());
@@ -89,21 +86,29 @@ namespace Reservering
 			string betaalmethode = Console.ReadLine();
 			Console.Clear();
 			Reservering klant1 = new Reservering(naam, achternaam, aantalMensen, tafelNummer, tijd, datum, klantid, betaalmethode);
-
+			Console.WriteLine("Typ INFO om informatie te zien over deze reservering, anders druk op enter om terug te gaan:");
+			string t = Console.ReadLine();
+			if(t == "INFO")
+            {
+				klant1.Info();
+				Console.WriteLine("Druk op enter om terug te gaan");
+				Console.ReadLine();
+            }
 			JsonSerializerOptions options = new JsonSerializerOptions
 			{
 				WriteIndented = true
 
 			};
-			string jsonStringRead = File.ReadAllText("../../../../Data/reservering.json");
-			var res1 = JsonSerializer.Deserialize<Reservering>(jsonStringRead);
-			Console.WriteLine(res1);
-			string jsonString = JsonSerializer.Serialize(klant1, options);
-			File.WriteAllText("../../../../Data/reservering.json", jsonString);
+			//string jsonStringRead = File.ReadAllText("../../../../Data/reservering.json");
+
+			//var res1 = JsonSerializer.Deserialize<Reservering>(jsonStringRead);
+			//Console.WriteLine(res1);
+			//string jsonString = JsonSerializer.Serialize(klant1, options);
+			//File.WriteAllText("../../../../Data/reservering.json", jsonString);
 
 
 
-			Console.ReadLine();
+			
 			
 		}
 	}
