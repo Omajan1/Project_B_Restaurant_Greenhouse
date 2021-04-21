@@ -212,7 +212,10 @@ csx/
 # Microsoft Azure Emulator
 ecf/
 rcf/
-
+.vs/
+Greenhouse/.vs/
+Greenhouse/bin/
+Greenhouse/obj/
 # Windows Store app package directories and files
 AppPackages/
 BundleArtifacts/
