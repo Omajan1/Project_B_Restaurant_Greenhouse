@@ -42,23 +42,23 @@ namespace Reservering
 				Console.WriteLine("                                                                                      |                   |              ");
 				Console.WriteLine("---------------------------------------------------------------------                 |                   |              ");
 				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("| ■ ■ 1 ■ ■      ■ ■ ■      ■ ■ 8 ■ ■     ■ ■ 10■ ■      ■ ■ ■ ■ ■  |                 |                   |              ");
-				Console.WriteLine("|   ■ ■ ■      ■ ■ 5 ■ ■      ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("|                ■ ■ ■                                   ■ ■ 15■ ■  |                 |                   |              ");
+				Console.WriteLine("| > ■ 1 ■ <      ■ ■ ■      > ■ 8 ■ <     > ■ 10■ <      > ■ ■ ■ <  |                 |                   |              ");
+				Console.WriteLine("|   ■ ■ ■      > ■ 5 ■ <      ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
+				Console.WriteLine("|                ■ ■ ■                                   > ■ 15■ <  |                 |                   |              ");
 				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("| ■ ■ 2 ■ ■      ■ ■ ■      ■ ■ 9 ■ ■     ■ ■ 11■ ■      ■ ■ ■ ■ ■  |         -----------------------------------------  ");
-				Console.WriteLine("|   ■ ■ ■      ■ ■ 6 ■ ■      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
+				Console.WriteLine("| > ■ 2 ■ <      ■ ■ ■      > ■ 9 ■ <     > ■ 11■ <      > ■ ■ ■ <  |         -----------------------------------------  ");
+				Console.WriteLine("|   ■ ■ ■      > ■ 6 ■ <      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
 				Console.WriteLine("|                ■ ■ ■                                              |         | De bar is open van 13:00 tot 01:00    |  ");
 				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■          ■        |         -----------------------------------------  ");
-				Console.WriteLine("| ■ ■ 3 ■ ■      ■ ■ ■                    ■ ■ 12■ ■       ----------|                                                    ");
-				Console.WriteLine("|   ■ ■ ■      ■ ■ 7 ■ ■                    ■ ■ ■       ■ |         |                        ^                           ");
+				Console.WriteLine("| > ■ 3 ■ <      ■ ■ ■                    > ■ 12■ <       ----------|                                                    ");
+				Console.WriteLine("|   ■ ■ ■      > ■ 7 ■ <                    ■ ■ ■       ■ |         |                        ^                           ");
 				Console.WriteLine("|                ■ ■ ■                                    |         |                        |                           ");
 				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       ■ |   B     |                        |                           ");
-				Console.WriteLine("| ■ ■ ■ ■ ■                               ■ ■ 13■ ■       |   A     |");
+				Console.WriteLine("| > ■ ■ ■ <                               > ■ 13■ <       |   A     |");
 				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       ■ |   R     |");
-				Console.WriteLine("| ■ ■ 4 ■ ■                                               |         |");
+				Console.WriteLine("| > ■ 4 ■ <                                               |         |");
 				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       ■ |         |");
-				Console.WriteLine("| ■ ■ ■ ■ ■                               ■ ■ 14■ ■       |         |");
+				Console.WriteLine("| > ■ ■ ■ <                               > ■ 14■ <       |         |");
 				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       ■ |         |");
 				Console.WriteLine("|                             ^                           |         |");
 				Console.WriteLine("|                             |                         ■ |         |");
@@ -66,6 +66,7 @@ namespace Reservering
 
 				//voor 1,2,3,... komt iets waarbij hij alleen de tafels laat zien die vrij zijn
 				Console.WriteLine("Tafel: " + "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" + "zijn nog beschikbaar.\n");
+				Console.WriteLine("<> zijn de stoelen en richting ervan.");
 
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
 				tafelNummer = Convert.ToInt32(Console.ReadLine());
