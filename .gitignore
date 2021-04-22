@@ -368,3 +368,8 @@ Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
 Greenhouse/.vs/Greenhouse/v16/.suo
 Greenhouse/.vs/
 *.cache
+Greenhouse/obj/Debug/netcoreapp3.1/apphost.exe
+*.exe
+
+Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
+*.v2
