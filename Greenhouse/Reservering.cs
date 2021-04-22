@@ -64,6 +64,9 @@ namespace Reservering
 				Console.WriteLine("|                             |                         ■ |         |");
 				Console.WriteLine("---------------------------   |    ----------------------------------\n");
 
+				//voor 1,2,3,... komt iets waarbij hij alleen de tafels laat zien die vrij zijn
+				Console.WriteLine("Tafel: " + "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" + "zijn nog beschikbaar.\n");
+
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
 				tafelNummer = Convert.ToInt32(Console.ReadLine());
 				if (tafelNummer > 15) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
