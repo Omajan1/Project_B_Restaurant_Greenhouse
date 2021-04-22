@@ -374,3 +374,8 @@ Greenhouse/obj/Debug/netcoreapp3.1/apphost.exe
 Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
 *.v2
 *.dll
+Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
+*.v2
+Greenhouse/.vs/Greenhouse/v16/.suo
+*.cache
+Greenhouse/obj/Debug/netcoreapp3.1/Greenhouse.csprojAssemblyReference.cache
