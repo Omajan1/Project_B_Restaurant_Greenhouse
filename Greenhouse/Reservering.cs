@@ -5,10 +5,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 namespace Reservering
 {
+	
 	public class PageReservering
 	{
-		public static string path = @"../../../../Data/reservering.json";
 
+		public static string path = @"../../../../Data/reservering.json";
 		public static void show()
 		{
 			Console.Clear();
@@ -85,18 +86,27 @@ namespace Reservering
 			}
 
 			Console.Clear();
-			Console.WriteLine("Wat is je Naam?");
-			string naam = Console.ReadLine();
-			Console.Clear();
-			Console.WriteLine("Wat is je Achternaam?");
-			string achternaam = Console.ReadLine();
+
 			
 			int aantalMensen;
 			while (true)
 			{
-				
-				Console.WriteLine("Voor hoeveel mensen is deze reservering?");
-				aantalMensen = Convert.ToInt32(Console.ReadLine());
+                while (true)
+                {
+					Console.WriteLine("Voor hoeveel mensen is deze reservering?");
+					try
+					{
+						aantalMensen = Convert.ToInt32(Console.ReadLine());
+						break;
+					}
+
+					catch (Exception e)
+					{
+						Console.WriteLine("Invalid number, try again:");
+					}
+				}
+
+
 				if (aantalMensen > 8)
 				{
 					Console.WriteLine("Voor het reserveren van groepen boven de 8 kunt u bellen naar : 0800-0432 \n Hierbij komen extra servicekosten van pas van 1,30 euro per persoon boven de 8\n");
@@ -104,7 +114,15 @@ namespace Reservering
 				}
 				else
 				{
-					break;
+					if(aantalMensen < 1)
+                    {
+						Console.WriteLine("'Het aantal mensen moet minimaal 1 zijn.");
+                    }
+                    else
+                    {
+						break;
+					}
+					
 				}
 			}
 
@@ -149,15 +167,15 @@ namespace Reservering
 
 				}
 			}
-			
-			
+		
 			Console.Clear();
-			Console.WriteLine("Hoe wilt u betalen? Contant , Pinnen of ApplePay");
-			string betaalmethode = Console.ReadLine();
+			Console.WriteLine("Wat is je Naam?");
+			string naam = Console.ReadLine();
 			Console.Clear();
+			Console.WriteLine("Wat is je Achternaam?");
+			string achternaam = Console.ReadLine();
 
-
-			Reservering klant = new Reservering(naam, achternaam, aantalMensen, tafelNummer, tijd, datum, klantid, betaalmethode);
+			Reservering klant = new Reservering(naam, achternaam, aantalMensen, tafelNummer, tijd, datum, klantid);
 
 			// Laad het json bestand naar een string
 			string initialJson = File.ReadAllText(path);
@@ -176,6 +194,7 @@ namespace Reservering
 
 			Console.WriteLine("Typ INFO om informatie te zien over deze reservering, anders druk op enter om terug te gaan:");
 			string t = Console.ReadLine();
+
 			if(t == "INFO")
             {
 
@@ -221,13 +240,12 @@ namespace Reservering
 		public string Tijd { get; set; }
 		public string Datum { get; set; }
 		public string KlantID { get; set; }
-		public string Betaalmethode { get; set; }
 
 		public void Info()
         {
 			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
         }
-		public Reservering(string naam, string achternaam, int aantalmensen, int tafelnummer, string tijd, string datum, string klantid, string betaalmethode)
+		public Reservering(string naam, string achternaam, int aantalmensen, int tafelnummer, string tijd, string datum, string klantid)
         {
 			Random r = new Random();
 			this.Naam = naam;
@@ -237,8 +255,21 @@ namespace Reservering
 			this.Tijd = tijd;
 			this.Datum = datum;
 			this.KlantID = klantid;
-			this.Betaalmethode = betaalmethode;
-			this.Res_ID = r.Next(1000, 9999);
+			
+
+			string path = @"../../../../Data/reservering.json";
+			// Laad het json bestand naar een string
+			string innit = File.ReadAllText(path);
+
+			// zet de string naar een array
+			var Count = JArray.Parse(innit);
+
+
+
+			int len = Count.Count;
+
+			this.Res_ID = len + 1;
+
 			Console.WriteLine($"Er is succesvol een reservering geplaatst op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur met ID {this.Res_ID}");
 		}
 	}
