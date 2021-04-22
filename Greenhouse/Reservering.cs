@@ -64,9 +64,9 @@ namespace Reservering
 			{
 				Console.WriteLine("Voor hoeveel mensen is deze reservering?");
 				aantalMensen = Convert.ToInt32(Console.ReadLine());
-				if (aantalMensen > 6)
+				if (aantalMensen > 8)
 				{
-					Console.WriteLine("Voor het reserveren van groepen boven de 6 kunt u bellen naar : 0800-0432");
+					Console.WriteLine("Voor het reserveren van groepen boven de 8 kunt u bellen naar : 0800-0432 \n Hierbij komen extra servicekosten van pas van 1,30 euro per persoon boven de 8\n");
 
 				}
 				else
