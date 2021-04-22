@@ -175,6 +175,12 @@ namespace Reservering
 			this.Betaalmethode = betaalmethode;
 			this.Res_ID = r.Next(1000, 9999);
 			Console.WriteLine($"Er is succesvol een reservering geplaatst op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd[0]}:{this.Tijd[1]} uur met ID {this.Res_ID}");
+
+			if (AantalMensen > 6)
+			{
+				Console.WriteLine("Aangezien u voor meer dan 6 personen heeft gereserveerd, zal er een kleine toeslag gevraagd worden.");
+
+			}
 		}
 	}
 }
