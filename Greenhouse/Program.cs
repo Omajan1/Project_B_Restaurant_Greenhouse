@@ -27,6 +27,7 @@ namespace Greenhouse
                 Console.WriteLine("3. Regels");
                 Console.WriteLine("4. Contact Opnemen?");
                 Console.WriteLine("5. Exit");
+                Console.WriteLine("6. Reservering laten zien");
 
                 Console.Write("Zet hier uw keuze neer: ");
                 string result = Console.ReadLine();
@@ -47,10 +48,14 @@ namespace Greenhouse
                     case "5":
                         running = false;
                         break;
-                    case "6":
+                    case "666":
                         test.run();
                         break;
+                    case "6":
+                        PageReservering.showReser();
+                        break;
                     default:
+
                         Console.Clear();
                         break;
 

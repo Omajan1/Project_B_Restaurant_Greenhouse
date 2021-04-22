@@ -1,86 +1,32 @@
 [
   {
-    "Naam": "Levi",
-    "Achternaam": "Reijns",
-    "AantalMensen": 4,
+    "Naam": "Test",
+    "Achternaam": "test",
+    "AantalMensen": 3,
     "TafelNummer": 5,
-    "Res_ID": 7699,
-    "Tijd": [
-      19,
-      19
-    ],
+    "Res_ID": 1,
+    "Tijd": "19:20",
     "Datum": "29-12-2002",
-    "KlantID": "4433",
-    "Betaalmethode": "Contant"
-  },
-  {
-    "Naam": "Levi",
-    "Achternaam": "Jlll",
-    "AantalMensen": 2,
-    "TafelNummer": 4,
-    "Res_ID": 8549,
-    "Tijd": [
-      20,
-      20
-    ],
-    "Datum": "29-29-2999",
-    "KlantID": "4332",
-    "Betaalmethode": "cO"
-  },
-  {
-    "Naam": "Levi",
-    "Achternaam": "Ja",
-    "AantalMensen": 4,
-    "TafelNummer": 3,
-    "Res_ID": 2612,
-    "Tijd": [
-      19,
-      19
-    ],
-    "Datum": "29-12-2002",
-    "KlantID": "4444",
-    "Betaalmethode": "Co"
+    "KlantID": "4444"
   },
   {
     "Naam": "le",
-    "Achternaam": "op",
-    "AantalMensen": 2,
-    "TafelNummer": 3,
-    "Res_ID": 9947,
-    "Tijd": [
-      19,
-      20
-    ],
+    "Achternaam": "le",
+    "AantalMensen": 4,
+    "TafelNummer": 5,
+    "Res_ID": 2,
+    "Tijd": "19:19",
     "Datum": "29-12-2002",
-    "KlantID": "3333",
-    "Betaalmethode": "codl"
+    "KlantID": "1234"
   },
   {
-    "Naam": "LEv",
-    "Achternaam": "dwdaw",
+    "Naam": "Levi",
+    "Achternaam": "Jaj",
     "AantalMensen": 3,
-    "TafelNummer": 2,
-    "Res_ID": 2671,
-    "Tijd": [
-      19,
-      19
-    ],
+    "TafelNummer": 6,
+    "Res_ID": 3,
+    "Tijd": "19:20",
     "Datum": "29-12-2002",
-    "KlantID": "4444",
-    "Betaalmethode": "Contant"
-  },
-  {
-    "Naam": "opel",
-    "Achternaam": "mercedes",
-    "AantalMensen": 2,
-    "TafelNummer": 12,
-    "Res_ID": 5820,
-    "Tijd": [
-      9,
-      12
-    ],
-    "Datum": "09-11-2003",
-    "KlantID": "911",
-    "Betaalmethode": "aliexpress"
+    "KlantID": "4322"
   }
 ]

@@ -5,11 +5,44 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 namespace Reservering
 {
-	
+
+
+
 	public class PageReservering
 	{
 
 		public static string path = @"../../../../Data/reservering.json";
+
+
+		public static void showReser()
+        {
+			// Laad het json bestand naar een string
+			string innit = File.ReadAllText(path);
+
+			// zet de string naar een array
+			var Count = JArray.Parse(innit);
+
+
+
+
+
+			foreach (JObject item in Count)
+			{
+				string date = item.GetValue("Datum").ToString();
+				string name = item.GetValue("Naam").ToString();
+				string aantalMensen = item.GetValue("AantalMensen").ToString();
+				string Tafel = item.GetValue("TafelNummer").ToString();
+				Console.WriteLine($"{name} heeft een reservering op {date} voor {aantalMensen} bij tafel {Tafel} \n\n");
+				Console.WriteLine("Druk op enter om door de reserveringen te gaan, typ back om terug te gaan.");
+				if(Console.ReadLine() == "back")
+                {
+					break;
+                }
+
+			}
+
+			
+        }
 		public static void show()
 		{
 			Console.Clear();
