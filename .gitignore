@@ -373,3 +373,4 @@ Greenhouse/obj/Debug/netcoreapp3.1/apphost.exe
 
 Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
 *.v2
+*.dll
