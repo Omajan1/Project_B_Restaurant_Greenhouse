@@ -2,8 +2,10 @@
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+
 namespace Contact
 {
+
 	
 	public class Comment
     {
@@ -18,38 +20,52 @@ namespace Contact
     }
 	public class contact
 	{
+		// Dit laat de vragen zien en geeft je de optie om ze te beantwoorden
 		public static void showVragen()
         {
 			Console.Clear();
-			string path = @"../../../../Data/commentsContact.json";
+
+			// Path naar het JSON bestand
+			string path = @"../../../../Data/Vragen.json";
+
 			// Laad het json bestand naar een string
 			string initialJson = File.ReadAllText(path);
 
-			// zet de string naar een array
+			// Zet de string naar een array
 			var array = JArray.Parse(initialJson);
+
+			// Gaat door elk element van de JSON array heen
 			foreach(JObject q in array)
             {
-
+				// Kijkt of het antwoord al is ingevuld
 				JToken isFull = q["Answer"];
+
 				if (isFull == null)
 				{
-					
-				string vraag = q.GetValue("Text").ToString();
-				string naam = q.GetValue("Name").ToString();
-				Console.WriteLine($"{naam} Stelde de vraag : " + vraag);
-				Console.WriteLine("Wil je deze vraag beantwoorden: typ y als je dat wilt, anders enter: ");
-				string choice = Console.ReadLine();
-					if(choice == "y")
-					{
-						Console.WriteLine("Wat is je antwoord op de vraag: \n");
-						string antwoord = Console.ReadLine();
-						q["Answer"] = antwoord;
-						// Slaat het op in JSON
-						File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
+					// Pakt values Text en Name van de JSON file
+					string vraag = q.GetValue("Text").ToString();
+					string naam = q.GetValue("Name").ToString();
 
-					}
+					Console.WriteLine($"{naam} stelde de vraag : \t" + vraag);
+					Console.WriteLine("Wil je deze vraag beantwoorden: typ Y als je dat wilt, anders enter: ");
 
-				Console.Clear();
+
+					string choice = Console.ReadLine();
+					choice = choice.ToUpper();
+
+					if (choice == "Y")
+						{
+							
+							Console.WriteLine("Wat is je antwoord op de vraag: \n");
+							string antwoord = Console.ReadLine();
+							// Voegt Answer toe aan het element
+							q["Answer"] = antwoord;
+							// Slaat het op in JSON
+							File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
+
+						}
+
+					Console.Clear();
 				}
 			}
 			
@@ -57,25 +73,26 @@ namespace Contact
 
 		public static void show()
 		{
+			// Path naar JSON file
 			string path = @"../../../../Data/commentsContact.json";
+
 			Console.Clear();
-			Console.WriteLine("Wilt u contact opnemen met het restaurant?: dan kan dat op de volgende manieren:\n\n" +
-				"Telefoonnummer: 010-794-4000\n" +
-				"Email: greenhouse@green.nl\n" +
-				"Adres: Wijnhaven 107, 3011 WN Rotterdam\n" +
-				"Provincie: Zuid-Holland\n" +
-				"Website: https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107 \n" +
-				
 
-				"Verstuur een chat bericht: typ het bericht en druk op enter\n" +
-				"Als je terug naar het hoofdmenu wilt, typ dan niks\n");
-			// Voeg iets to zodat je een string naar een json bestand kan zetten met de vraag als er tijd over is
-			Console.WriteLine("---Druk om een toets om terug te gaan.---\n");
+			Console.WriteLine("Wilt u contact opnemen met het restaurant?: dan kan dat op de volgende manieren:");
+			Console.WriteLine("Telefoonnummer: 010-794-4000");
+			Console.WriteLine("Email: greenhouse@green.nl");
+			Console.WriteLine("Adres: Wijnhaven 107, 3011 WN Rotterdam");
+			Console.WriteLine("Provincie: Zuid-Holland");
+			Console.WriteLine("Website: https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107");
+			Console.WriteLine("Verstuur een chat bericht: typ het bericht en druk op enter");
+			Console.WriteLine("Als je terug naar het hoofdmenu wilt, typ dan niks");
+			Console.WriteLine("---Druk om een toets om terug te gaan.---");
 
-			
-
+			// Pakt of de gebruiker terug wilt of welke vraag je wilt achterlaten
 			string input = Console.ReadLine();
 
+
+			// Als input niet leeg is 
 			if(input != "")
             {
 
@@ -83,7 +100,7 @@ namespace Contact
 				string name = Console.ReadLine();
 
 
-
+				// Maakt een nieuw comment object
 				Comment comment = new Comment(input, name);
 
 				// Laad het json bestand naar een string
@@ -102,24 +119,7 @@ namespace Contact
 				File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
 
 				Console.ReadLine();
-
-
-
-
-
-
-
-
-
-
-
 			}
-
-
-
-
-
-
 		}
 	}
 }
