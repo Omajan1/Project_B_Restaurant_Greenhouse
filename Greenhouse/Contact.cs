@@ -9,7 +9,7 @@ namespace Contact
     {
 		public string Text = "";
 		public string Name = "";
-		public string Answer = "";
+
 		public Comment(string text, string name)
         {
 			this.Text = text;
@@ -29,17 +29,28 @@ namespace Contact
 			var array = JArray.Parse(initialJson);
 			foreach(JObject q in array)
             {
+
+				JToken isFull = q["Answer"];
+				if (isFull == null)
+				{
+					
 				string vraag = q.GetValue("Text").ToString();
 				string naam = q.GetValue("Name").ToString();
 				Console.WriteLine($"{naam} Stelde de vraag : " + vraag);
 				Console.WriteLine("Wil je deze vraag beantwoorden: typ y als je dat wilt, anders enter: ");
 				string choice = Console.ReadLine();
-				if(choice == "y")
-                {
+					if(choice == "y")
+					{
+						Console.WriteLine("Wat is je antwoord op de vraag: \n");
+						string antwoord = Console.ReadLine();
+						q["Answer"] = antwoord;
+						// Slaat het op in JSON
+						File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
 
-                }
+					}
 
 				Console.Clear();
+				}
 			}
 			
 		}
@@ -89,6 +100,7 @@ namespace Contact
 				
 				// Slaat het op in JSON
 				File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
+
 				Console.ReadLine();
 
 
