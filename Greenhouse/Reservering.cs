@@ -2,7 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-
+using JSON;
 namespace Reservering
 {
 
@@ -11,13 +11,13 @@ namespace Reservering
 	public class PageReservering
 	{
 
-		public static string path = @"../../../../Data/reservering.json";
+		
 
 
 		public static void showReser()
         {
 			// Laad het json bestand naar een string
-			string innit = File.ReadAllText(path);
+			string innit = File.ReadAllText(paths.reservaring);
 
 			// zet de string naar een array
 			var Count = JArray.Parse(innit);
@@ -279,7 +279,7 @@ namespace Reservering
 			Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, klantid);
 
 			// Laad het json bestand naar een string
-			string initialJson = File.ReadAllText(path);
+			string initialJson = File.ReadAllText(paths.reservaring);
 
 			// zet de string naar een array
 			var array = JArray.Parse(initialJson);
@@ -291,7 +291,7 @@ namespace Reservering
 			array.Add(jsonObject);
 
 			// Slaat het op in JSON
-			File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
+			File.WriteAllText(paths.reservaring, JsonConvert.SerializeObject(array, Formatting.Indented));
 
 
 
@@ -302,7 +302,7 @@ namespace Reservering
             {
 
 				// Laad het json bestand naar een string
-				string innit = File.ReadAllText(path);
+				string innit = File.ReadAllText(paths.reservaring);
 
 				// zet de string naar een array
 				var Count = JArray.Parse(innit);

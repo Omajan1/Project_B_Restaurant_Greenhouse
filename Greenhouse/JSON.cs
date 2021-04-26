@@ -1,6 +1,10 @@
 ﻿using System;
-
-public class JSON
+namespace JSON
 {
-    public string pathVragen = @"../../../../Data/Vragen.json";
+    public class paths
+    {
+        public static string vragen = @"../../../../data/vragen.json";
+        public static string reservaring = @"../../../../data/reservering.json";
+    }
 }
+

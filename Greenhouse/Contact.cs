@@ -2,7 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-
+using JSON;
 namespace Contact
 {
 
@@ -25,11 +25,10 @@ namespace Contact
         {
 			Console.Clear();
 
-			// Path naar het JSON bestand
-			string path = @"../../../../Data/Vragen.json";
+
 
 			// Laad het json bestand naar een string
-			string initialJson = File.ReadAllText(path);
+			string initialJson = File.ReadAllText(paths.vragen);
 
 			// Zet de string naar een array
 			var array = JArray.Parse(initialJson);
@@ -61,7 +60,7 @@ namespace Contact
 							// Voegt Answer toe aan het element
 							q["Answer"] = antwoord;
 							// Slaat het op in JSON
-							File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
+							File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
 
 						}
 
@@ -73,8 +72,7 @@ namespace Contact
 
 		public static void show()
 		{
-			// Path naar JSON file
-			string path = @"../../../../Data/commentsContact.json";
+
 
 			Console.Clear();
 
@@ -104,7 +102,7 @@ namespace Contact
 				Comment comment = new Comment(input, name);
 
 				// Laad het json bestand naar een string
-				string initialJson = File.ReadAllText(path);
+				string initialJson = File.ReadAllText(paths.vragen);
 
 				// zet de string naar een array
 				var array = JArray.Parse(initialJson);
@@ -116,7 +114,7 @@ namespace Contact
 				array.Add(jsonObject);
 				
 				// Slaat het op in JSON
-				File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
+				File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
 
 				Console.ReadLine();
 			}

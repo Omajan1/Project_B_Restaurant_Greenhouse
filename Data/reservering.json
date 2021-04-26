@@ -7,5 +7,14 @@
     "Tijd": "19:00",
     "Datum": "29-12-2002",
     "KlantID": "4444"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Jay",
+    "TafelNummer": 5,
+    "Res_ID": 2,
+    "Tijd": "13:00",
+    "Datum": "12/6",
+    "KlantID": "3321"
   }
 ]
