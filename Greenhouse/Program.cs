@@ -21,13 +21,15 @@ namespace Greenhouse
             while (true)
             {
                 Console.Clear();
+                Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("--Welkom bij de Reserverings Applicatie van GreenHouse--\n");
                 Console.WriteLine("--Duurzaamheid en Sustainability met Lokale Leveranciers!--");
                 Console.WriteLine("\t--Voor elke portomonee en altijd lekker!--\n");
-                Console.WriteLine("-----------------------------------------");
-                Console.WriteLine("| Elke dag open, vannaf 13:00 tot 22:00 |");
-                Console.WriteLine("| De bar is open van 13:00 tot 01:00    |");
-                Console.WriteLine("-----------------------------------------\n");
+                Console.WriteLine("-----------------------------------------------------------");
+                Console.WriteLine("\t-----------------------------------------");
+                Console.WriteLine("\t| Elke dag open, vannaf 13:00 tot 22:00 |");
+                Console.WriteLine("\t| De bar is open van 13:00 tot 01:00    |");
+                Console.WriteLine("\t-----------------------------------------\n");
                 Console.WriteLine("Dit zijn de opties:");
                 Console.WriteLine("1. Reserveren");
                 Console.WriteLine("2. Menu");
@@ -49,11 +51,11 @@ namespace Greenhouse
                 switch (result)
                 {
                     case "1":
-                        PageReservering.show();
+                        reservaring.makeReservation();
                         break;
 
                     case "2":
-                        menuPage0.show();
+                        menu.show();
                         break;
                     case "3":
                         rules.show();
@@ -65,7 +67,7 @@ namespace Greenhouse
                         contact.showAnswers();
                         break;
                     case "6":
-                        PageReservering.showReser();
+                        reservaring.showReserveringen();
                         break;
                     case "7":
                         contact.showVragen();

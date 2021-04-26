@@ -8,32 +8,29 @@ namespace Reservering
 
 
 
-	public class PageReservering
+	public class reservaring
 	{
 
-		
-
-
-		public static void showReser()
+		public static void showReserveringen()
         {
+
 			// Laad het json bestand naar een string
 			string innit = File.ReadAllText(paths.reservaring);
 
 			// zet de string naar een array
 			var Count = JArray.Parse(innit);
 
-
-
-
-
+			// Loopt door alle reserveringen
 			foreach (JObject item in Count)
 			{
+
 				string date = item.GetValue("Datum").ToString();
 				string name = item.GetValue("Naam").ToString();
+				string table = item.GetValue("TafelNummer").ToString();
 
-				string Tafel = item.GetValue("TafelNummer").ToString();
-				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {Tafel} \n\n");
+				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} \n\n");
 				Console.WriteLine("Druk op enter om door de reserveringen te gaan, typ back om terug te gaan.");
+
 				if(Console.ReadLine() == "back")
                 {
 					break;
@@ -43,7 +40,7 @@ namespace Reservering
 
 			
         }
-		public static void show()
+		public static void makeReservation()
 		{
 			Console.Clear();
 
@@ -206,46 +203,6 @@ namespace Reservering
 
 			Console.Clear();
 
-
-			/*
-			int aantalMensen;
-			while (true)
-			{
-                while (true)
-                {
-					Console.WriteLine("Voor hoeveel mensen is deze reservering?");
-					try
-					{
-						aantalMensen = Convert.ToInt32(Console.ReadLine());
-						break;
-					}
-
-					catch (Exception e)
-					{
-						Console.WriteLine("Invalid number, try again:");
-					}
-				}
-
-
-				if (aantalMensen > 8)
-				{
-					Console.WriteLine("Voor het reserveren van groepen boven de 8 kunt u bellen naar : 0800-0432 \n Hierbij komen extra servicekosten van pas van 1,30 euro per persoon boven de 8\n");
-
-				}
-				else
-				{
-					if(aantalMensen < 1)
-                    {
-						Console.WriteLine("'Het aantal mensen moet minimaal 1 zijn.");
-                    }
-                    else
-                    {
-						break;
-					}
-					
-				}
-			}
-			*/
 
 
 

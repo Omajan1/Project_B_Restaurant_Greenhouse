@@ -1,7 +1,7 @@
 ﻿using System;
 namespace MenuPage0
 {
-    public class menuPage0
+    public class menu
     {
         public static void show() 
         {
