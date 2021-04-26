@@ -11,12 +11,13 @@ namespace Greenhouse
     {
         static void Main(string[] args)
         {
-            
+            // Console settings
+
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
             Console.SetWindowSize(180, 35);
 
-            
+            // Running loop
             while (true)
             {
                 Console.Clear();
@@ -36,10 +37,15 @@ namespace Greenhouse
                 Console.WriteLine("6. Reservering laten zien");
                 Console.WriteLine("7. Laat vragen zien om te beantwoorden");
                 Console.WriteLine("8. Exit");
-
                 Console.Write("Zet hier uw keuze neer: ");
+
+                // Pakt keuze van user
                 string result = Console.ReadLine();
+
+                // SLuit af als het 8 is
                 if (result == "8") break;
+                
+                // Keuzes
                 switch (result)
                 {
                     case "1":
@@ -57,9 +63,6 @@ namespace Greenhouse
                         break;
                     case "5":
                         contact.showAnswers();
-                        break;
-                    case "666":
-                        test.run();
                         break;
                     case "6":
                         PageReservering.showReser();
