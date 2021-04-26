@@ -26,9 +26,10 @@ namespace Greenhouse
                 Console.WriteLine("2. Menu");
                 Console.WriteLine("3. Regels");
                 Console.WriteLine("4. Contact Opnemen?");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. FAQ");
                 Console.WriteLine("6. Reservering laten zien");
-                Console.WriteLine("7. Laat vragen zien");
+                Console.WriteLine("7. Laat vragen zien om te beantwoorden");
+                Console.WriteLine("8. Exit");
 
                 Console.Write("Zet hier uw keuze neer: ");
                 string result = Console.ReadLine();
@@ -48,6 +49,9 @@ namespace Greenhouse
                         contact.show();
                         break;
                     case "5":
+                        contact.showAnswers();
+                        break;
+                    case "8":
                         running = false;
                         break;
                     case "666":

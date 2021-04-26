@@ -8,5 +8,19 @@
     "Text": "Test vraag lollol",
     "Name": "Levi",
     "Answer": "Test 1"
+  },
+  {
+    "Text": "Hallo, hoelaat gaat het restaurant open op koningsdag?",
+    "Name": "Levi",
+    "Answer": "19:00"
+  },
+  {
+    "Text": "Hoeveel euro is een glaasje water?",
+    "Name": "Levi",
+    "Answer": "13 euro en 14 cent"
+  },
+  {
+    "Text": "Hoeveel euro is een koekje?",
+    "Name": "Levi"
   }
 ]
