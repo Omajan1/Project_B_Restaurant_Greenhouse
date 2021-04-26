@@ -44,22 +44,28 @@ namespace Reservering
 		{
 			Console.Clear();
 
-			string datum;
+			
 
 			while (true)
 			{
 				Console.Clear();
+				// Pakt tijd van nu
 				string Time = DateTime.Now.ToShortDateString(); 
+
 				Console.WriteLine("Op welke datum wilt u deze reservering plaatsen? Typ het in het format DD-M, zoals dit: 21/4");
 				Console.WriteLine($"De datum van vandaag is: " + Time);
-				datum = Console.ReadLine();
 
-				
+
+				string datum = Console.ReadLine();
+
+				// Split datum uit op de /, zodat het DD/MM wordt
+
 				string[] datumTotaal = datum.Split('/');
+
 
 				if(datumTotaal.Length != 2)
                 {
-					Console.WriteLine("Not the correct format, try again:");
+					Console.WriteLine("Dit is geen geldige datum, druk op enter en probeer het opnieuw :");
 					Console.ReadLine();
                 }
                 else
@@ -78,8 +84,8 @@ namespace Reservering
                         {
 							if(Int32.Parse(datumTotaal[0]) > 31 && Int32.Parse(datumTotaal[0]) < 1)
                             {
-								Console.WriteLine("That isnt a valid day, please try again:");
-                            }
+								Console.WriteLine("Dit is geen geldige datum, druk op enter en probeer het opnieuw :");
+							}
                             else
                             {
 								break;
@@ -87,14 +93,14 @@ namespace Reservering
 						}
                         else
                         {
-							Console.WriteLine("That isnt a valid day, please try again:");
-                        }
+							Console.WriteLine("Dit is geen geldige datum, druk op enter en probeer het opnieuw :");
+						}
 						
 						Console.ReadLine();
 					}
 					catch (Exception e)
 					{
-						Console.WriteLine("Not a valid date, try again:");
+						Console.WriteLine("Dit is geen geldige datum, druk op enter en probeer het opnieuw :");
 
 					}
 
