@@ -3,7 +3,7 @@ namespace MenuPage0
 {
     public class menuPage0
     {
-        public static void show() //voor nu void 
+        public static void show() 
         {
             Console.Clear();
             Console.WriteLine("Welkom bij de Menu Pagina\n");
