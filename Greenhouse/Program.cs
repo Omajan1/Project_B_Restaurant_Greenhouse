@@ -4,14 +4,20 @@ using Reservering;
 using MenuPage0;
 using Contact;
 using Test;
+
 namespace Greenhouse
 {
-    class Pages
+    class Program
     {
-        public static void Home()
+        static void Main(string[] args)
         {
-            bool running = true;
-            while (running)
+            
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.SetWindowSize(180, 35);
+
+            
+            while (true)
             {
                 Console.Clear();
                 Console.WriteLine("--Welkom bij de Reserverings Applicatie van GreenHouse--\n");
@@ -33,6 +39,7 @@ namespace Greenhouse
 
                 Console.Write("Zet hier uw keuze neer: ");
                 string result = Console.ReadLine();
+                if (result == "8") break;
                 switch (result)
                 {
                     case "1":
@@ -51,9 +58,6 @@ namespace Greenhouse
                     case "5":
                         contact.showAnswers();
                         break;
-                    case "8":
-                        running = false;
-                        break;
                     case "666":
                         test.run();
                         break;
@@ -64,31 +68,12 @@ namespace Greenhouse
                         contact.showVragen();
                         break;
                     default:
-
                         Console.Clear();
                         break;
 
 
-
                 }
             }
-        }
-
-
-    }
-    
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Omdat het greenhouse is deze kleuren
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.SetWindowSize(160, 35);
-            Pages.Home(); 
-
-
-
         }
     }
 }
