@@ -21,13 +21,14 @@ namespace Greenhouse
                 Console.WriteLine("| Elke dag open, vannaf 13:00 tot 22:00 |");
                 Console.WriteLine("| De bar is open van 13:00 tot 01:00    |");
                 Console.WriteLine("-----------------------------------------\n");
-                Console.WriteLine("Dit zijn de opties:\n");
+                Console.WriteLine("Dit zijn de opties:");
                 Console.WriteLine("1. Reserveren");
                 Console.WriteLine("2. Menu");
                 Console.WriteLine("3. Regels");
                 Console.WriteLine("4. Contact Opnemen?");
                 Console.WriteLine("5. Exit");
                 Console.WriteLine("6. Reservering laten zien");
+                Console.WriteLine("7. Laat vragen zien");
 
                 Console.Write("Zet hier uw keuze neer: ");
                 string result = Console.ReadLine();
@@ -36,6 +37,7 @@ namespace Greenhouse
                     case "1":
                         PageReservering.show();
                         break;
+
                     case "2":
                         menuPage0.show();
                         break;
@@ -53,6 +55,9 @@ namespace Greenhouse
                         break;
                     case "6":
                         PageReservering.showReser();
+                        break;
+                    case "7":
+                        contact.showVragen();
                         break;
                     default:
 

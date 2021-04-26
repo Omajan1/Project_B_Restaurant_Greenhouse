@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -31,9 +30,9 @@ namespace Reservering
 			{
 				string date = item.GetValue("Datum").ToString();
 				string name = item.GetValue("Naam").ToString();
-				string aantalMensen = item.GetValue("AantalMensen").ToString();
+
 				string Tafel = item.GetValue("TafelNummer").ToString();
-				Console.WriteLine($"{name} heeft een reservering op {date} voor {aantalMensen} bij tafel {Tafel} \n\n");
+				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {Tafel} \n\n");
 				Console.WriteLine("Druk op enter om door de reserveringen te gaan, typ back om terug te gaan.");
 				if(Console.ReadLine() == "back")
                 {
@@ -293,6 +292,8 @@ namespace Reservering
 
 			// Slaat het op in JSON
 			File.WriteAllText(path, JsonConvert.SerializeObject(array, Formatting.Indented));
+
+
 
 			Console.WriteLine("Typ INFO om informatie te zien over deze reservering, anders druk op enter om terug te gaan:");
 			string t = Console.ReadLine();
