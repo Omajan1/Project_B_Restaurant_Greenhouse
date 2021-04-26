@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+
 namespace Reservering
 {
 
@@ -51,29 +52,113 @@ namespace Reservering
 
 			while (true)
 			{
-				Console.WriteLine("Op welke datum wilt u deze reservering plaatsen? Typ het in het format DD-MM-YYYY, zoals dit: 21-04-2021");
+				Console.Clear();
+				string Time = DateTime.Now.ToShortDateString(); 
+				Console.WriteLine("Op welke datum wilt u deze reservering plaatsen? Typ het in het format DD-M, zoals dit: 21/4");
+				Console.WriteLine($"De datum van vandaag is: " + Time);
 				datum = Console.ReadLine();
-				if (datum.Length == 10)
-				{
-					break;
 
+				
+				string[] datumTotaal = datum.Split('/');
+
+				if(datumTotaal.Length != 2)
+                {
+					Console.WriteLine("Not the correct format, try again:");
+					Console.ReadLine();
+                }
+                else
+                {
+					try
+					{
+						foreach (var word in datumTotaal)
+						{
+							int a = Int32.Parse(word);
+						}
+						int month = (int)System.DateTime.Now.Month;
+						int day = (int)System.DateTime.Now.Day;
+
+						if(Int32.Parse(datumTotaal[1]) > month && Int32.Parse(datumTotaal[1]) < 12)
+                        {
+							if(Int32.Parse(datumTotaal[0]) > 31 && Int32.Parse(datumTotaal[0]) < 1)
+                            {
+								Console.WriteLine("That isnt a valid day, please try again:");
+                            }
+                            else
+                            {
+								break;
+                            }
+						}
+                        else
+                        {
+							Console.WriteLine("That isnt a valid day, please try again:");
+                        }
+						
+						Console.ReadLine();
+					}
+					catch (Exception e)
+					{
+						Console.WriteLine("Not a valid date, try again:");
+
+					}
+
+
+					Console.ReadLine();
 				}
-				else
-				{
-					Console.WriteLine("Deze datum is volgeboekt of het is niet in het geldige format DD-MM-YYYY");
-				}
+
+
+
+
+				
+
+
+
+
+
 			}
 
 			//check komen
 
 			Console.Clear();
 
+			string tijd;
 
+			Console.Clear();
+			while (true)
+			{
+				Console.Clear();
+				Console.WriteLine("Welk tijdslot wilt u reserveren voor deze dag?");
+				Console.WriteLine("1. Van 13:00 tot 16:00\n" +
+					"2. Van 16:00 tot 19:00\n" +
+					"3. Van 19:00 tot 22:00\n");
+				string input = Console.ReadLine();
+                switch (input)
+                {
+					case "1":
+						tijd = "13:00";
+						break;
+					case "2":
+						tijd = "16:00";
+						break;
+
+					case "3":
+						tijd = "19:00";
+						break;
+					default:
+						Console.WriteLine("Please give a valid choice:");
+						Console.ReadLine();
+						tijd = "";
+						break;
+
+                }
+				
+				if (tijd != "") break;
+
+			}
 
 			int tafelNummer;
 			while (true)
 			{
-				
+				Console.Clear();
 				//■
 				Console.WriteLine("                     -TAFEL INDELING GREENHOUSE-                                      |                   |              ");
 				Console.WriteLine("                                                                                      |                   |              ");
@@ -110,7 +195,8 @@ namespace Reservering
 				if (tafelNummer > 15) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 				{
 					Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
-					
+					Console.ReadLine();
+
 				}
 				else
 				{
@@ -120,7 +206,8 @@ namespace Reservering
 
 			Console.Clear();
 
-			
+
+			/*
 			int aantalMensen;
 			while (true)
 			{
@@ -158,28 +245,9 @@ namespace Reservering
 					
 				}
 			}
+			*/
 
-			string tijd;
 
-			Console.Clear();
-			while (true)
-			{
-				
-				Console.WriteLine("Hoelaat wilt u komen eten? Typ eerst het uur, druk op enter, en typ vervolgens het aantal minuten:");
-				int tijd1 = Convert.ToInt32(Console.ReadLine());
-				int tijd2 = Convert.ToInt32(Console.ReadLine());
-				if (tijd1 > 22)
-				{
-					Console.WriteLine("Dit is geen geldige tijd: Het restaurant stopt met serveren om 22:00, kies een tijd voor dit");
-
-				}
-				else
-				{
-					tijd = (tijd1.ToString() + ":" +  tijd2.ToString());
-					break;
-
-				}
-			}
 
 
 			string klantid;
@@ -208,7 +276,7 @@ namespace Reservering
 			Console.WriteLine("Wat is je Achternaam?");
 			string achternaam = Console.ReadLine();
 
-			Reservering klant = new Reservering(naam, achternaam, aantalMensen, tafelNummer, tijd, datum, klantid);
+			Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, klantid);
 
 			// Laad het json bestand naar een string
 			string initialJson = File.ReadAllText(path);
@@ -267,7 +335,6 @@ namespace Reservering
     {
 		public string Naam { get; set; }
 		public string Achternaam { get; set; }
-		public int AantalMensen { get; set; }
 		public int TafelNummer { get; set; }
 		public int Res_ID { get; set; }
 		public string Tijd { get; set; }
@@ -278,12 +345,11 @@ namespace Reservering
         {
 			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
         }
-		public Reservering(string naam, string achternaam, int aantalmensen, int tafelnummer, string tijd, string datum, string klantid)
+		public Reservering(string naam, string achternaam, int tafelnummer, string tijd, string datum, string klantid)
         {
 			Random r = new Random();
 			this.Naam = naam;
 			this.Achternaam = achternaam;
-			this.AantalMensen = aantalmensen;
 			this.TafelNummer = tafelnummer;
 			this.Tijd = tijd;
 			this.Datum = datum;

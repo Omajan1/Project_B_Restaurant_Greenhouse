@@ -1,32 +1,11 @@
 [
   {
-    "Naam": "Test",
-    "Achternaam": "test",
-    "AantalMensen": 3,
-    "TafelNummer": 5,
+    "Naam": "Levi",
+    "Achternaam": "Oep",
+    "TafelNummer": 12,
     "Res_ID": 1,
-    "Tijd": "19:20",
+    "Tijd": "19:00",
     "Datum": "29-12-2002",
     "KlantID": "4444"
-  },
-  {
-    "Naam": "le",
-    "Achternaam": "le",
-    "AantalMensen": 4,
-    "TafelNummer": 5,
-    "Res_ID": 2,
-    "Tijd": "19:19",
-    "Datum": "29-12-2002",
-    "KlantID": "1234"
-  },
-  {
-    "Naam": "Levi",
-    "Achternaam": "Jaj",
-    "AantalMensen": 3,
-    "TafelNummer": 6,
-    "Res_ID": 3,
-    "Tijd": "19:20",
-    "Datum": "29-12-2002",
-    "KlantID": "4322"
   }
 ]
