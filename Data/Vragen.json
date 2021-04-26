@@ -21,6 +21,12 @@
   },
   {
     "Text": "Hoeveel euro is een koekje?",
-    "Name": "Levi"
+    "Name": "Levi",
+    "Answer": "15 euro"
+  },
+  {
+    "Text": "Hallo, dit is een test voor het vragen",
+    "Name": "Testvraag",
+    "Answer": "Test antwoord"
   }
 ]
