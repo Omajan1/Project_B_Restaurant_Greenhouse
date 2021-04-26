@@ -2,7 +2,5 @@
 
 public class JSON
 {
-	public paths()
-	{
-	}
+    public string pathVragen = @"../../../../Data/Vragen.json";
 }
