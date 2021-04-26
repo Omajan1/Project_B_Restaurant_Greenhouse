@@ -74,6 +74,7 @@ namespace Reservering
 						{
 							int a = Int32.Parse(word);
 						}
+
 						int month = (int)System.DateTime.Now.Month;
 						int day = (int)System.DateTime.Now.Day;
 
