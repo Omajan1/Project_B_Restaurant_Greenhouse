@@ -6,6 +6,7 @@ using JSON;
 
 namespace Reservering
 {
+
 	public class reservaring
 	{
 		public static void showReserveringen()
@@ -35,69 +36,21 @@ namespace Reservering
         }
 		public static void makeReservation()
 		{
-			Console.Clear();
-
-			while (true)
-			{
+			
+			string datum;
+            while (true)
+            {
 				Console.Clear();
-				// Pakt tijd van nu
-				string Time = DateTime.Now.ToShortDateString(); 
-
-				Console.WriteLine("Op welke datum wilt u deze reservering plaatsen? Typ het in het format DD-M, zoals dit: 21/4");
-				Console.WriteLine($"De datum van vandaag is: " + Time);
-
-
-				string datum = Console.ReadLine();
-
-				// Split datum uit op de /, zodat het DD/MM wordt
-
-				string[] datumTotaal = datum.Split('/');
-
-
-				if(datumTotaal.Length != 2)
-                {
-					Console.WriteLine("Dit is geen geldige datum, druk op enter en probeer het opnieuw :");
-					Console.ReadLine();
-                }
-                else
-                {
-					try
-					{
-						foreach (var word in datumTotaal)
-						{
-							int a = Int32.Parse(word);
-						}
-
-						int month = (int)System.DateTime.Now.Month;
-						int day = (int)System.DateTime.Now.Day;
-
-						if(Int32.Parse(datumTotaal[1]) > month && Int32.Parse(datumTotaal[1]) < 12)
-                        {
-							if(Int32.Parse(datumTotaal[0]) > 31 && Int32.Parse(datumTotaal[0]) < 1)
-                            {
-								Console.WriteLine("Dit is geen geldige datum, druk op enter en probeer het opnieuw :");
-							}
-                            else
-                            {
-								break;
-                            }
-						}
-                        else
-                        {
-							Console.WriteLine("Dit is geen geldige datum, druk op enter en probeer het opnieuw :");
-						}
-						
-						Console.ReadLine();
-					}
-					catch (Exception e)
-					{
-						Console.WriteLine("Dit is geen geldige datum, druk op enter en probeer het opnieuw :");
-					}
-					Console.ReadLine();
-				}
+				Console.WriteLine("1. Kies een datum : ");
+				Console.WriteLine("2. Kies een tafel: ");
+				Console.WriteLine("3. Op welk tijdstip wilt u komen eten? : ");
+				Console.WriteLine("3. Op welk tijdstip wilt u komen eten? : ");
 			}
 
-			//check komen
+
+			
+
+
 			Console.Clear();
 
 			string tijd;
@@ -173,11 +126,10 @@ namespace Reservering
 				if (tafelNummer > 15) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 				{
 					Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
-<<<<<<< Updated upstream
+
 					Console.ReadLine();
 
-=======
->>>>>>> Stashed changes
+
 				}
 				else
 				{

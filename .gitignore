@@ -212,10 +212,7 @@ csx/
 # Microsoft Azure Emulator
 ecf/
 rcf/
-.vs/
-Greenhouse/.vs/
-Greenhouse/bin/
-Greenhouse/obj/
+
 # Windows Store app package directories and files
 AppPackages/
 BundleArtifacts/
@@ -363,19 +360,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-*.v2
-Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
-Greenhouse/.vs/Greenhouse/v16/.suo
-Greenhouse/.vs/
-*.cache
-Greenhouse/obj/Debug/netcoreapp3.1/apphost.exe
-*.exe
-
-Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
-*.v2
-*.dll
-Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
-*.v2
-Greenhouse/.vs/Greenhouse/v16/.suo
-*.cache
-Greenhouse/obj/Debug/netcoreapp3.1/Greenhouse.csprojAssemblyReference.cache

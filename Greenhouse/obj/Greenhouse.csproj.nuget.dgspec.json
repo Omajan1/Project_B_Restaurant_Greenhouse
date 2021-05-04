@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\snell\\Desktop\\Github\\Project_B_Restaurant_Greenhouse\\Greenhouse\\Greenhouse.csproj": {}
+    "C:\\Users\\jjjoo\\Documents\\GitHub\\Project_B_Restaurant_Greenhouse\\Greenhouse\\Greenhouse.csproj": {}
   },
   "projects": {
-    "C:\\Users\\snell\\Desktop\\Github\\Project_B_Restaurant_Greenhouse\\Greenhouse\\Greenhouse.csproj": {
+    "C:\\Users\\jjjoo\\Documents\\GitHub\\Project_B_Restaurant_Greenhouse\\Greenhouse\\Greenhouse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\snell\\Desktop\\Github\\Project_B_Restaurant_Greenhouse\\Greenhouse\\Greenhouse.csproj",
+        "projectUniqueName": "C:\\Users\\jjjoo\\Documents\\GitHub\\Project_B_Restaurant_Greenhouse\\Greenhouse\\Greenhouse.csproj",
         "projectName": "Greenhouse",
-        "projectPath": "C:\\Users\\snell\\Desktop\\Github\\Project_B_Restaurant_Greenhouse\\Greenhouse\\Greenhouse.csproj",
-        "packagesPath": "C:\\Users\\snell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\snell\\Desktop\\Github\\Project_B_Restaurant_Greenhouse\\Greenhouse\\obj\\",
+        "projectPath": "C:\\Users\\jjjoo\\Documents\\GitHub\\Project_B_Restaurant_Greenhouse\\Greenhouse\\Greenhouse.csproj",
+        "packagesPath": "C:\\Users\\jjjoo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jjjoo\\Documents\\GitHub\\Project_B_Restaurant_Greenhouse\\Greenhouse\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\snell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jjjoo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
