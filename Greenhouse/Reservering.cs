@@ -3,17 +3,13 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using JSON;
+
 namespace Reservering
 {
-
-
-
 	public class reservaring
 	{
-
 		public static void showReserveringen()
         {
-
 			// Laad het json bestand naar een string
 			string innit = File.ReadAllText(paths.reservaring);
 
@@ -35,16 +31,11 @@ namespace Reservering
                 {
 					break;
                 }
-
 			}
-
-			
         }
 		public static void makeReservation()
 		{
 			Console.Clear();
-
-			
 
 			while (true)
 			{
@@ -101,26 +92,12 @@ namespace Reservering
 					catch (Exception e)
 					{
 						Console.WriteLine("Dit is geen geldige datum, druk op enter en probeer het opnieuw :");
-
 					}
-
-
 					Console.ReadLine();
 				}
-
-
-
-
-				
-
-
-
-
-
 			}
 
 			//check komen
-
 			Console.Clear();
 
 			string tijd;
@@ -153,9 +130,7 @@ namespace Reservering
 						break;
 
                 }
-				
 				if (tijd != "") break;
-
 			}
 
 			int tafelNummer;
@@ -212,10 +187,6 @@ namespace Reservering
 
 			Console.Clear();
 
-
-
-
-
 			string klantid;
 			Console.Clear();
 			while (true)
@@ -226,12 +197,10 @@ namespace Reservering
 				if (klantid.Length == 4)
 				{
 					break;
-
 				}
 				else
 				{
 					Console.WriteLine("Dit is geen geldig ID, probeer het opnieuw, druk enter om opnieuw te proberen");
-
 				}
 			}
 		
@@ -259,23 +228,16 @@ namespace Reservering
 			// Slaat het op in JSON
 			File.WriteAllText(paths.reservaring, JsonConvert.SerializeObject(array, Formatting.Indented));
 
-
-
 			Console.WriteLine("Typ INFO om informatie te zien over deze reservering, anders druk op enter om terug te gaan:");
 			string t = Console.ReadLine();
 
-			if(t == "INFO")
+			if (t == "INFO")
             {
-
 				// Laad het json bestand naar een string
 				string innit = File.ReadAllText(paths.reservaring);
 
 				// zet de string naar een array
 				var Count = JArray.Parse(innit);
-
-
-
-
 
 				foreach (JObject item in Count)
 				{
@@ -288,14 +250,6 @@ namespace Reservering
 				Console.WriteLine("Druk op enter om terug te gaan");
 				Console.ReadLine();
             }
-
-
-
-
-
-
-
-
 		}
 	}
 	
