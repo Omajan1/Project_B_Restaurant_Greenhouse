@@ -9,84 +9,52 @@ namespace Reservering
 
 	public class reservaring
 	{
-		public static void showReserveringen()
+		public static string getTime()
         {
-			// Laad het json bestand naar een string
-			string innit = File.ReadAllText(paths.reservaring);
-
-			// zet de string naar een array
-			var Count = JArray.Parse(innit);
-
-			// Loopt door alle reserveringen
-			foreach (JObject item in Count)
-			{
-
-				string date = item.GetValue("Datum").ToString();
-				string name = item.GetValue("Naam").ToString();
-				string table = item.GetValue("TafelNummer").ToString();
-
-				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} \n\n");
-				Console.WriteLine("Druk op enter om door de reserveringen te gaan, typ back om terug te gaan.");
-
-				if(Console.ReadLine() == "back")
-                {
-					break;
-                }
-			}
-        }
-		public static void makeReservation()
-		{
-			
-			string datum;
             while (true)
             {
-				Console.Clear();
-				Console.WriteLine("1. Kies een datum : ");
-				Console.WriteLine("2. Kies een tafel: ");
-				Console.WriteLine("3. Op welk tijdstip wilt u komen eten? : ");
-				Console.WriteLine("3. Op welk tijdstip wilt u komen eten? : ");
-			}
-
-
-			
-
-
-			Console.Clear();
-
-			string tijd;
-
-			Console.Clear();
-			while (true)
-			{
-				Console.Clear();
 				Console.WriteLine("Welk tijdslot wilt u reserveren voor deze dag?");
 				Console.WriteLine("1. Van 13:00 tot 16:00\n" +
 					"2. Van 16:00 tot 19:00\n" +
 					"3. Van 19:00 tot 22:00\n");
-				string input = Console.ReadLine();
-                switch (input)
-                {
+
+				switch (Console.ReadLine())
+				{
 					case "1":
-						tijd = "13:00";
+						return "13:00";
 						break;
 					case "2":
-						tijd = "16:00";
+						return "16:00";
 						break;
-
 					case "3":
-						tijd = "19:00";
+						return "19:00";
 						break;
 					default:
-						Console.WriteLine("Please give a valid choice:");
+						Console.WriteLine("Geef een geldige keuzen : ");
 						Console.ReadLine();
-						tijd = "";
 						break;
 
-                }
-				if (tijd != "") break;
+				}
 			}
 
-			int tafelNummer;
+		}
+
+		public static string getDate()
+        {
+			return "test datum";
+        }
+
+		public static string getVoornaam()
+        {
+			return "voornaam";
+        }
+
+		public static string getAchternaam()
+        {
+			return "achternaam";
+        }
+		public static int getTable()
+        {
 			while (true)
 			{
 				Console.Clear();
@@ -122,63 +90,125 @@ namespace Reservering
 				Console.WriteLine("'<'/'>' zijn de stoelen en richting ervan.");
 
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
-				tafelNummer = Convert.ToInt32(Console.ReadLine());
+				int tafelNummer = Convert.ToInt32(Console.ReadLine());
 				if (tafelNummer > 15) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 				{
 					Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
 
-					Console.ReadLine();
+					
 
 
 				}
 				else
 				{
-					break;
+					return tafelNummer;
 				}
 			}
-
-			Console.Clear();
-
-			string klantid;
-			Console.Clear();
-			while (true)
-			{
-				
-				Console.WriteLine("Wat is je KlantenID?");
-				klantid = Console.ReadLine();
-				if (klantid.Length == 4)
-				{
-					break;
-				}
-				else
-				{
-					Console.WriteLine("Dit is geen geldig ID, probeer het opnieuw, druk enter om opnieuw te proberen");
-				}
-			}
-		
-			Console.Clear();
-			Console.WriteLine("Wat is je Naam?");
-			string naam = Console.ReadLine();
-			Console.Clear();
-			Console.WriteLine("Wat is je Achternaam?");
-			string achternaam = Console.ReadLine();
-
-			Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, klantid);
-
+		}
+		public static void showReserveringen()
+        {
 			// Laad het json bestand naar een string
-			string initialJson = File.ReadAllText(paths.reservaring);
+			string innit = File.ReadAllText(paths.reservaring);
 
 			// zet de string naar een array
-			var array = JArray.Parse(initialJson);
+			var Count = JArray.Parse(innit);
 
-			// Maakt het object om toetevoegen naar een object voor json
-			JObject jsonObject = JObject.FromObject(klant);
+			// Loopt door alle reserveringen
+			foreach (JObject item in Count)
+			{
 
-			// Voegt het json object toe aan de array
-			array.Add(jsonObject);
+				string date = item.GetValue("Datum").ToString();
+				string name = item.GetValue("Naam").ToString();
+				string table = item.GetValue("TafelNummer").ToString();
 
-			// Slaat het op in JSON
-			File.WriteAllText(paths.reservaring, JsonConvert.SerializeObject(array, Formatting.Indented));
+				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} \n\n");
+				Console.WriteLine("Druk op enter om door de reserveringen te gaan, typ back om terug te gaan.");
+
+				if(Console.ReadLine() == "back")
+                {
+					break;
+                }
+			}
+        }
+		public static void makeReservation()
+		{
+			bool running = true;
+
+			string tijd = "";
+			string naam = "";
+			string achternaam = "";
+			int tafelNummer = -1;
+			string datum = "";
+			string klantid = "";
+            while (running)
+            {
+
+				Console.Clear();
+				Console.WriteLine("1. Kies een datum                      : " + datum);
+				Console.WriteLine("2. Op welk tijdstip wilt u komen eten? : " + tijd);
+				Console.WriteLine("3. Kies een tafel                      : " + tafelNummer);
+				Console.WriteLine("4. Wat is uw voornaam                  : " + naam);
+				Console.WriteLine("5. Wat is uw achternaam                : " + achternaam);
+				Console.WriteLine("6. Plaats reservaring                  :");
+				
+				switch(Console.ReadLine()){ 
+					case "1":
+						datum = getDate();
+						break;
+					case "2":
+						tijd = getTime();
+						break;
+					case "3":
+						tafelNummer = getTable();
+						break;
+					case "4":
+						naam = getVoornaam();
+						break;
+					case "5":
+						achternaam = getAchternaam();
+						break;
+					case "6":
+						running = false;
+
+						Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, klantid);
+
+						// Laad het json bestand naar een string
+						string initialJson = File.ReadAllText(paths.reservaring);
+
+						// zet de string naar een array
+						var array = JArray.Parse(initialJson);
+
+						// Maakt het object om toetevoegen naar een object voor json
+						JObject jsonObject = JObject.FromObject(klant);
+
+						// Voegt het json object toe aan de array
+						array.Add(jsonObject);
+
+						// Slaat het op in JSON
+						File.WriteAllText(paths.reservaring, JsonConvert.SerializeObject(array, Formatting.Indented));
+
+						break;
+				}
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
 
 			Console.WriteLine("Typ INFO om informatie te zien over deze reservering, anders druk op enter om terug te gaan:");
 			string t = Console.ReadLine();
