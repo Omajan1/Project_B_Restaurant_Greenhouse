@@ -4,10 +4,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using JSON;
 
-namespace Reservering
+namespace reservering
 {
 
-	public class reservaring
+	public class Reservering
 	{
 		public static string getTime()
         {
@@ -31,7 +31,6 @@ namespace Reservering
 						break;
 					default:
 						Console.WriteLine("Geef een geldige keuzen : ");
-						Console.ReadLine();
 						break;
 
 				}
@@ -41,19 +40,24 @@ namespace Reservering
 
 		public static string getDate()
         {
-			return "test datum";
+			Console.WriteLine("Wanneer wilt u een reservering plaatsen? : ");
+			Console.WriteLine("In het format DD/MM, zoals dit : 29/2 of 2/5");
+			string dateOutput = Console.ReadLine();
+			return dateOutput;
         }
 
 		public static string getVoornaam()
         {
-			return "voornaam";
+			Console.WriteLine("Wat is uw voornaam?");
+			return Console.ReadLine();
         }
 
 		public static string getAchternaam()
         {
-			return "achternaam";
-        }
-		public static int getTable()
+			Console.WriteLine("Wat is uw achternaam?");
+			return Console.ReadLine();
+		}
+		public static string getTable()
         {
 			while (true)
 			{
@@ -90,8 +94,11 @@ namespace Reservering
 				Console.WriteLine("'<'/'>' zijn de stoelen en richting ervan.");
 
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
-				int tafelNummer = Convert.ToInt32(Console.ReadLine());
-				if (tafelNummer > 15) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
+
+				// Voeg check toe voor int, het crasht als je een string invoeft
+				// int tafelNummer = Convert.ToInt32(Console.ReadLine());
+				string tafelNummer = Console.ReadLine();
+				if (tafelNummer == "") // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 				{
 					Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
 
@@ -101,7 +108,7 @@ namespace Reservering
 				}
 				else
 				{
-					return tafelNummer;
+					return tafelNummer.ToString();
 				}
 			}
 		}
@@ -137,7 +144,7 @@ namespace Reservering
 			string tijd = "";
 			string naam = "";
 			string achternaam = "";
-			int tafelNummer = -1;
+			string tafelNummer = "";
 			string datum = "";
 			string klantid = "";
             while (running)
@@ -239,8 +246,7 @@ namespace Reservering
     {
 		public string Naam { get; set; }
 		public string Achternaam { get; set; }
-		public int TafelNummer { get; set; }
-		public int Res_ID { get; set; }
+		public string TafelNummer { get; set; }		public int Res_ID { get; set; }
 		public string Tijd { get; set; }
 		public string Datum { get; set; }
 		public string KlantID { get; set; }
@@ -249,7 +255,7 @@ namespace Reservering
         {
 			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
         }
-		public Reservering(string naam, string achternaam, int tafelnummer, string tijd, string datum, string klantid)
+		public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum, string klantid)
         {
 			Random r = new Random();
 			this.Naam = naam;
@@ -260,9 +266,9 @@ namespace Reservering
 			this.KlantID = klantid;
 			
 
-			string path = @"../../../../Data/reservering.json";
+			
 			// Laad het json bestand naar een string
-			string innit = File.ReadAllText(path);
+			string innit = File.ReadAllText(JSON.paths.reservaring);
 
 			// zet de string naar een array
 			var Count = JArray.Parse(innit);
