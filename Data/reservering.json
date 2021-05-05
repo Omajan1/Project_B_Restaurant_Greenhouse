@@ -25,5 +25,14 @@
     "Tijd": "16:00",
     "Datum": "test datum",
     "KlantID": ""
+  },
+  {
+    "Naam": "",
+    "Achternaam": "",
+    "TafelNummer": -1,
+    "Res_ID": 4,
+    "Tijd": "16:00",
+    "Datum": "test datum",
+    "KlantID": ""
   }
 ]
