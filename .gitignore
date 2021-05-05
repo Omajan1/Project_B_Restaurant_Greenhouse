@@ -9,13 +9,18 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+Greenhouse/.vs
+Greenhouse/bin
+Greenhouse/obj
+Greenhouse/.vs/
+Greenhouse/bin/
+Greenhouse/obj/
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
 # Mono auto generated files
 mono_crash.*
-
+.vs/
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
