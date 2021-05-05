@@ -365,3 +365,5 @@ Greenhouse/obj/Debug/netcoreapp3.1/Greenhouse.csprojAssemblyReference.cache
 Greenhouse/.vs/Greenhouse/v16/.suo
 Greenhouse/.vs/Greenhouse/v16/.suo
 Greenhouse/obj/Debug/netcoreapp3.1/Greenhouse.csprojAssemblyReference.cache
+*.cache
+Greenhouse/obj/Debug/netcoreapp3.1/Greenhouse.csprojAssemblyReference.cache
