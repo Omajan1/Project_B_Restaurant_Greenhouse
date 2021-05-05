@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using JSON;
 using Login;
-namespace Contact
+namespace contact
 {
 
 	
@@ -19,7 +19,7 @@ namespace Contact
 			this.Name = name;
         }
     }
-	public class contact
+	public class Contact
 	{
 		// Dit laat de vragen zien en geeft je de optie om ze te beantwoorden
 		public static void showVragen()
@@ -75,20 +75,24 @@ namespace Contact
 
 		}
 
-		public static void show()
+		public static void showInfo()
 		{
 
 
 			Console.Clear();
 
 			Console.WriteLine("Wilt u contact opnemen met het restaurant?: dan kan dat op de volgende manieren:");
+			Console.WriteLine();
 			Console.WriteLine("Telefoonnummer: 010-794-4000");
 			Console.WriteLine("Email: greenhouse@green.nl");
 			Console.WriteLine("Adres: Wijnhaven 107, 3011 WN Rotterdam");
 			Console.WriteLine("Provincie: Zuid-Holland");
 			Console.WriteLine("Website: https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107");
+			Console.WriteLine();
 			Console.WriteLine("Verstuur een chat bericht: typ het bericht en druk op enter");
+			Console.WriteLine();
 			Console.WriteLine("Als je terug naar het hoofdmenu wilt, typ dan niks");
+			Console.WriteLine();
 			Console.WriteLine("---Druk om een toets om terug te gaan.---");
 
 			// Pakt of de gebruiker terug wilt of welke vraag je wilt achterlaten
@@ -121,7 +125,7 @@ namespace Contact
 				// Slaat het op in JSON
 				File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
 				Console.Clear();
-				Console.WriteLine("Je vraag is gestelt, u kunt in het hoofdmenu zien of er antwoord op is gegeven!");
+				Console.WriteLine("Je vraag is gestelt, u kunt in het hoofdmenu zien bij FAQ of er antwoord op is gegeven!");
 				Console.WriteLine("Druk op enter om terug te gaan");
 				Console.ReadLine();
 			}

@@ -7,7 +7,7 @@ using JSON;
 namespace reservering
 {
 
-	public class Reservering
+	public class ReserveringMain
 	{
 		public static string getTime()
         {
@@ -15,8 +15,8 @@ namespace reservering
             {
 				Console.WriteLine("Welk tijdslot wilt u reserveren voor deze dag?");
 				Console.WriteLine("1. Van 13:00 tot 16:00\n" +
-					"2. Van 16:00 tot 19:00\n" +
-					"3. Van 19:00 tot 22:00\n");
+								  "2. Van 16:00 tot 19:00\n" +
+								  "3. Van 19:00 tot 22:00\n");
 
 				switch (Console.ReadLine())
 				{
@@ -123,11 +123,12 @@ namespace reservering
 			// Loopt door alle reserveringen
 			foreach (JObject item in Count)
 			{
-
+				Console.Clear();
 				string date = item.GetValue("Datum").ToString();
 				string name = item.GetValue("Naam").ToString();
 				string table = item.GetValue("TafelNummer").ToString();
-
+				Console.WriteLine();
+				Console.WriteLine();
 				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} \n\n");
 				Console.WriteLine("Druk op enter om door de reserveringen te gaan, typ back om terug te gaan.");
 

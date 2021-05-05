@@ -1,8 +1,8 @@
 ﻿using System;
 using Rules;
-using Reservering;
+using reservering;
 using MenuPage0;
-using Contact;
+using contact;
 using Test;
 
 namespace Greenhouse
@@ -15,7 +15,7 @@ namespace Greenhouse
 
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
-            Console.SetWindowSize(180, 35);
+            Console.SetWindowSize(180, 42);
 
             // Running loop
             while (true)
@@ -51,7 +51,7 @@ namespace Greenhouse
                 switch (result)
                 {
                     case "1":
-                        reservaring.makeReservation();
+                        ReserveringMain.makeReservation();
                         break;
 
                     case "2":
@@ -61,16 +61,16 @@ namespace Greenhouse
                         rules.show();
                         break;
                     case "4":
-                        contact.show();
+                        Contact.showInfo();
                         break;
                     case "5":
-                        contact.showAnswers();
+                        Contact.showAnswers();
                         break;
                     case "6":
-                        reservaring.showReserveringen();
+                        ReserveringMain.showReserveringen();
                         break;
                     case "7":
-                        contact.showVragen();
+                        Contact.showVragen();
                         break;
                     default:
                         Console.Clear();
