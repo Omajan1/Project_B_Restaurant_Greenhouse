@@ -1,23 +1,23 @@
 ﻿using System;
 namespace MenuPage0
 {
-    public class menuPage0
+    public class menu
     {
-        public static void show() //voor nu void 
+        public static void show() 
         {
             Console.Clear();
-            Console.WriteLine("Welcome to the Menu Page\n");
+            Console.WriteLine("Welkom bij de Menu Pagina\n");
 
-            Console.WriteLine("Choose the catagory you want to view\n");
-            Console.WriteLine("1. Appitizer");
-            Console.WriteLine("2. Main");
-            Console.WriteLine("3. Dessert");
-            Console.WriteLine("4. Fish");
-            Console.WriteLine("5. Vegan");
-            Console.WriteLine("6. Vega");
-            Console.WriteLine("7. All options listed above (you can also type 'all')");
+            Console.WriteLine("Kies de catagorie die u wilt bekijken:\n");
+            Console.WriteLine("1. Voorgerechten");
+            Console.WriteLine("2. Hoofdgerechten");
+            Console.WriteLine("3. Toetjes");
+            Console.WriteLine("4. Vis-gerechten");
+            Console.WriteLine("5. Vegan opties");
+            Console.WriteLine("6. Vega opties");
+            Console.WriteLine("7. Alles (u kan ook 'all' typen)");
 
-            Console.Write("What would you want to see: ");
+            Console.Write("Wat zou u willen zien: ");
             string result = Console.ReadLine();
 
             //check wat er is geinput
