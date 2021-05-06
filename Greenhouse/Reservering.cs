@@ -215,7 +215,7 @@ namespace reservering
 			// Tijdelijk nog een string
 			string tafelNummer = "";
 			string datum = "";
-			string klantid = "";
+			
 
             while (running)
             {
@@ -236,7 +236,17 @@ namespace reservering
 						tijd = getTime();
 						break;
 					case "3":
-						tafelNummer = getTable(tijd, datum);
+						if(tijd != "" && datum != "")
+                        {
+							tafelNummer = getTable(tijd, datum);
+                        }
+                        else
+                        {
+							Console.Clear();
+							Console.WriteLine("Vul eerst optie 1 en 2 in : ");
+							Console.ReadLine();
+                        }
+						
 						break;
 					case "4":
 						naam = getVoornaam();
@@ -245,27 +255,40 @@ namespace reservering
 						achternaam = getAchternaam();
 						break;
 					case "6":
-						running = false;
+						
 						// Hier moet nog een check komen of alles is ingevuld !!!!!!!!!!!
+						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "")
+                        {
+							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum);
 
-						Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, klantid);
+							// Laad het json bestand naar een string
+							string initialJson = File.ReadAllText(paths.reservaring);
 
-						// Laad het json bestand naar een string
-						string initialJson = File.ReadAllText(paths.reservaring);
+							// zet de string naar een array
+							var array = JArray.Parse(initialJson);
 
-						// zet de string naar een array
-						var array = JArray.Parse(initialJson);
+							// Maakt het object om toetevoegen naar een object voor json
+							JObject jsonObject = JObject.FromObject(klant);
 
-						// Maakt het object om toetevoegen naar een object voor json
-						JObject jsonObject = JObject.FromObject(klant);
+							// Voegt het json object toe aan de array
+							array.Add(jsonObject);
 
-						// Voegt het json object toe aan de array
-						array.Add(jsonObject);
+							// Slaat het op in JSON
+							File.WriteAllText(paths.reservaring, JsonConvert.SerializeObject(array, Formatting.Indented));
+							running = false;
+							break;
+							
+						}
+                        else
+                        {
+							Console.Clear();
+							Console.WriteLine("De reservering is nog niet compleet, vul hem aub aan : ");
+							Console.ReadLine();
+							break;
+                        }
 
-						// Slaat het op in JSON
-						File.WriteAllText(paths.reservaring, JsonConvert.SerializeObject(array, Formatting.Indented));
 
-						break;
+						
 				}
 			}
 				Console.WriteLine("Druk op enter om terug te gaan");
@@ -280,13 +303,13 @@ namespace reservering
 		public string TafelNummer { get; set; }		public int Res_ID { get; set; }
 		public string Tijd { get; set; }
 		public string Datum { get; set; }
-		public string KlantID { get; set; }
+		
 
 		public void Info()
         {
 			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
         }
-		public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum, string klantid)
+		public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum )
         {
 			Random r = new Random();
 			this.Naam = naam;
@@ -294,7 +317,7 @@ namespace reservering
 			this.TafelNummer = tafelnummer;
 			this.Tijd = tijd;
 			this.Datum = datum;
-			this.KlantID = klantid;
+	
 			
 
 			
