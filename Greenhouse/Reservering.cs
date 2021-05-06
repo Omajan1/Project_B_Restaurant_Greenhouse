@@ -32,11 +32,9 @@ namespace reservering
 						break;
 					default:
 						Console.WriteLine("Geef een geldige keuzen : ");
-						break;
-
+						break
 				}
 			}
-
 		}
 
 		public static string getDate()
@@ -108,9 +106,6 @@ namespace reservering
 				if (tafelNummer == "") // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 				{
 					Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
-
-					
-
 
 				}
 				else
@@ -209,11 +204,8 @@ namespace reservering
 						break;
 				}
 			}
-
-
 				Console.WriteLine("Druk op enter om terug te gaan");
 				Console.ReadLine();
-            
 		}
 	}
 	
