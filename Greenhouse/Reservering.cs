@@ -29,7 +29,7 @@ namespace reservering
 					case "3":
 						return "19:00";
 					default:
-						Console.WriteLine("Geef een geldige keuzen : ");
+						Console.WriteLine("Geef een geldige keuze : ");
 						break;
 				}
 			}
@@ -37,10 +37,11 @@ namespace reservering
 
 		public static string getDate()
         {
-			// Hier moet nog een check komen die kijkt of de datum geldig is !!!!!!!!!!!!!!
 			Console.WriteLine("Wanneer wilt u een reservering plaatsen? : ");
 			Console.WriteLine("In het format DD/MM, zoals dit : 29/2 of 2/5");
 			string dateOutput = Console.ReadLine();
+			// check:
+			Filter.DateCheck.Main(dateOutput);
 			return dateOutput;
         }
 
@@ -48,14 +49,18 @@ namespace reservering
         {
 			// Leest de voornaam
 			Console.WriteLine("Wat is uw voornaam?");
-			return Console.ReadLine();
-        }
+			string Input = Console.ReadLine();
+			Filter.FilterMain.FilterString(Input);
+			return Input;
+		}
 
 		public static string getAchternaam()
         {
 			// Leest de achternaam
 			Console.WriteLine("Wat is uw achternaam?");
-			return Console.ReadLine();
+			string Input = Console.ReadLine();
+			Filter.FilterMain.FilterString(Input);
+			return Input;
 		}
 		public static string getTable(string tijd, string datum)
         {
@@ -167,7 +172,8 @@ namespace reservering
 				// Voeg check toe voor int, het crasht als je een string invoeft
 				// int tafelNummer = Convert.ToInt32(Console.ReadLine());
 				// Hier moet laten een int van gemaakt worden, maar het cracht nu als je dat invult
-				string tafelNummer = Console.ReadLine();
+				var tafelNummer = Console.ReadLine();
+				Filter.FilterMain.FilterInt(tafelNummer);
 				if (tafelNummer == "") // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 				{
 					Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
