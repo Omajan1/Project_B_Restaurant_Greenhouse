@@ -28,5 +28,23 @@
     "Text": "Hallo, dit is een test voor het vragen",
     "Name": "Testvraag",
     "Answer": "Test antwoord"
+  },
+  {
+    "Text": "Hallo, dit is een test",
+    "Name": "Levi",
+    "Answer": "Test antwoord"
+  },
+  {
+    "Text": "4",
+    "Name": "Levi"
+  },
+  {
+    "Text": "5",
+    "Name": "5"
+  },
+  {
+    "Text": "6",
+    "Name": "6",
+    "Answer": "6"
   }
 ]

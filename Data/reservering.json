@@ -34,5 +34,23 @@
     "Tijd": "16:00",
     "Datum": "test datum",
     "KlantID": ""
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Reijns",
+    "TafelNummer": "14",
+    "Res_ID": 5,
+    "Tijd": "19:00",
+    "Datum": "29/5",
+    "KlantID": ""
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Test",
+    "TafelNummer": "3",
+    "Res_ID": 6,
+    "Tijd": "16:00",
+    "Datum": "29/3",
+    "KlantID": ""
   }
 ]

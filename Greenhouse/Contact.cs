@@ -17,18 +17,33 @@ namespace contact
         {
 			this.Text = text;
 			this.Name = name;
-        }
+
+			// Laad het json bestand naar een string
+			string initialJson = File.ReadAllText(paths.vragen);
+
+			// zet de string naar een array
+			var array = JArray.Parse(initialJson);
+
+			// Maakt het object om toetevoegen naar een object voor json
+			JObject jsonObject = JObject.FromObject(this);
+
+			// Voegt het json object toe aan de array
+			array.Add(jsonObject);
+
+			// Slaat het op in JSON
+			File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
+		}
     }
 	public class Contact
 	{
 		// Dit laat de vragen zien en geeft je de optie om ze te beantwoorden
 		public static void showVragen()
         {
+			// Als de inlog gegevens niet goed zijn kun je hier niet bij
 			if (Login.Login.check())
             {
 
             
-
 				Console.Clear();
 
 				// Laad het json bestand naar een string
@@ -93,7 +108,7 @@ namespace contact
 			Console.WriteLine();
 			Console.WriteLine("Als je terug naar het hoofdmenu wilt, typ dan niks");
 			Console.WriteLine();
-			Console.WriteLine("---Druk om een toets om terug te gaan.---");
+			Console.WriteLine("---Druk om een toets om terug te gaan.---\n");
 
 			// Pakt of de gebruiker terug wilt of welke vraag je wilt achterlaten
 			string input = Console.ReadLine();
@@ -102,28 +117,16 @@ namespace contact
 			// Als input niet leeg is 
 			if(input != "")
             {
-
+				Console.WriteLine();
 				Console.WriteLine("Wat is je naam?");
 				string name = Console.ReadLine();
 
 
 				// Maakt een nieuw comment object
+				// Het maken van een nieuw object slaat het automatisch op in JSON
 				Comment comment = new Comment(input, name);
 
-				// Laad het json bestand naar een string
-				string initialJson = File.ReadAllText(paths.vragen);
 
-				// zet de string naar een array
-				var array = JArray.Parse(initialJson);
-				
-				// Maakt het object om toetevoegen naar een object voor json
-				JObject jsonObject = JObject.FromObject(comment);
-
-				// Voegt het json object toe aan de array
-				array.Add(jsonObject);
-				
-				// Slaat het op in JSON
-				File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
 				Console.Clear();
 				Console.WriteLine("Je vraag is gestelt, u kunt in het hoofdmenu zien bij FAQ of er antwoord op is gegeven!");
 				Console.WriteLine("Druk op enter om terug te gaan");

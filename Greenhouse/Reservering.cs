@@ -11,6 +11,7 @@ namespace reservering
 	{
 		public static string getTime()
         {
+			// Geeft de 3 timeslots aan en laat de user pas doorgaan als een keuze is gemaakt.
             while (true)
             {
 				Console.WriteLine("Welk tijdslot wilt u reserveren voor deze dag?");
@@ -40,6 +41,7 @@ namespace reservering
 
 		public static string getDate()
         {
+			// Hier moet nog een check komen die kijkt of de datum geldig is !!!!!!!!!!!!!!
 			Console.WriteLine("Wanneer wilt u een reservering plaatsen? : ");
 			Console.WriteLine("In het format DD/MM, zoals dit : 29/2 of 2/5");
 			string dateOutput = Console.ReadLine();
@@ -48,17 +50,20 @@ namespace reservering
 
 		public static string getVoornaam()
         {
+			// Leest de voornaam
 			Console.WriteLine("Wat is uw voornaam?");
 			return Console.ReadLine();
         }
 
 		public static string getAchternaam()
         {
+			// Leest de achternaam
 			Console.WriteLine("Wat is uw achternaam?");
 			return Console.ReadLine();
 		}
 		public static string getTable()
         {
+
 			while (true)
 			{
 				Console.Clear();
@@ -90,6 +95,7 @@ namespace reservering
 				Console.WriteLine("---------------------------   |    ----------------------------------\n");
 
 				//voor 1,2,3,... komt iets waarbij hij alleen de tafels laat zien die vrij zijn
+				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
 				Console.WriteLine("Tafel: " + "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" + " zijn nog beschikbaar.\n");
 				Console.WriteLine("'<'/'>' zijn de stoelen en richting ervan.");
 
@@ -97,6 +103,7 @@ namespace reservering
 
 				// Voeg check toe voor int, het crasht als je een string invoeft
 				// int tafelNummer = Convert.ToInt32(Console.ReadLine());
+				// Hier moet laten een int van gemaakt worden, maar het cracht nu als je dat invult
 				string tafelNummer = Console.ReadLine();
 				if (tafelNummer == "") // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 				{
@@ -123,13 +130,13 @@ namespace reservering
 			// Loopt door alle reserveringen
 			foreach (JObject item in Count)
 			{
+				// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
 				Console.Clear();
 				string date = item.GetValue("Datum").ToString();
 				string name = item.GetValue("Naam").ToString();
 				string table = item.GetValue("TafelNummer").ToString();
 				Console.WriteLine();
-				Console.WriteLine();
-				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} \n\n");
+				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table}\n");
 				Console.WriteLine("Druk op enter om door de reserveringen te gaan, typ back om terug te gaan.");
 
 				if(Console.ReadLine() == "back")
@@ -140,14 +147,17 @@ namespace reservering
         }
 		public static void makeReservation()
 		{
+
 			bool running = true;
 
 			string tijd = "";
 			string naam = "";
 			string achternaam = "";
+			// Tijdelijk nog een string
 			string tafelNummer = "";
 			string datum = "";
 			string klantid = "";
+
             while (running)
             {
 
@@ -177,6 +187,7 @@ namespace reservering
 						break;
 					case "6":
 						running = false;
+						// Hier moet nog een check komen of alles is ingevuld !!!!!!!!!!!
 
 						Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, klantid);
 
@@ -200,46 +211,9 @@ namespace reservering
 			}
 
 
-
-
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
-
-
-			Console.WriteLine("Typ INFO om informatie te zien over deze reservering, anders druk op enter om terug te gaan:");
-			string t = Console.ReadLine();
-
-			if (t == "INFO")
-            {
-				// Laad het json bestand naar een string
-				string innit = File.ReadAllText(paths.reservaring);
-
-				// zet de string naar een array
-				var Count = JArray.Parse(innit);
-
-				foreach (JObject item in Count)
-				{
-					Console.WriteLine(item);
-					string name = item.GetValue("Naam").ToString();
-					Console.WriteLine(name);
-					
-				}
-
 				Console.WriteLine("Druk op enter om terug te gaan");
 				Console.ReadLine();
-            }
+            
 		}
 	}
 	
