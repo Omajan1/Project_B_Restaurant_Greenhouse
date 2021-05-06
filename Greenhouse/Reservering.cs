@@ -51,14 +51,18 @@ namespace reservering
         {
 			// Leest de voornaam
 			Console.WriteLine("Wat is uw voornaam?");
-			return Console.ReadLine();
-        }
+			string Input = Console.ReadLine();
+			Filter.FilterMain.FilterString(Input);
+			return Input;
+		}
 
 		public static string getAchternaam()
         {
 			// Leest de achternaam
 			Console.WriteLine("Wat is uw achternaam?");
-			return Console.ReadLine();
+			string Input = Console.ReadLine();
+			Filter.FilterMain.FilterString(Input);
+			return Input;
 		}
 		public static string getTable()
         {

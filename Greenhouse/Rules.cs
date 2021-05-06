@@ -19,7 +19,7 @@ namespace Rules
 				Console.WriteLine("8. Als u 30 minuten na uw gereserveerde tijd niet aanwezig bent, dan kunnen wij uw tafel weggeven aan andere wachtende klanten.\n");
 				Console.WriteLine("9. Wapenbezit in het restaurant is verboden.\n");
 				Console.WriteLine("10. Het is verboden om eigendommen van het restaurant mee te nemen.\n");
-				Console.WriteLine("11. Grof taalgebruik tegen het personeel wordt niet getolereerd.\\n");
+				Console.WriteLine("11. Grof taalgebruik tegen het personeel wordt niet getolereerd.\n");
 				Console.WriteLine("12. Het binnentreden met aanstootgevende kleding is niet toegestaan.\n");
 				Console.WriteLine("13. We verwachten dat iedereen elkaar met respect behandeld, zo niet, dan is het personeel altijd in staat de desbetreffende klant weg te sturen.\n");
 				Console.WriteLine("14. Na een toiletgebruik wordt verwacht je je handen altijd reinigt.\n");
