@@ -2,6 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 using JSON;
 
 namespace reservering
@@ -23,16 +24,13 @@ namespace reservering
 				{
 					case "1":
 						return "13:00";
-						break;
 					case "2":
 						return "16:00";
-						break;
 					case "3":
 						return "19:00";
-						break;
 					default:
 						Console.WriteLine("Geef een geldige keuzen : ");
-						break
+						break;
 				}
 			}
 		}
@@ -59,11 +57,77 @@ namespace reservering
 			Console.WriteLine("Wat is uw achternaam?");
 			return Console.ReadLine();
 		}
-		public static string getTable()
+		public static string getTable(string tijd, string datum)
         {
 
 			while (true)
 			{
+				// Laad het json bestand naar een string
+				string innit = File.ReadAllText(paths.reservaring);
+
+				// zet de string naar een array
+				var Count = JArray.Parse(innit);
+
+				List<JObject> UsedTableObjects = new List<JObject>(); 
+
+				// gaat langs elk object in reservering, pakt de objects met dezelfde datum en stopt deze in een list voor verdere fitlering
+				foreach (JObject item in Count)
+                {
+					string date = item.GetValue("Datum").ToString();
+					if (date == datum)
+                    {
+						UsedTableObjects.Add(item);
+                    }
+				}
+
+				List<JObject> FinalUsableObjects = new List<JObject>();
+
+				// gaat langs elk object in objecten van die ene datum en kijkt welke dezelfde tijd hebben, voegt deze toe aan een list
+				foreach (JObject item in UsedTableObjects)
+                {
+					string time = item.GetValue("Tijd").ToString();
+					if (time == tijd)
+                    {
+						FinalUsableObjects.Add(item);
+                    }
+                }
+
+				List<string> TableNumbersInUse = new List<string>();
+
+				//voegt alle tafelnummers toe die gebruikt worden op die dag op dat tijdstip
+				foreach (JObject item in FinalUsableObjects)
+                {
+					string TableInUse = item.GetValue("TafelNummer").ToString();
+					TableNumbersInUse.Add(TableInUse);
+				}
+
+				List<string> TafelsVrij = new List<string>();
+
+				//vul tafelsvrij met alle mogelijke tafels
+				for (int i = 1; i < 16; i++)
+                {
+					string string_of_i = Convert.ToString(i);
+					TafelsVrij.Add(string_of_i);
+                }
+
+				foreach (string tafelnum in TafelsVrij)
+                {
+					foreach (string tafel in TableNumbersInUse)
+                    {
+						if (tafel == tafelnum)
+                        {
+							TafelsVrij.Remove(tafel);
+                        }
+                    }
+                }
+
+				string TafelsVrij_string = "";
+
+				foreach (string tafel in TafelsVrij)
+                {
+					TafelsVrij_string += tafel + ",";
+                }
+
 				Console.Clear();
 				//■
 				Console.WriteLine("                     -TAFEL INDELING GREENHOUSE-                                      |                   |              ");
@@ -94,7 +158,8 @@ namespace reservering
 
 				//voor 1,2,3,... komt iets waarbij hij alleen de tafels laat zien die vrij zijn
 				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
-				Console.WriteLine("Tafel: " + "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" + " zijn nog beschikbaar.\n");
+
+				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
 				Console.WriteLine("'<'/'>' zijn de stoelen en richting ervan.");
 
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
@@ -106,7 +171,6 @@ namespace reservering
 				if (tafelNummer == "") // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 				{
 					Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
-
 				}
 				else
 				{
@@ -155,14 +219,14 @@ namespace reservering
 
             while (running)
             {
-
+				// 3 kan niet als 1 en 2 niet gedaan zijn
 				Console.Clear();
 				Console.WriteLine("1. Kies een datum                      : " + datum);
 				Console.WriteLine("2. Op welk tijdstip wilt u komen eten? : " + tijd);
 				Console.WriteLine("3. Kies een tafel                      : " + tafelNummer);
 				Console.WriteLine("4. Wat is uw voornaam                  : " + naam);
 				Console.WriteLine("5. Wat is uw achternaam                : " + achternaam);
-				Console.WriteLine("6. Plaats reservaring                  :");
+				Console.WriteLine("6. Plaats reservering                  :");
 				
 				switch(Console.ReadLine()){ 
 					case "1":
@@ -172,7 +236,7 @@ namespace reservering
 						tijd = getTime();
 						break;
 					case "3":
-						tafelNummer = getTable();
+						tafelNummer = getTable(tijd, datum);
 						break;
 					case "4":
 						naam = getVoornaam();
