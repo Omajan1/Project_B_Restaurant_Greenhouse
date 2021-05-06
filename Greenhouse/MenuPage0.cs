@@ -15,13 +15,12 @@ namespace MenuPage0
             Console.WriteLine("Kies de catagorie die u wilt bekijken:\n");
             Console.WriteLine("1. Voorgerechten");
             Console.WriteLine("2. Hoofdgerechten");
-            Console.WriteLine("3. Toetjes");
+            Console.WriteLine("3. Nagerechten");
             Console.WriteLine("4. Vis-gerechten");
             Console.WriteLine("5. Vegan opties");
             Console.WriteLine("6. Vega opties");
             Console.WriteLine("7. Alles (u kan ook 'all' typen)");
 
-            Console.Write("Wat zou u willen zien: ");
             Console.Write("Wat zou u willen zien: ");
             string result;
 
@@ -69,7 +68,7 @@ namespace MenuPage0
 
             static void Voorgerechten()
             {
-                Console.WriteLine("Voorgerechten\n");
+                Console.WriteLine("Voorgerechten\n--------------------------------------------------------------------------\n");
 
                 string innit = File.ReadAllText(paths.gerechten);
                 var Count = JArray.Parse(innit);
@@ -83,7 +82,7 @@ namespace MenuPage0
 
                     if (soortgerecht == "voorgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n{price}\n");
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -91,7 +90,7 @@ namespace MenuPage0
 
             static void Hoofdgerechten()
             {
-                Console.WriteLine("Hoofdgerechten\n");
+                Console.WriteLine("Hoofdgerechten\n--------------------------------------------------------------------------\n");
 
                 string innit = File.ReadAllText(paths.gerechten);
                 var Count = JArray.Parse(innit);
@@ -105,7 +104,7 @@ namespace MenuPage0
 
                     if (soortgerecht == "hoofdgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n{price}\n");
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -113,7 +112,7 @@ namespace MenuPage0
 
             static void Nagerechten()
             {
-                Console.WriteLine("Nagerechten\n");
+                Console.WriteLine("Nagerechten\n--------------------------------------------------------------------------\n");
 
                 string innit = File.ReadAllText(paths.gerechten);
                 var Count = JArray.Parse(innit);
@@ -127,7 +126,7 @@ namespace MenuPage0
 
                     if (soortgerecht == "Nagerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n{price}\n");
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
                     }
                 }
             }
