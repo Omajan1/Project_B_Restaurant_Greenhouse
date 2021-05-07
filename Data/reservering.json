@@ -2,55 +2,109 @@
   {
     "Naam": "Levi",
     "Achternaam": "Oep",
-    "TafelNummer": 12,
+    "TafelNummer": 1,
     "Res_ID": 1,
     "Tijd": "19:00",
-    "Datum": "29-12-2002",
+    "Datum": "29/12",
     "KlantID": "4444"
   },
   {
     "Naam": "Levi",
     "Achternaam": "Jay",
-    "TafelNummer": 5,
+    "TafelNummer": 2,
     "Res_ID": 2,
     "Tijd": "13:00",
-    "Datum": "12/6",
+    "Datum": "29/12",
     "KlantID": "3321"
   },
   {
     "Naam": "voornaam",
     "Achternaam": "achternaam",
-    "TafelNummer": 5,
+    "TafelNummer": 3,
     "Res_ID": 3,
     "Tijd": "16:00",
-    "Datum": "test datum",
-    "KlantID": ""
+    "Datum": "29/12",
+    "KlantID": "7362"
   },
   {
     "Naam": "",
     "Achternaam": "",
-    "TafelNummer": -1,
+    "TafelNummer": 4,
     "Res_ID": 4,
     "Tijd": "16:00",
-    "Datum": "test datum",
-    "KlantID": ""
+    "Datum": "29/12",
+    "KlantID": "7623"
   },
   {
     "Naam": "Levi",
     "Achternaam": "Reijns",
-    "TafelNummer": "14",
+    "TafelNummer": 5,
     "Res_ID": 5,
     "Tijd": "19:00",
-    "Datum": "29/5",
-    "KlantID": ""
+    "Datum": "29/12",
+    "KlantID": "9064"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Reijns",
+    "TafelNummer": 1,
+    "Res_ID": 5,
+    "Tijd": "19:00",
+    "Datum": "30/12",
+    "KlantID": "9064"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Reijns",
+    "TafelNummer": 6,
+    "Res_ID": 5,
+    "Tijd": "19:00",
+    "Datum": "30/12",
+    "KlantID": "9064"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Reijns",
+    "TafelNummer": 7,
+    "Res_ID": 5,
+    "Tijd": "19:00",
+    "Datum": "30/12",
+    "KlantID": "9064"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Reijns",
+    "TafelNummer": 1,
+    "Res_ID": 5,
+    "Tijd": "19:00",
+    "Datum": "31/12",
+    "KlantID": "9064"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Reijns",
+    "TafelNummer": 5,
+    "Res_ID": 5,
+    "Tijd": "19:00",
+    "Datum": "31/12",
+    "KlantID": "9064"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Reijns",
+    "TafelNummer": 7,
+    "Res_ID": 5,
+    "Tijd": "19:00",
+    "Datum": "31/12",
+    "KlantID": "9064"
   },
   {
     "Naam": "Levi",
     "Achternaam": "Test",
-    "TafelNummer": "3",
+    "TafelNummer": 9,
     "Res_ID": 6,
     "Tijd": "16:00",
-    "Datum": "29/3",
-    "KlantID": ""
+    "Datum": "31/12",
+    "KlantID": "3726"
   }
 ]

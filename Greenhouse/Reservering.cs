@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
@@ -109,26 +110,28 @@ namespace reservering
 				List<string> TafelsVrij = new List<string>();
 
 				//vul tafelsvrij met alle mogelijke tafels
-				for (int i = 1; i < 16; i++)
-                {
-					string string_of_i = Convert.ToString(i);
-					TafelsVrij.Add(string_of_i);
-                }
+				TafelsVrij.Add("1");
+				TafelsVrij.Add("2");
+				TafelsVrij.Add("3");
+				TafelsVrij.Add("4");
+				TafelsVrij.Add("5");
+				TafelsVrij.Add("6");
+				TafelsVrij.Add("7");
+				TafelsVrij.Add("8");
+				TafelsVrij.Add("9");
+				TafelsVrij.Add("10");
+				TafelsVrij.Add("11");
+				TafelsVrij.Add("12");
+				TafelsVrij.Add("13");
+				TafelsVrij.Add("14");
+				TafelsVrij.Add("15");
 
-				foreach (string tafelnum in TafelsVrij)
-                {
-					foreach (string tafel in TableNumbersInUse)
-                    {
-						if (tafel == tafelnum)
-                        {
-							TafelsVrij.Remove(tafel);
-                        }
-                    }
-                }
+
+				List<string> result = TafelsVrij.Except(TableNumbersInUse).ToList();
 
 				string TafelsVrij_string = "";
 
-				foreach (string tafel in TafelsVrij)
+				foreach (string tafel in result)
                 {
 					TafelsVrij_string += tafel + ",";
                 }
