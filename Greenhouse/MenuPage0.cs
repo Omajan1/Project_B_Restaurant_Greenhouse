@@ -9,6 +9,11 @@ namespace MenuPage0
     {
         public static void show() 
         {
+            bool running = true;
+            while (running)
+            {
+
+            
             Console.Clear();
             Console.WriteLine("Welkom bij de Menu Pagina\n");
 
@@ -20,50 +25,59 @@ namespace MenuPage0
             Console.WriteLine("5. Vegan opties");
             Console.WriteLine("6. Vega opties");
             Console.WriteLine("7. Alles (u kan ook 'all' typen)");
-
+            Console.WriteLine("8. Terug naar home");
             Console.Write("Wat zou u willen zien: ");
             string result;
 
             //check wat er is geinput
-            while (true)
+
+            switch (result = Console.ReadLine())
             {
-                result = Console.ReadLine();
-                if (result == "7" || result == "all")
-                {
-                    Console.Clear();
-                    Alles();
-                }
-                else if (result == "1")
-                {
+                case "1":
                     Console.Clear();
                     Voorgerechten();
-                }
-                else if (result == "2")
-                {
+                        Console.ReadLine();
+                        break;
+                case "2":
                     Console.Clear();
                     Hoofdgerechten();
-                }
-                else if (result == "3")
-                {
+                        Console.ReadLine();
+                        break;
+                case "3":
                     Console.Clear();
                     Nagerechten();
-                }
-                else if (result == "4")
-                {
+                        Console.ReadLine();
+                        break;
+                case "4":
                     Console.Clear();
                     Visgerechten();
-                }
-                else if (result == "5")
-                {
+                        Console.ReadLine();
+                        break;
+                case "5":
                     Console.Clear();
                     Vegan();
-                }
-                else if (result == "6")
-                {
+                        Console.ReadLine();
+                        break;
+                case "6":
                     Console.Clear();
                     Vega();
-                }
+                        Console.ReadLine();
+                        break;
+                case "7":
+                    Console.Clear();
+                    Alles();
+                        Console.ReadLine();
+                        break;
+                case "all":
+                    Console.Clear();
+                    Alles();
+                        Console.ReadLine();
+                        break;
+                case "8":
+                        running = false;
+                        break;
             }
+           }
 
 
             static void Voorgerechten()
