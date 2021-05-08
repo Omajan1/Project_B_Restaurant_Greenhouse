@@ -27,8 +27,7 @@ namespace Filter
                 Console.WriteLine("Dit is geen nummer, probeer het opnieuw.");
                 input = Console.ReadLine();
                 FilterMain.FilterInt(input);
-            }
-            else
+            } else
             {
                 Console.WriteLine("Gelukt!");
                 return Convert.ToInt32(input);
@@ -46,7 +45,7 @@ namespace Filter
 
     class DateCheck
     {
-
+    
         public static string Check(string DateInput)
         {
             string slash = "/";
