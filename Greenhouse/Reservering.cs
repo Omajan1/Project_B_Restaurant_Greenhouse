@@ -196,23 +196,37 @@ namespace reservering
 			var Count = JArray.Parse(innit);
 
 			// Loopt door alle reserveringen
-			foreach (JObject item in Count)
+			var running = true;
+			while (running)
 			{
-				// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
-				Console.Clear();
-				string date = item.GetValue("Datum").ToString();
-				string name = item.GetValue("Naam").ToString();
-				string table = item.GetValue("TafelNummer").ToString();
-				Console.WriteLine();
-				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table}\n");
-				Console.WriteLine("Druk op enter om door de reserveringen te gaan, typ back om terug te gaan.");
 
-				if(Console.ReadLine() == "back")
-                {
-					break;
-                }
+
+				foreach (JObject item in Count)
+				{
+					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
+					Console.Clear();
+					Console.WriteLine("Druk op enter om door te gaan naar de volgende reservering, typ Q om terug te gaan\n");
+					string date = item.GetValue("Datum").ToString();
+					string name = item.GetValue("Naam").ToString();
+					string table = item.GetValue("TafelNummer").ToString();
+
+					Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table}\n");
+					string choice = Console.ReadLine();
+					if (choice.ToUpper() == "Q")
+                    {
+						running = false;
+						break;
+						break;
+                    }
+
+
+
+
+				}
+
+
 			}
-        }
+		}
 		public static void makeReservation()
 		{
 
@@ -236,8 +250,12 @@ namespace reservering
 				Console.WriteLine("4. Wat is uw voornaam                  : " + naam);
 				Console.WriteLine("5. Wat is uw achternaam                : " + achternaam);
 				Console.WriteLine("6. Plaats reservering                  :");
-				
-				switch(Console.ReadLine()){ 
+				Console.WriteLine("7. Terug naar het hoofdmenu            :");
+
+				switch (Console.ReadLine()){
+					case "7":
+						running = false;
+						break;
 					case "1":
 						datum = getDate();
 						break;
@@ -265,7 +283,7 @@ namespace reservering
 						break;
 					case "6":
 						
-						// Hier moet nog een check komen of alles is ingevuld !!!!!!!!!!!
+						
 						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "")
                         {
 							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum);
@@ -285,6 +303,8 @@ namespace reservering
 							// Slaat het op in JSON
 							File.WriteAllText(paths.reservaring, JsonConvert.SerializeObject(array, Formatting.Indented));
 							running = false;
+							Console.WriteLine("Druk op enter om terug te gaan");
+							Console.ReadLine();
 							break;
 							
 						}
@@ -300,8 +320,7 @@ namespace reservering
 						
 				}
 			}
-				Console.WriteLine("Druk op enter om terug te gaan");
-				Console.ReadLine();
+
 		}
 	}
 	
