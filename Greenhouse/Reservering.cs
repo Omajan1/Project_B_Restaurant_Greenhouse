@@ -43,7 +43,7 @@ namespace reservering
 			Console.WriteLine("In het format DD/MM, zoals dit : 29/2 of 2/5");
 			string dateOutput = Console.ReadLine();
 			// check:
-			Filter.DateCheck.Main(dateOutput);
+			dateOutput = Filter.DateCheck.Start(dateOutput);
 			return dateOutput;
         }
 

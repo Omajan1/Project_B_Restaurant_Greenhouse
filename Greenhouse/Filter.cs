@@ -4,7 +4,7 @@ namespace Filter
 {
     public class FilterMain
     {
-        static public void FilterString(string input)
+        static public string FilterString(string input)
         {
             if (typeCheckInt(input))
             {
@@ -15,10 +15,12 @@ namespace Filter
             else
             {
                 Console.WriteLine("Gelukt!");
+                return input;
             }
+            return input;
         }
 
-        static public void FilterInt(string input)
+        static public int FilterInt(string input)
         {
             if (!typeCheckInt(input))
             {
@@ -28,7 +30,9 @@ namespace Filter
             } else
             {
                 Console.WriteLine("Gelukt!");
+                return Convert.ToInt32(input);
             }
+            return Convert.ToInt32(input);
         }
 
         public static bool typeCheckInt(string input)
@@ -41,30 +45,38 @@ namespace Filter
 
     class DateCheck
     {
-        public static void Check(string DateInput)
+    
+        public static string Check(string DateInput)
         {
             string slash = "/";
             bool Boolian = DateInput.Contains(slash);
             if (DateInput.Length > 5 || !Boolian)
             {
-                Foutmelding();
+                Console.WriteLine("Deze datum is niet beschikbaar, probeer het nog eens.\n");
+                DateInput = Console.ReadLine();
+                Check(DateInput);
             }
-            string[] DayMonthList = DateInput.Split('/');
-
-            int Month = DateTime.Now.Month;
-            int Day = DateTime.Now.Day;
-            int a = Convert.ToInt32(DayMonthList[0]);
-            int b = Convert.ToInt32(DayMonthList[1]);
-
-
-            int daysinmonth = Validate(Month);
-
-
-            if (Convert.ToInt32(Month) >= b || b > 12 && Convert.ToInt32(Day) > a || a > daysinmonth || b > 12)
+            else
             {
-                Foutmelding();
-            }
+                string[] DayMonthList = DateInput.Split('/');
 
+                int Month = DateTime.Now.Month;
+                int Day = DateTime.Now.Day;
+                int a = Convert.ToInt32(DayMonthList[0]);
+                int b = Convert.ToInt32(DayMonthList[1]);
+
+
+                int daysinmonth = Validate(b);
+
+                if (((Convert.ToInt32(Month) >= b || b > 12) && (Convert.ToInt32(Day) > a || b > 12)) || a > daysinmonth)
+                {
+                    Console.WriteLine("Deze datum is niet beschikbaar, probeer het nog eens.\n");
+                    DateInput = Console.ReadLine();
+                    Check(DateInput);
+                }
+                return DateInput;
+            }
+            return DateInput;
         }
 
         public static int Validate(int Month)
@@ -73,19 +85,13 @@ namespace Filter
             return Days;
         }
 
-
-        public static void Foutmelding()
+        public static string Start(string DateInput)
         {
-            Console.WriteLine("Deze datum is niet beschikbaar, probeer het nog eens.\n");
-            string DateInput = Console.ReadLine();
-            Main(DateInput);
-        }
+            DateInput = Check(DateInput);
+            //Console.WriteLine("Gelukt!");
+            //Console.ReadLine();
+            return DateInput;
 
-        public static void Main(string DateInput)
-        {
-            Check(DateInput);
-            Console.WriteLine("Gelukt!");
-            Console.ReadLine();
         }
     }
 }
