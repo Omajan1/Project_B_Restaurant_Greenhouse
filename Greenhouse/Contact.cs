@@ -51,7 +51,11 @@ namespace contact
 
 				// Zet de string naar een array
 				var array = JArray.Parse(initialJson);
+				var running = true;
+                while (running)
+                {
 
+                
 					// Gaat door elk element van de JSON array heen
 					foreach (JObject q in array)
 					{
@@ -65,12 +69,12 @@ namespace contact
 							string naam = q.GetValue("Name").ToString();
 
 							Console.WriteLine($"\n{naam} stelde de vraag : \t" + vraag + "\n");
-							Console.WriteLine("Wil je deze vraag beantwoorden:\n \nY = Beantwoorden \nENTER = Volgende vraag\n");
+							Console.WriteLine("Wil je deze vraag beantwoorden:\n \nY = Beantwoorden \nENTER = Volgende vraag\nQ om terug naar home te gaan\n");
 
 
 							string choice = Console.ReadLine();
 							choice = choice.ToUpper();
-
+							if (choice == "Q") running = false;
 							if (choice == "Y")
 							{
 
@@ -86,6 +90,7 @@ namespace contact
 							Console.Clear();
 						}
 					}
+				}
 			}
 
 		}

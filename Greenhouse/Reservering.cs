@@ -196,23 +196,37 @@ namespace reservering
 			var Count = JArray.Parse(innit);
 
 			// Loopt door alle reserveringen
-			foreach (JObject item in Count)
+			var running = true;
+			while (running)
 			{
-				// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
-				Console.Clear();
-				string date = item.GetValue("Datum").ToString();
-				string name = item.GetValue("Naam").ToString();
-				string table = item.GetValue("TafelNummer").ToString();
-				Console.WriteLine();
-				Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table}\n");
-				Console.WriteLine("Druk op enter om door de reserveringen te gaan, typ back om terug te gaan.");
 
-				if(Console.ReadLine() == "back")
-                {
-					break;
-                }
+
+				foreach (JObject item in Count)
+				{
+					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
+					Console.Clear();
+					Console.WriteLine("Druk op enter om door te gaan naar de volgende reservering, typ Q om terug te gaan\n");
+					string date = item.GetValue("Datum").ToString();
+					string name = item.GetValue("Naam").ToString();
+					string table = item.GetValue("TafelNummer").ToString();
+
+					Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table}\n");
+					string choice = Console.ReadLine();
+					if (choice.ToUpper() == "Q")
+                    {
+						running = false;
+						break;
+						break;
+                    }
+
+
+
+
+				}
+
+
 			}
-        }
+		}
 		public static void makeReservation()
 		{
 
