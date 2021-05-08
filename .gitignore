@@ -386,7 +386,7 @@ Greenhouse/obj/Greenhouse.csproj.nuget.g.props
 *.props
 Greenhouse/obj/project.assets.json
 Greenhouse/obj/Debug/netcoreapp3.1/Greenhouse.assets.cache
-*.csproj
+
 Greenhouse/.vs/Greenhouse/v16/.suo
 *.v2
 Greenhouse/.vs/Greenhouse/DesignTimeBuild/.dtbcache.v2
