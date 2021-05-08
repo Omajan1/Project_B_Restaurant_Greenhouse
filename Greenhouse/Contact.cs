@@ -84,10 +84,14 @@ namespace contact
 								q["Answer"] = antwoord;
 								// Slaat het op in JSON
 								File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
-
+								
 							}
 
 							Console.Clear();
+                        }
+                        else
+                        {
+							running = false;
 						}
 					}
 				}
