@@ -16,7 +16,7 @@ namespace Nunit3
         public void Login_Geeft_False_Bij_Verkeerd_Wachtwoord_En_Username()
         {
             // Moet false worden
-            bool s = Login.Login.check("","");
+            bool s = Login.Login.check("", "");
 
             Assert.AreEqual(s, false);
         }
