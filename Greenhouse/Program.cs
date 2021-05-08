@@ -1,7 +1,7 @@
 ﻿using System;
 using Rules;
 using reservering;
-using MenuPage0;
+using Menu;
 using contact;
 
 
@@ -46,7 +46,7 @@ namespace Greenhouse
 
                 // SLuit af als het 8 is
                 if (result == "8") break;
-                
+
                 // Keuzes
                 switch (result)
                 {
@@ -70,7 +70,13 @@ namespace Greenhouse
                         ReserveringMain.showReserveringen();
                         break;
                     case "7":
-                        Contact.showVragen();
+                        Console.Clear();
+                        Console.WriteLine("Gebruikersnaam:");
+                        string username = Console.ReadLine();
+                        Console.WriteLine("Wachtwoord:");
+                        string password = Console.ReadLine();
+                        if (Login.Login.check(username, password)) Contact.showVragen();
+                        else Console.WriteLine("Verkeerde gegevens ");
                         break;
                     default:
                         Console.Clear();

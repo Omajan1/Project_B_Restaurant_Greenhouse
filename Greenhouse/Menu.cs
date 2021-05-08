@@ -3,7 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using JSON;
-namespace MenuPage0
+namespace Menu
 {
     public class menu
     {
