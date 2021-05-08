@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Login;
+using Contact;
 namespace Nunit3
 {
     public class Tests
@@ -7,7 +8,7 @@ namespace Nunit3
         [SetUp]
         public void Setup()
         {
-
+            
         }
 
 
@@ -33,7 +34,23 @@ namespace Nunit3
             Assert.AreEqual(s, true);
         }
 
+        [Test]
+        public void Contact_naam_staat_goed()
+        {
+            // Moet false worden
+            Comment contact = new Comment("textTest", "nameTest", true);
 
+            Assert.AreEqual(contact.Name, "nameTest");
+        }
+
+        [Test]
+        public void Contact_text_staat_goed()
+        {
+            // Moet false worden
+            Comment contact = new Comment("textTest", "nameTest", true);
+
+            Assert.AreEqual(contact.Text, "textTest");
+        }
 
 
 

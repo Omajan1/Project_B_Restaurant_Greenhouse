@@ -216,7 +216,7 @@ namespace reservering
                     {
 						running = false;
 						break;
-						break;
+
                     }
 
 
