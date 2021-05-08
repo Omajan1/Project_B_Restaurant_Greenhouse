@@ -16,36 +16,35 @@ namespace Greenhouse
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
             Console.SetWindowSize(180, 42);
-
+            bool running = true;
             // Running loop
-            while (true)
+            while (running)
             {
                 Console.Clear();
                 Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("--Welkom bij de Reserverings Applicatie van GreenHouse--\n");
+                Console.WriteLine("----Welkom bij de Reserverings Applicatie van GreenHouse---");
                 Console.WriteLine("--Duurzaamheid en Sustainability met Lokale Leveranciers!--");
-                Console.WriteLine("\t--Voor elke portomonee en altijd lekker!--\n");
+                Console.WriteLine("-----------Voor elke portomonee en altijd lekker!----------");
                 Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("\t-----------------------------------------");
-                Console.WriteLine("\t| Elke dag open, vannaf 13:00 tot 22:00 |");
-                Console.WriteLine("\t| De bar is open van 13:00 tot 01:00    |");
-                Console.WriteLine("\t-----------------------------------------\n");
-                Console.WriteLine("Dit zijn de opties:");
-                Console.WriteLine("1. Reserveren");
-                Console.WriteLine("2. Menu");
-                Console.WriteLine("3. Regels");
-                Console.WriteLine("4. Contact Opnemen?");
-                Console.WriteLine("5. FAQ");
-                Console.WriteLine("6. Reservering laten zien");
-                Console.WriteLine("7. Laat vragen zien om te beantwoorden");
-                Console.WriteLine("8. Exit");
-                Console.Write("Zet hier uw keuze neer: ");
+                Console.WriteLine("-----------------------------------------------------------");
+                Console.WriteLine("--------|  Elke dag open, vannaf 13:00 tot 22:00  |--------");
+                Console.WriteLine("---------|  De bar is open van 13:00 tot 01:00  |----------");
+                Console.WriteLine("-----------------------------------------------------------");
+                Console.WriteLine();
+                Console.WriteLine("Dit zijn de opties                          ");
+                Console.WriteLine("1. Een reservering plaatsen                 ");
+                Console.WriteLine("2. Het menu bekijken                        ");
+                Console.WriteLine("3. De regels bekijken                       ");
+                Console.WriteLine("4. Contact opnemen met Greenhouse           ");
+                Console.WriteLine("5. FAQ                                      ");
+                Console.WriteLine("6. Alle geplaatste reserveringen laten zien ");
+                Console.WriteLine("7. Admin panel                              ");
+                Console.WriteLine("8. Exit                                     ");
+                Console.WriteLine("Zet hieronder uw keuze neer                 ");
+
 
                 // Pakt keuze van user
                 string result = Console.ReadLine();
-
-                // SLuit af als het 8 is
-                if (result == "8") break;
 
                 // Keuzes
                 switch (result)
@@ -77,6 +76,9 @@ namespace Greenhouse
                         string password = Console.ReadLine();
                         if (Login.Login.check(username, password)) Contact.showVragen();
                         else Console.WriteLine("Verkeerde gegevens ");
+                        break;
+                    case "8":
+                        running = false;
                         break;
                     default:
                         Console.Clear();
