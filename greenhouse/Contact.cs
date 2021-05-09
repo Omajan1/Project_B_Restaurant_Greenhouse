@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using JSON;
 using Login;
-namespace contact
+namespace Contact
 {
 
 
@@ -32,6 +32,12 @@ namespace contact
 
             // Slaat het op in JSON
             File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
+        }
+        public Comment(string text, string name, bool test)
+        {
+            this.Text = text;
+            this.Name = name;
+
         }
     }
     public class Contact
