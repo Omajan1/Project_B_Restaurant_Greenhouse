@@ -95,20 +95,26 @@ namespace contact
 
 
 			Console.Clear();
-
-			Console.WriteLine("Wilt u contact opnemen met het restaurant?: dan kan dat op de volgende manieren:");
+			Console.WriteLine("Contact Opnemen?\n");
+			Console.WriteLine("U kunt op de volgende manieren contact opnemen:\n");
+			// verandering van de kleur van de tekst
+			Console.ForegroundColor = ConsoleColor.DarkBlue;
+			Console.WriteLine("1. Wij zijn telefonisch bereikbaar via ons telefoonummer: 010-794-4000.\n");
+			Console.WriteLine("2. U kunt ook een email sturen naar: greenhouse@green.nl.\n");
+			Console.WriteLine("3. Stuur een brief of bezoek onze locatie op:");
+			Console.WriteLine("   Adres: Wijnhaven 107, 3011 WN Rotterdam");
+			Console.WriteLine("   Provincie: Zuid-Holland\n");
+			Console.WriteLine("4. U kunt ons ook online vinden via:");
+			Console.WriteLine("   https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107");
 			Console.WriteLine();
-			Console.WriteLine("Telefoonnummer: 010-794-4000");
-			Console.WriteLine("Email: greenhouse@green.nl");
-			Console.WriteLine("Adres: Wijnhaven 107, 3011 WN Rotterdam");
-			Console.WriteLine("Provincie: Zuid-Holland");
-			Console.WriteLine("Website: https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107");
+			Console.WriteLine("5. Tenslotte kunt een chat bericht sturen naar een medewerker, dit doet u als volgt:");
+			Console.WriteLine("   -  Typ hieronder eerst het bericht.");
+			Console.WriteLine("   -  Druk daarna op enter.");
+			Console.WriteLine("   -  Vul vervolgens uw gegevens in zodat u een antwoord kunt ontvangen.\n\n");
+			Console.ForegroundColor = ConsoleColor.Black;
+			Console.WriteLine("Als u terug naar het hoofdmenu wilt, typ dan niks en druk op enter.");
 			Console.WriteLine();
-			Console.WriteLine("Verstuur een chat bericht: typ het bericht en druk op enter");
-			Console.WriteLine();
-			Console.WriteLine("Als je terug naar het hoofdmenu wilt, typ dan niks");
-			Console.WriteLine();
-			Console.WriteLine("---Druk om een toets om terug te gaan.---\n");
+			Console.WriteLine("---Druk op een toets om terug te gaan.---\n");
 
 			// Pakt of de gebruiker terug wilt of welke vraag je wilt achterlaten
 			string input = Console.ReadLine();
