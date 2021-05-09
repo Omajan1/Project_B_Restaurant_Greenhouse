@@ -14,12 +14,16 @@ namespace reservering
 		public static string getTime()
         {
 			// Geeft de 3 timeslots aan en laat de user pas doorgaan als een keuze is gemaakt.
-            while (true)
+			bool running = true;
+            while (running)
             {
+
 				Console.WriteLine("Welk tijdslot wilt u reserveren voor deze dag?");
-				Console.WriteLine("1. Van 13:00 tot 16:00\n" +
-								  "2. Van 16:00 tot 19:00\n" +
-								  "3. Van 19:00 tot 22:00\n");
+				Console.WriteLine("1. Van 13:00 tot 16:00");
+				Console.WriteLine("2. Van 16:00 tot 19:00");
+				Console.WriteLine("3. Van 19:00 tot 22:00");
+				Console.WriteLine("4. Terug naar het menu");
+						
 
 				switch (Console.ReadLine())
 				{
@@ -29,20 +33,26 @@ namespace reservering
 						return "16:00";
 					case "3":
 						return "19:00";
+					case "4":
+						running = false;
+						return "";
+						break;
 					default:
 						Console.WriteLine("Geef een geldige keuze : ");
 						break;
 				}
 			}
+			return "";
 		}
+
 
 		public static string getDate()
         {
 			Console.WriteLine("Wanneer wilt u een reservering plaatsen? : ");
 			Console.WriteLine("In het format DD/MM, zoals dit : 29/2 of 2/5");
-			string dateOutput = Console.ReadLine();
+
 			// check:
-			dateOutput = Filter.DateCheck.Start(dateOutput);
+			string dateOutput = Filter.DateCheck.Check();
 			return dateOutput;
         }
 
@@ -235,7 +245,6 @@ namespace reservering
 			string tijd = "";
 			string naam = "";
 			string achternaam = "";
-			// Tijdelijk nog een string
 			string tafelNummer = "";
 			string datum = "";
 			
@@ -346,19 +355,12 @@ namespace reservering
 			this.Tijd = tijd;
 			this.Datum = datum;
 	
-			
-
-			
 			// Laad het json bestand naar een string
 			string innit = File.ReadAllText(JSON.paths.reservaring);
 
 			// zet de string naar een array
 			var Count = JArray.Parse(innit);
-
-
-
 			int len = Count.Count;
-
 			this.Res_ID = len + 1;
 
 			Console.WriteLine($"Er is succesvol een reservering geplaatst op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur met ID {this.Res_ID}");
