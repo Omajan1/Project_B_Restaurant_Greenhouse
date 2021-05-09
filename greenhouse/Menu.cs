@@ -12,72 +12,73 @@ namespace Menu
             bool running = true;
             while (running)
             {
+                Console.Clear();
+                Console.WriteLine("Welkom bij de Menu Pagina\n");
 
-            
-            Console.Clear();
-            Console.WriteLine("Welkom bij de Menu Pagina\n");
+                Console.WriteLine("Kies de catagorie die u wilt bekijken:\n");
+                Console.WriteLine("1. Voorgerechten");
+                Console.WriteLine("2. Hoofdgerechten");
+                Console.WriteLine("3. Nagerechten");
+                Console.WriteLine("4. Vis-gerechten");
+                Console.WriteLine("5. Vegan opties");
+                Console.WriteLine("6. Vega opties");
+                Console.WriteLine("7. Alles (u kan ook 'all' typen)");
+                Console.WriteLine("8. Terug naar home");
+                Console.Write("Wat zou u willen zien: ");
+                string result = Console.ReadLine();
 
-            Console.WriteLine("Kies de catagorie die u wilt bekijken:\n");
-            Console.WriteLine("1. Voorgerechten");
-            Console.WriteLine("2. Hoofdgerechten");
-            Console.WriteLine("3. Nagerechten");
-            Console.WriteLine("4. Vis-gerechten");
-            Console.WriteLine("5. Vegan opties");
-            Console.WriteLine("6. Vega opties");
-            Console.WriteLine("7. Alles (u kan ook 'all' typen)");
-            Console.WriteLine("8. Terug naar home");
-            Console.Write("Wat zou u willen zien: ");
-            string result;
+                string[] options = result.Split(",");
 
-            //check wat er is geinput
-
-            switch (result = Console.ReadLine())
-            {
-                case "1":
-                    Console.Clear();
-                    Voorgerechten();
-                        Console.ReadLine();
-                        break;
-                case "2":
-                    Console.Clear();
-                    Hoofdgerechten();
-                        Console.ReadLine();
-                        break;
-                case "3":
-                    Console.Clear();
-                    Nagerechten();
-                        Console.ReadLine();
-                        break;
-                case "4":
-                    Console.Clear();
-                    Visgerechten();
-                        Console.ReadLine();
-                        break;
-                case "5":
-                    Console.Clear();
-                    Vegan();
-                        Console.ReadLine();
-                        break;
-                case "6":
-                    Console.Clear();
-                    Vega();
-                        Console.ReadLine();
-                        break;
-                case "7":
-                    Console.Clear();
-                    Alles();
-                        Console.ReadLine();
-                        break;
-                case "all":
-                    Console.Clear();
-                    Alles();
-                        Console.ReadLine();
-                        break;
-                case "8":
+                Console.Clear();
+                foreach (string option in options)
+                {
+                    if (option == "7" || option == "all")
+                    {
+                        Alles();
+                        Console.WriteLine();
+                    }
+                    else if (option == "8")
+                    {
                         running = false;
                         break;
+                    }
+                    else if (option == "1")
+                    {
+                        Voorgerechten();
+                        Console.ReadLine();
+                    }
+                    else if (option == "2")
+                    {
+                        Hoofdgerechten();
+                        Console.ReadLine();
+                    }
+                    else if (option == "3")
+                    {
+                        Nagerechten();
+                        Console.ReadLine();
+                    }
+                    else if (option == "4")
+                    {
+                        Visgerechten();
+                        Console.ReadLine();
+                    }
+                    else if (option == "5")
+                    {
+                        Vegan();
+                        Console.ReadLine();
+                    }
+                    else if (option == "6")
+                    {
+                        Vega();
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("This is not a valid option");
+                        Console.ReadLine();
+                    }
+                }
             }
-           }
 
 
             static void Voorgerechten()
