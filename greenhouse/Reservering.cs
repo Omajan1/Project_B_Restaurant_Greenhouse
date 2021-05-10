@@ -49,7 +49,7 @@ namespace reservering
 		public static string getDate()
         {
 			Console.WriteLine("Wanneer wilt u een reservering plaatsen? : ");
-			Console.WriteLine("In het format DD/MM, zoals dit : 29/2 of 2/5");
+			Console.WriteLine("In het format DD/MM, zoals dit : 29/02 of 02/05");
 
 			// check:
 			string dateOutput = Filter.DateCheck.Check();
