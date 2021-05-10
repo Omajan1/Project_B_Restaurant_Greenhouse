@@ -40,8 +40,7 @@ namespace contact
 		public static void showVragen()
 		{
 			// Als de inlog gegevens niet goed zijn kun je hier niet bij
-			if (Login.Login.check())
-			{
+
 
 
 				Console.Clear();
@@ -86,7 +85,7 @@ namespace contact
 						Console.Clear();
 					}
 				}
-			}
+			
 
 		}
 

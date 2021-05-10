@@ -2,7 +2,7 @@
 using Rules;
 using reservering;
 using Menu;
-using Contact;
+using contact;
 
 
 namespace Greenhouse
@@ -60,10 +60,10 @@ namespace Greenhouse
                         rules.show();
                         break;
                     case "4":
-                        Contact.Contact.showInfo();
+                        contact.Contact.showInfo();
                         break;
                     case "5":
-                        Contact.Contact.showAnswers();
+                        contact.Contact.showAnswers();
                         break;
                     case "6":
                         ReserveringMain.showReserveringen();
@@ -74,7 +74,7 @@ namespace Greenhouse
                         string username = Console.ReadLine();
                         Console.WriteLine("Wachtwoord:");
                         string password = Console.ReadLine();
-                        if (Login.Login.check(username, password)) Contact.Contact.showVragen();
+                        if (Login.Login.check(username, password)) contact.Contact.showVragen();
                         else Console.WriteLine("Verkeerde gegevens ");
                         break;
                     case "8":

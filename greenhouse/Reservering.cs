@@ -36,7 +36,6 @@ namespace reservering
 					case "4":
 						running = false;
 						return "";
-						break;
 					default:
 						Console.WriteLine("Geef een geldige keuze : ");
 						break;
