@@ -21,8 +21,8 @@ namespace Rules
 				Console.WriteLine("10. Grof taalgebruik tegen het personeel wordt niet getolereerd.\n");
 				Console.WriteLine("11. Het binnentreden met aanstootgevende kleding is niet toegestaan.\n");
 				Console.WriteLine("12. We verwachten dat iedereen elkaar met respect behandeld, zo niet, dan is het personeel altijd in staat de desbetreffende klant weg te sturen.\n");
-				Console.WriteLine("15. Het meenemen van eigen voedingsmiddelen en dranken is ten strengste verboden.\n");
-				Console.WriteLine("16. Het netjes achterlaten van je tafel is niet verplicht, maar laat het acceptabel achter.\n");
+				Console.WriteLine("13. Het meenemen van eigen voedingsmiddelen en dranken is ten strengste verboden.\n");
+				Console.WriteLine("14. Het netjes achterlaten van je tafel is niet verplicht, maar laat het acceptabel achter.\n");
 				Console.WriteLine("\t\t\t---Druk op enter om terug te gaan.---\n");
 				Console.ReadLine();
 
