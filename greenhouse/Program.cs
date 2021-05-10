@@ -12,14 +12,27 @@ namespace Greenhouse
         static void Main(string[] args)
         {
             // Console settings
+            
+            
+            
 
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.White;
             Console.SetWindowSize(180, 42);
+            bool darkMode = false;
             bool running = true;
             // Running loop
             while (running)
             {
+                if (!darkMode)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.White;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
+
                 Console.Clear();
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("----Welkom bij de Reserverings Applicatie van GreenHouse---");
@@ -38,7 +51,8 @@ namespace Greenhouse
                 Console.WriteLine("4. Contact opnemen met Greenhouse           ");
                 Console.WriteLine("5. FAQ                                      ");
                 Console.WriteLine("6. Alle geplaatste reserveringen laten zien ");
-                Console.WriteLine("7. Admin panel                              ");
+                if(!darkMode) Console.WriteLine("7. Zet darkmode aan                         ");
+                else Console.WriteLine("7. Zet darkmode uit                         ");
                 Console.WriteLine("8. Exit                                     ");
                 Console.WriteLine("Zet hieronder uw keuze neer                 ");
 
@@ -69,6 +83,9 @@ namespace Greenhouse
                         ReserveringMain.showReserveringen();
                         break;
                     case "7":
+                        darkMode = !darkMode;
+                        break;
+                    case "9":
                         Console.Clear();
                         Console.WriteLine("Gebruikersnaam:");
                         string username = Console.ReadLine();
