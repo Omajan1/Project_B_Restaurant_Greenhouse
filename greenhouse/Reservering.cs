@@ -224,6 +224,7 @@ namespace reservering
 
 			// Loopt door alle reserveringen
 			var running = true;
+			int counter = 0;
 			Console.Clear();
 			while (running)
 			{
@@ -240,16 +241,15 @@ namespace reservering
 					string tijd = item.GetValue("Tijd").ToString();
 
 					Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
-
-
-
-
-
+					counter += 1;
+					if(counter % 5 == 0)
+                    {
+						Console.WriteLine($"Pagina {(counter / 5)}");
+						Console.ReadLine();
+						Console.Clear();
+                    }
 				}
 				running = false;
-				Console.ReadLine();
-
-
 			}
 		}
 		public static void makeReservation()
