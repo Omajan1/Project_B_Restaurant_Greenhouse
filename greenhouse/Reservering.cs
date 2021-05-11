@@ -273,8 +273,8 @@ namespace reservering
 				Console.WriteLine("3. Kies een tafel                      : " + tafelNummer);
 				Console.WriteLine("4. Wat is uw voornaam                  : " + naam);
 				Console.WriteLine("5. Wat is uw achternaam                : " + achternaam);
-				Console.WriteLine("6. Plaats reservering                  :");
-				Console.WriteLine("7. Terug naar het hoofdmenu            :");
+				Console.WriteLine("6. Plaats reservering                  ");
+				Console.WriteLine("7. Terug naar het hoofdmenu            ");
 
 				switch (Console.ReadLine()){
 					case "7":
