@@ -147,7 +147,24 @@ namespace contact
 				Console.ReadLine();
 			}
 		}
+		public static void FAQ()
+        {
+			Console.Clear();
+			Console.WriteLine("--------------------------------------------------------------------");
+			Console.WriteLine("Is er een drive thru?");
+			Console.WriteLine("Nee helaas, we hebben geen drive thru.");
+			Console.WriteLine("--------------------------------------------------------------------\n");
 
+			Console.WriteLine("--------------------------------------------------------------------");
+			Console.WriteLine("Welke dagen zijn jullie open?");
+			Console.WriteLine("Maandag tot en met Zaterdag, Zondag zijn we helaas gesloten.");
+			Console.WriteLine("--------------------------------------------------------------------\n");
+
+			Console.WriteLine("--------------------------------------------------------------------");
+			Console.WriteLine("Welk merk cola wordt er geserveerd?");
+			Console.WriteLine("We serveren alleen Coca Cola, geen Pepsi.");
+			Console.WriteLine("--------------------------------------------------------------------\n");
+		}
 		public static void showAnswers()
 		{
 
