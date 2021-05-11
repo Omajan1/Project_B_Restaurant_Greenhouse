@@ -193,7 +193,17 @@ namespace reservering
 					var isTableInt = Filter.FilterMain.typeCheckInt(tafelNummer);
 					if (isTableInt)
 					{
-						if (tafelNummer == "" || Convert.ToInt32(tafelNummer) < 1) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
+						bool table_is_in_use = false;
+						
+						foreach (string table in TableNumbersInUse)
+                        {
+							if (table == tafelNummer)
+                            {
+								table_is_in_use = true;
+                            }
+                        }
+						
+						if (tafelNummer == "" || Convert.ToInt32(tafelNummer) < 1 || Convert.ToInt32(tafelNummer) > 15 || table_is_in_use) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 						{
 							Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
 						}
