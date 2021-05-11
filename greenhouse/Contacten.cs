@@ -8,10 +8,19 @@ namespace contact
 {
 
 
+
 	public class Comment
 	{
 		public string Text = "";
 		public string Name = "";
+
+
+		public Comment(string text, string name, bool x)
+		{
+			this.Text = text;
+			this.Name = name;
+		}
+
 
 		public Comment(string text, string name)
 		{
