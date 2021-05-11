@@ -184,16 +184,34 @@ namespace reservering
 				// Voeg check toe voor int, het crasht als je een string invoeft
 				// int tafelNummer = Convert.ToInt32(Console.ReadLine());
 				// Hier moet laten een int van gemaakt worden, maar het cracht nu als je dat invult
-				var tafelNummer = Console.ReadLine();
-				Filter.FilterMain.FilterInt(tafelNummer);
-				if (tafelNummer == "") // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
-				{
-					Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
+				bool r = true;
+				string tafelNummer;
+
+				while (r)
+                {
+					tafelNummer = Console.ReadLine();
+					var isTableInt = Filter.FilterMain.typeCheckInt(tafelNummer);
+					if (isTableInt)
+					{
+						if (tafelNummer == "" || Convert.ToInt32(tafelNummer) < 1) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
+						{
+							Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
+						}
+						else
+						{
+							return tafelNummer.ToString();
+						}
+						r = false;
+					}
+					else
+					{
+						Console.WriteLine("");
+					}
 				}
-				else
-				{
-					return tafelNummer.ToString();
-				}
+
+
+
+
 			}
 		}
 		public static void showReserveringen()
@@ -206,6 +224,7 @@ namespace reservering
 
 			// Loopt door alle reserveringen
 			var running = true;
+			Console.Clear();
 			while (running)
 			{
 
@@ -213,25 +232,22 @@ namespace reservering
 				foreach (JObject item in Count)
 				{
 					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
-					Console.Clear();
-					Console.WriteLine("Druk op enter om door te gaan naar de volgende reservering, typ Q om terug te gaan\n");
+
+
 					string date = item.GetValue("Datum").ToString();
 					string name = item.GetValue("Naam").ToString();
 					string table = item.GetValue("TafelNummer").ToString();
+					string tijd = item.GetValue("Tijd").ToString();
 
-					Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table}\n");
-					string choice = Console.ReadLine();
-					if (choice.ToUpper() == "Q")
-                    {
-						running = false;
-						break;
+					Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
 
-                    }
 
 
 
 
 				}
+				running = false;
+				Console.ReadLine();
 
 
 			}

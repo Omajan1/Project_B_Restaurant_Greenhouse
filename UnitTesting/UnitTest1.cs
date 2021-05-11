@@ -1,6 +1,6 @@
 using NUnit.Framework;
 using Login;
-using Contact;
+using contact;
 namespace Nunit3
 {
     public class Tests
