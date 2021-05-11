@@ -238,7 +238,6 @@ namespace reservering
 		}
 		public static void makeReservation()
 		{
-
 			bool running = true;
 
 			string tijd = "";
@@ -291,7 +290,6 @@ namespace reservering
 						break;
 					case "6":
 						
-						
 						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "")
                         {
 							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum);
@@ -314,7 +312,6 @@ namespace reservering
 							Console.WriteLine("Druk op enter om terug te gaan");
 							Console.ReadLine();
 							break;
-							
 						}
                         else
                         {
@@ -323,12 +320,8 @@ namespace reservering
 							Console.ReadLine();
 							break;
                         }
-
-
-						
 				}
 			}
-
 		}
 	}
 	
