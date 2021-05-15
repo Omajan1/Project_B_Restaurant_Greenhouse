@@ -214,7 +214,7 @@ namespace reservering
 
 			}
 		}
-		public static void showReserveringen()
+		public static void showReserveringen(string naamVanKlant)
         {
 			// Laad het json bestand naar een string
 			string innit = File.ReadAllText(paths.reservaring);
@@ -233,13 +233,16 @@ namespace reservering
 				{
 					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
 
+					if(naamVanKlant == item.GetValue("Naam").ToString())
+                    {
+						string date = item.GetValue("Datum").ToString();
+						string name = item.GetValue("Naam").ToString();
+						string table = item.GetValue("TafelNummer").ToString();
+						string tijd = item.GetValue("Tijd").ToString();
 
-					string date = item.GetValue("Datum").ToString();
-					string name = item.GetValue("Naam").ToString();
-					string table = item.GetValue("TafelNummer").ToString();
-					string tijd = item.GetValue("Tijd").ToString();
+						Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
+					}
 
-					Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
 
 
 
