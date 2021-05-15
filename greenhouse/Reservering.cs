@@ -244,7 +244,7 @@ namespace reservering
 				{
 					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
 
-					if(naamVanKlant == item.GetValue("Naam").ToString())
+					if (naamVanKlant == item.GetValue("Naam").ToString())
                     {
 						string date = item.GetValue("Datum").ToString();
 						string name = item.GetValue("Naam").ToString();
@@ -252,16 +252,16 @@ namespace reservering
 						string tijd = item.GetValue("Tijd").ToString();
 
 						Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
+						counter += 1;
+						if (counter % 5 == 0)
+						{
+							Console.WriteLine($"Pagina {(counter / 5)}");
+							Console.ReadLine();
+							Console.Clear();
+						}
 					}
 
-					Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
-					counter += 1;
-					if(counter % 5 == 0)
-                    {
-						Console.WriteLine($"Pagina {(counter / 5)}");
-						Console.ReadLine();
-						Console.Clear();
-                    }
+
 				}
 				running = false;
 			}
