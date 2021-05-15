@@ -193,7 +193,17 @@ namespace reservering
 					var isTableInt = Filter.FilterMain.typeCheckInt(tafelNummer);
 					if (isTableInt)
 					{
-						if (tafelNummer == "" || Convert.ToInt32(tafelNummer) < 1) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
+						bool table_is_in_use = false;
+						
+						foreach (string table in TableNumbersInUse)
+                        {
+							if (table == tafelNummer)
+                            {
+								table_is_in_use = true;
+                            }
+                        }
+						
+						if (tafelNummer == "" || Convert.ToInt32(tafelNummer) < 1 || Convert.ToInt32(tafelNummer) > 15 || table_is_in_use) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 						{
 							Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
 						}
@@ -224,6 +234,7 @@ namespace reservering
 
 			// Loopt door alle reserveringen
 			var running = true;
+			int counter = 0;
 			Console.Clear();
 			while (running)
 			{
@@ -243,21 +254,20 @@ namespace reservering
 						Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
 					}
 
-
-
-
-
-
+					Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
+					counter += 1;
+					if(counter % 5 == 0)
+                    {
+						Console.WriteLine($"Pagina {(counter / 5)}");
+						Console.ReadLine();
+						Console.Clear();
+                    }
 				}
 				running = false;
-				Console.ReadLine();
-
-
 			}
 		}
 		public static void makeReservation()
 		{
-
 			bool running = true;
 
 			string tijd = "";
@@ -310,7 +320,6 @@ namespace reservering
 						break;
 					case "6":
 						
-						
 						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "")
                         {
 							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum);
@@ -333,7 +342,6 @@ namespace reservering
 							Console.WriteLine("Druk op enter om terug te gaan");
 							Console.ReadLine();
 							break;
-							
 						}
                         else
                         {
@@ -342,12 +350,8 @@ namespace reservering
 							Console.ReadLine();
 							break;
                         }
-
-
-						
 				}
 			}
-
 		}
 	}
 	
