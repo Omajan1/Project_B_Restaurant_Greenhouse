@@ -5,12 +5,13 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using JSON;
-
+using ConsoleReader;
 namespace reservering
 {
 
 	public class ReserveringMain
 	{
+		
 		public static string getTime()
         {
 			// Geeft de 3 timeslots aan en laat de user pas doorgaan als een keuze is gemaakt.
@@ -23,9 +24,10 @@ namespace reservering
 				Console.WriteLine("2. Van 16:00 tot 19:00");
 				Console.WriteLine("3. Van 19:00 tot 22:00");
 				Console.WriteLine("4. Terug naar het menu");
-						
 
-				switch (Console.ReadLine())
+				ConsoleReader.ConsoleReader reader = new ConsoleReader.ConsoleReader();
+
+				switch (reader.main())
 				{
 					case "1":
 						return "13:00";
@@ -59,7 +61,9 @@ namespace reservering
         {
 			// Leest de voornaam
 			Console.WriteLine("Wat is uw voornaam?");
+
 			string Input = Console.ReadLine();
+
 			Filter.FilterMain.FilterString(Input);
 			return Input;
 		}
