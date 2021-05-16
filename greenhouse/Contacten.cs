@@ -131,9 +131,9 @@ namespace contact
             Console.WriteLine("Typ STOP om te stoppen met typen van een bericht.");
             if (input == "1")
             {
-                string vraag = "";
+                string vraag = "\n";
                 string inputVraag;
-                bool runningVraag = true;
+                bool runningVraag = true; 
                 while (runningVraag)
                 {
                     inputVraag = Console.ReadLine();
