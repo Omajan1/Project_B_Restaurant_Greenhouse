@@ -5,12 +5,13 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using JSON;
-
+using ConsoleReader;
 namespace reservering
 {
 
 	public class ReserveringMain
 	{
+		
 		public static string getTime()
         {
 			// Geeft de 3 timeslots aan en laat de user pas doorgaan als een keuze is gemaakt.
@@ -23,9 +24,10 @@ namespace reservering
 				Console.WriteLine("2. Van 16:00 tot 19:00");
 				Console.WriteLine("3. Van 19:00 tot 22:00");
 				Console.WriteLine("4. Terug naar het menu");
-						
 
-				switch (Console.ReadLine())
+				ConsoleReader.ConsoleReader reader = new ConsoleReader.ConsoleReader();
+
+				switch (reader.main())
 				{
 					case "1":
 						return "13:00";
@@ -59,7 +61,9 @@ namespace reservering
         {
 			// Leest de voornaam
 			Console.WriteLine("Wat is uw voornaam?");
+
 			string Input = Console.ReadLine();
+
 			Filter.FilterMain.FilterString(Input);
 			return Input;
 		}
@@ -151,33 +155,33 @@ namespace reservering
 				Console.WriteLine("                                                                                      |                   |              ");
 				Console.WriteLine("---------------------------------------------------------------------                 |                   |              ");
 				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("| > ■ 1 ■ <      ■ ■ ■      > ■ 8 ■ <     > ■ 10■ <      > ■ ■ ■ <  |                 |                   |              ");
-				Console.WriteLine("|   ■ ■ ■      > ■ 5 ■ <      ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("|                ■ ■ ■                                   > ■ 15■ <  |                 |                   |              ");
+				Console.WriteLine("| Θ ■ 1 ■ Θ      ■ ■ ■      Θ ■ 8 ■ Θ     Θ ■ 10■ Θ      Θ ■ ■ ■ Θ  |                 |                   |              ");
+				Console.WriteLine("|   ■ ■ ■      Θ ■ 5 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
+				Console.WriteLine("|                ■ ■ ■                                   Θ ■ 15■ Θ  |                 |                   |              ");
 				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("| > ■ 2 ■ <      ■ ■ ■      > ■ 9 ■ <     > ■ 11■ <      > ■ ■ ■ <  |         -----------------------------------------  ");
-				Console.WriteLine("|   ■ ■ ■      > ■ 6 ■ <      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
+				Console.WriteLine("| Θ ■ 2 ■ Θ      ■ ■ ■      Θ ■ 9 ■ Θ     Θ ■ 11■ Θ      Θ ■ ■ ■ Θ  |         -----------------------------------------  ");
+				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
 				Console.WriteLine("|                ■ ■ ■                                              |         | De bar is open van 13:00 tot 01:00    |  ");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■          ■        |         -----------------------------------------  ");
-				Console.WriteLine("| > ■ 3 ■ <      ■ ■ ■                    > ■ 12■ <       ----------|                                                    ");
-				Console.WriteLine("|   ■ ■ ■      > ■ 7 ■ <                    ■ ■ ■       ■ |         |                        ^                           ");
+				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■          Θ        |         -----------------------------------------  ");
+				Console.WriteLine("| Θ ■ 3 ■ Θ      ■ ■ ■                    Θ ■ 12■ Θ       ----------|                                                    ");
+				Console.WriteLine("|   ■ ■ ■      Θ ■ 7 ■ Θ                    ■ ■ ■       Θ |         |                        ^                           ");
 				Console.WriteLine("|                ■ ■ ■                                    |         |                        |                           ");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       ■ |   B     |                        |                           ");
-				Console.WriteLine("| > ■ ■ ■ <                               > ■ 13■ <       |   A     |");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       ■ |   R     |");
-				Console.WriteLine("| > ■ 4 ■ <                                               |         |");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       ■ |         |");
-				Console.WriteLine("| > ■ ■ ■ <                               > ■ 14■ <       |         |");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       ■ |         |");
+				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |   B     |                        |                           ");
+				Console.WriteLine("| Θ ■ ■ ■ Θ                               Θ ■ 13■ Θ       |   A     |");
+				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |   R     |");
+				Console.WriteLine("| Θ ■ 4 ■ Θ                                               |         |");
+				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |         |");
+				Console.WriteLine("| Θ ■ ■ ■ Θ                               Θ ■ 14■ Θ       |         |");
+				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |         |");
 				Console.WriteLine("|                             ^                           |         |");
-				Console.WriteLine("|                             |                         ■ |         |");
+				Console.WriteLine("|                             |                         Θ |         |");
 				Console.WriteLine("---------------------------   |    ----------------------------------\n");
 
 				//voor 1,2,3,... komt iets waarbij hij alleen de tafels laat zien die vrij zijn
 				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
 
 				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
-				Console.WriteLine("'<'/'>' zijn de stoelen en richting ervan.");
+				Console.WriteLine(" Θ zijn de stoelen.");
 
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
 
@@ -224,7 +228,7 @@ namespace reservering
 
 			}
 		}
-		public static void showReserveringen()
+		public static void showReserveringen(string naamVanKlant)
         {
 			// Laad het json bestand naar een string
 			string innit = File.ReadAllText(paths.reservaring);
@@ -244,20 +248,24 @@ namespace reservering
 				{
 					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
 
-
-					string date = item.GetValue("Datum").ToString();
-					string name = item.GetValue("Naam").ToString();
-					string table = item.GetValue("TafelNummer").ToString();
-					string tijd = item.GetValue("Tijd").ToString();
-
-					Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
-					counter += 1;
-					if(counter % 5 == 0)
+					if (naamVanKlant == item.GetValue("Naam").ToString())
                     {
-						Console.WriteLine($"Pagina {(counter / 5)}");
-						Console.ReadLine();
-						Console.Clear();
-                    }
+						string date = item.GetValue("Datum").ToString();
+						string name = item.GetValue("Naam").ToString();
+						string table = item.GetValue("TafelNummer").ToString();
+						string tijd = item.GetValue("Tijd").ToString();
+
+						Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
+						counter += 1;
+						if (counter % 5 == 0)
+						{
+							Console.WriteLine($"Pagina {(counter / 5)}");
+							Console.ReadLine();
+							Console.Clear();
+						}
+					}
+
+
 				}
 				running = false;
 			}

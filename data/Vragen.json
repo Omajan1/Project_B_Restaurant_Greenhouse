@@ -8,5 +8,14 @@
     "Text": "Wordt er alchol geschonken?",
     "Name": "Patrick",
     "Answer": "Ja zeker! "
+  },
+  {
+    "Text": "STOP",
+    "Name": "Levi"
+  },
+  {
+    "Text": "Hoi,\ndit is eentest\n\nHAHAH LOOL\n\nlevi\n",
+    "Name": "Levi",
+    "Answer": "Test antwoord op deze vraag"
   }
 ]
