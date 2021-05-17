@@ -19,11 +19,12 @@ namespace Menu
                 Console.WriteLine("1. Voorgerechten");
                 Console.WriteLine("2. Hoofdgerechten");
                 Console.WriteLine("3. Nagerechten");
-                Console.WriteLine("4. Vis-gerechten");
-                Console.WriteLine("5. Vegan opties");
-                Console.WriteLine("6. Vega opties");
-                Console.WriteLine("7. Alles (u kan ook 'all' typen)");
-                Console.WriteLine("8. Terug naar home");
+                Console.WriteLine("4. Extra");
+                Console.WriteLine("5. Vis-gerechten");
+                Console.WriteLine("6. Vegan opties");
+                Console.WriteLine("7. Vega opties");
+                Console.WriteLine("8. Alles (u kan ook 'all' typen)");
+                Console.WriteLine("9. Terug naar home");
                 Console.Write("Wat zou u willen zien: ");
                 string result = Console.ReadLine();
 
@@ -32,12 +33,13 @@ namespace Menu
                 Console.Clear();
                 foreach (string option in options)
                 {
-                    if (option == "7" || option == "all")
+                    if (option == "8" || option == "all")
                     {
                         Alles();
-                        Console.WriteLine();
+                        Console.Write("Druk op enter om terug te gaan");
+                        Console.ReadLine();
                     }
-                    else if (option == "8")
+                    else if (option == "9")
                     {
                         running = false;
                         break;
@@ -45,32 +47,44 @@ namespace Menu
                     else if (option == "1")
                     {
                         Voorgerechten();
+                        Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
                     }
                     else if (option == "2")
                     {
                         Hoofdgerechten();
+                        Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
                     }
                     else if (option == "3")
                     {
                         Nagerechten();
+                        Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
                     }
                     else if (option == "4")
                     {
-                        Visgerechten();
+                        Extra();
+                        Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
                     }
                     else if (option == "5")
                     {
-                        Vegan();
+                        Visgerechten();
+                        Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
                     }
                     else if (option == "6")
                     {
+                        Vegan();
+                        Console.Write("Druk op enter om terug te gaan");
+                        Console.ReadLine();
+                    }
+                    else if (option == "7")
+                    {
                         Vega();
-                        Console.WriteLine();
+                        Console.Write("Druk op enter om terug te gaan");
+                        Console.ReadLine();
                     }
                     else
                     {
@@ -139,7 +153,30 @@ namespace Menu
                     string price = item.GetValue("price").ToString();
                     string soortgerecht = item.GetValue("soortgerecht").ToString();
 
+
                     if (soortgerecht == "Nagerecht")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+                }
+            }
+
+            static void Extra()
+            {
+                Console.WriteLine("Extra\n--------------------------------------------------------------------------\n");
+
+                string innit = File.ReadAllText(paths.gerechten);
+                var Count = JArray.Parse(innit);
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+
+
+                    if (soortgerecht == "Extra's")
                     {
                         Console.WriteLine($"{name}\n{info}\n-{price}\n");
                     }
@@ -148,27 +185,236 @@ namespace Menu
 
             static void Visgerechten()
             {
-                Console.WriteLine("Visgerechten");
+                Console.WriteLine("Visgerechten\n--------------------------------------------------------------------------\n");
+
+                string innit = File.ReadAllText(paths.gerechten);
+                var Count = JArray.Parse(innit);
+
+                Console.WriteLine("Voorgerechten:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vis == "ja" && soortgerecht == "voorgerecht")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
+
+                Console.WriteLine("\n\nHoofdgerechten:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vis == "ja" && soortgerecht == "hoofdgerecht")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
+
             }
 
             static void Vegan()
             {
-                Console.WriteLine("Vegan opties");
+                Console.WriteLine("Vegan opties\n--------------------------------------------------------------------------\n");
+
+                string innit = File.ReadAllText(paths.gerechten);
+                var Count = JArray.Parse(innit);
+
+                Console.WriteLine("\n\nVoorgerechten:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vegan == "ja" && soortgerecht =="voorgerecht")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
+
+                Console.WriteLine("\n\nHoofdgerechten:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vegan == "ja" && soortgerecht == "hoofdgerecht")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
+
+                Console.WriteLine("\n\nNagerechten:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vegan == "ja" && soortgerecht == "Nagerecht")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
+
+                Console.WriteLine("\n\nExtra:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vegan == "ja" && soortgerecht == "Extra's")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
             }
 
             static void Vega()
             {
-                Console.WriteLine("Vega opties");
+                Console.WriteLine("Vega opties\n--------------------------------------------------------------------------\n");
+
+                string innit = File.ReadAllText(paths.gerechten);
+                var Count = JArray.Parse(innit);
+
+                Console.WriteLine("\n\nVoorgerechten:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vega == "ja" && soortgerecht == "voorgerecht")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
+
+                Console.WriteLine("\n\nHoofdgerechten:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vega == "ja" && soortgerecht == "hoofdgerecht")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
+
+                Console.WriteLine("\n\nNagerechten:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vega == "ja" && soortgerecht == "Nagerecht")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
+
+                Console.WriteLine("\n\nExtra:\n");
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                    string price = item.GetValue("price").ToString();
+                    string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string vegan = item.GetValue("vegan").ToString();
+                    string vega = item.GetValue("vega").ToString();
+                    string vis = item.GetValue("vis").ToString();
+
+                    if (vega == "ja" && soortgerecht == "Extra's")
+                    {
+                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                    }
+
+                }
+
             }
+            
 
 
             static void Alles()
             {
                 Voorgerechten();
+                Console.WriteLine("\n\n");
                 Hoofdgerechten();
+                Console.WriteLine("\n\n");
                 Nagerechten();
+                Console.WriteLine("\n\n");
+                Extra();
+                Console.WriteLine("\n\n");
                 Visgerechten();
+                Console.WriteLine("\n\n");
                 Vegan();
+                Console.WriteLine("\n\n");
                 Vega();
             }
 

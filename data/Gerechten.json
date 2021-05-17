@@ -20,12 +20,12 @@
       },
       {
         "name": "Soep van de dag",
-        "info": "Altijd een vlees en vega(n) variant beschikbaar. Vraag naar de soep van vandaag!",
+        "info": "Altijd een vlees, vis en vega(n) variant beschikbaar. Vraag naar de soep van vandaag!",
         "price": "5,95",
         "soortgerecht": "voorgerecht",
         "vega": "ja",
         "vegan": "ja",
-        "vis":  "nee"
+        "vis":  "ja"
       },
       {
         "name": "(Paddenstoelen)ragout met parmezaankoekjes",
@@ -213,7 +213,7 @@
         "info": "Heerlijke krokante nachos met Goudse kaas en een versgemaakte avacado dip",
         "price": "8,95",
         "soortgerecht": "Extra's",
-        "vega": "ja",
+        "vega": "nee",
         "vegan": "ja",
         "vis":  "nee"
       },
@@ -222,7 +222,7 @@
         "info": "Verschillende focassias met kaas, ui en dip",
         "price": "5,95",
         "soortgerecht": "Extra's",
-        "vega": "ja",
+        "vega": "nee",
         "vegan": "ja",
         "vis":  "nee"
       },
