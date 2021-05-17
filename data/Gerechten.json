@@ -4,157 +4,236 @@
         "name": "Gazpacho",
         "info": "Gazpacho van watermeloen, tomaat, limoen, gegarneerd met komkommer en basilicum.",
         "price": "6,95",
-        "soortgerecht": "voorgerecht"
+        "soortgerecht": "voorgerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Steak/bieten tartare",
         "info": "De klassieke steak tartare met ei, sjalot, en augurk, of de bietenvariant met feta.",
         "price": "7.95",
-        "soortgerecht": "voorgerecht"
+        "soortgerecht": "voorgerecht",
+        "vega": "nee",
+        "vegan": "nee",
+        "vis":  "nee"
       },
       {
         "name": "Soep van de dag",
         "info": "Altijd een vlees en vega(n) variant beschikbaar. Vraag naar de soep van vandaag!",
         "price": "5,95",
-        "soortgerecht": "voorgerecht"
+        "soortgerecht": "voorgerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "(Paddenstoelen)ragout met parmezaankoekjes",
         "info": "Een heerlijke hartige combinatie van ragout met een kazig parmezaankoekje.",
         "price": "6,95",
-        "soortgerecht": "voorgerecht"
+        "soortgerecht": "voorgerecht",
+        "vega": "nee",
+        "vegan": "nee",
+        "vis":  "nee"
       },
       {
         "name": "Tabouleh",
         "info": "Lekkere frisse peterseliesalade met een klein zuurtje, bulgur, tomaten, munt en ui.",
         "price": "5,95",
-        "soortgerecht": "voorgerecht"
+        "soortgerecht": "voorgerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Vangst van de dag",
         "info": "In de ochtend gevangen verse vis met patat of aardappelschijfjes en salade.",
         "price": "Prijs verschilt",
-        "soortgerecht": "hoofdgerecht"
+        "soortgerecht": "hoofdgerecht",
+        "vega": "nee",
+        "vegan": "nee",
+        "vis":  "ja"
+
       },
       {
         "name": "Club Sandwich",
-        "info": "De klassieke steak tartare met ei, sjalot, en augurk, of de bietenvariant met feta.",
+        "info": "Een sandwich van speltbrood met vlees of vis, heerlijke spread, tuinkers, tomaat, avacado en rauwkorst",
         "price": "9,95",
-        "soortgerecht": "hoofdgerecht"
+        "soortgerecht": "hoofdgerecht",
+        "vega": "nee",
+        "vegan": "nee",
+        "vis":  "ja"
       },
       {
         "name": "Green Burger",
         "info": "Een lekkere burger met peen, ui, (vegan) feta, babyspinazie en rode bieten-hummus. Keuze uit rundvlees, kip, kabeljauw of portobello.",
         "price": "12,95",
-        "soortgerecht": "hoofdgerecht"
+        "soortgerecht": "hoofdgerecht",
+        "vega": "nee",
+        "vegan": "nee",
+        "vis":  "ja"
       },
       {
         "name": "Penne prei en bonensaus",
         "info": "Een lekker frisse pasta van volkoren speltpenne, witte bonen, met prei en knoflook met zalm, of vlees(vervanger) naar keuze.",
         "price": "11,95",
-        "soortgerecht": "hoofdgerecht"
+        "soortgerecht": "hoofdgerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "ja"
       },
       {
         "name": "Rigatoni met pompoen en walnoten-knoflookkruim",
-        "info": "Mezze rigatoni (grove pasta) met pompoen, walnoten, knoflook en salie met vlees of vervanger naar keuze.",
+        "info": "Mezze rigatoni (grove pasta) met pompoen, walnoten, knoflook en salie met vis, vlees(vervanger) naar keuze.",
         "price": "9,95",
-        "soortgerecht": "hoofdgerecht"
+        "soortgerecht": "hoofdgerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "ja"
       },
       {
         "name": "Penne boerenkool en tahin",
         "info": "Volkoren penne rigate met boerenkool, snoeptomaatjes en witte tahin (sesampasta) met vlees, vis of vervanger naar keuze.",
         "price": "9,95",
-        "soortgerecht": "hoofdgerecht"
+        "soortgerecht": "hoofdgerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "ja"
       },
       {
         "name": "Spanakopita",
         "info": "Een griekse klassieker van filodeeg, spinazie, feta, en een beetje bulgur.",
         "price": "10,95",
-        "soortgerecht": "hoofdgerecht"
+        "soortgerecht": "hoofdgerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Chili con/sin Carne",
         "info": "Een heerlijke schotel van kidneybonen, bruine bonen, en heerlijke tomatensaus met rijst of aardappels naar keuze.",
         "price": "11,95",
-        "soortgerecht": "hoofdgerecht"
+        "soortgerecht": "hoofdgerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Taco(bowl)",
         "info": "Taco of bowl (zonder taco) met zoete aardappel, tomaat, basmatirijst, avocado, zwarte bonen.",
         "price": "8,95",
-        "soortgerecht": "hoofdgerecht"
+        "soortgerecht": "hoofdgerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Brownies met biscuit en frambozen",
         "info": "Een vegan brownie met stukjes koek en framboos.",
         "price": "7,95",
-        "soortgerecht": "Nagerecht"
+        "soortgerecht": "Nagerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Panna cotta met gezouten honing-notencrumble",
         "info": "Een frisse panna cotta met een dressing van cashewnoten en bloemenhoning.",
         "price": "8,95",
-        "soortgerecht": "Nagerecht"
+        "soortgerecht": "Nagerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Espresso martini-tiramisu",
         "info": "Een frisse en romige tiramisu met tonen van espresso en martini.",
         "price": "9,95",
-        "soortgerecht": "Nagerecht"
+        "soortgerecht": "Nagerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Chocolademousse",
         "info": "Een verse veganistische chocolademousse, vers bereid door onze huischef.",
         "price": "5,95",
-        "soortgerecht": "Nagerecht"
+        "soortgerecht": "Nagerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Fruitsalade",
         "info": "Een frisse, vers gesneden fruitsalade met appel, kersen, peer, sinaasappel en mango.",
         "price": "4,95",
-        "soortgerecht": "Nagerecht"
+        "soortgerecht": "Nagerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Super Yoghurt",
         "info": "Lekkere frisse extra proteine yoghurt met 3 scheppen vers fruit naar keuze!",
         "price": "4,95",
-        "soortgerecht": "Nagerecht"
+        "soortgerecht": "Nagerecht",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "6 Bitter-/falafelballen",
-        "info": "Een vegan brownie met stukjes koek en framboos.",
+        "info": "Naar wens uit de oven of frituur",
         "price": "6,95",
-        "soortgerecht": "Extra's"
+        "soortgerecht": "Extra's",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Tafelborrelplank",
-        "info": "Een frisse panna cotta met een dressing van cashewnoten en bloemenhoning.",
+        "info": "Lekkere snacks voor de hele tafel",
         "price": "14,95",
-        "soortgerecht": "Extra's"
+        "soortgerecht": "Extra's",
+        "vega": "nee",
+        "vegan": "nee",
+        "vis":  "nee"
       },
       {
-        "name": "(Groene) loempia’s",
-        "info": "Een frisse en romige tiramisu met tonen van espresso en martini.",
+        "name": "(Groene) loempias",
+        "info": "Tofu- of kiploempias met frisse limoen, munt, koriander en komkommers",
         "price": "5,95",
-        "soortgerecht": "Extra's"
+        "soortgerecht": "Extra's",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
-        "name": "Nacho’s met kaas",
-        "info": "Een verse veganistische chocolademousse, vers bereid door onze huischef.",
+        "name": "Nachos met kaas",
+        "info": "Heerlijke krokante nachos met Goudse kaas en een versgemaakte avacado dip",
         "price": "8,95",
-        "soortgerecht": "Extra's"
+        "soortgerecht": "Extra's",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
-        "name": "Focaccia’s",
-        "info": "Een frisse, vers gesneden fruitsalade met appel, kersen, peer, sinaasappel en mango.",
+        "name": "Focaccias",
+        "info": "Verschillende focassias met kaas, ui en dip",
         "price": "5,95",
-        "soortgerecht": "Extra's"
+        "soortgerecht": "Extra's",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       },
       {
         "name": "Groentechips",
-        "info": "Lekkere frisse extra proteïne yoghurt met 3 scheppen vers fruit naar keuze!",
+        "info": "Groentechips met Middelandse zeezout en versgeplukte kruiden",
         "price": "4,95",
-        "soortgerecht": "Extra's"
+        "soortgerecht": "Extra's",
+        "vega": "ja",
+        "vegan": "ja",
+        "vis":  "nee"
       }
 
 ]
