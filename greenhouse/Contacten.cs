@@ -61,41 +61,62 @@ namespace contact
             var array = JArray.Parse(initialJson);
 
             // Gaat door elk element van de JSON array heen
-            foreach (JObject q in array)
+            bool running = true;
+            while (running)
             {
-                // Kijkt of het antwoord al is ingevuld
-                JToken isFull = q["Answer"];
-
-                if (isFull == null)
+                if(array == null)
+                foreach (JObject q in array)
                 {
-                    // Pakt values Text en Name van de JSON file
-                    string vraag = q.GetValue("Text").ToString();
-                    string naam = q.GetValue("Name").ToString();
+                    // Kijkt of het antwoord al is ingevuld
+                    JToken isFull = q["Answer"];
 
-                    Console.WriteLine($"\n{naam} stelde de vraag : \t" + vraag + "\n");
-                    Console.WriteLine("Wil je deze vraag beantwoorden:\n \nY = Beantwoorden \nENTER = Volgende vraag\n");
-
-
-                    string choice = Console.ReadLine();
-                    choice = choice.ToUpper();
-
-                    if (choice == "Y")
+                    if (isFull == null)
                     {
+                        // Pakt values Text en Name van de JSON file
+                        string vraag = q.GetValue("Text").ToString();
+                        string naam = q.GetValue("Name").ToString();
 
-                        Console.WriteLine("Wat is je antwoord op de vraag: \n");
-                        string antwoord = Console.ReadLine();
-                        // Voegt Answer toe aan het element
-                        q["Answer"] = antwoord;
-                        // Slaat het op in JSON
-                        File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
+                        Console.WriteLine($"\n{naam} stelde de vraag : \t" + vraag + "\n");
+                        Console.WriteLine("Wil je deze vraag beantwoorden:\n \nY = Beantwoorden\nD = Delete \nENTER = Volgende vraag\n");
 
-                    }
 
-                    Console.Clear();
+                        string choice = Console.ReadLine();
+                        choice = choice.ToUpper();
+
+                        if (choice.ToUpper() == "Y")
+                        {
+
+                            Console.WriteLine("Wat is je antwoord op de vraag: \n");
+                            string antwoord = Console.ReadLine();
+                            // Voegt Answer toe aan het element
+                            q["Answer"] = antwoord;
+                            // Slaat het op in JSON
+                            File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
+
+                        }
+                        if (choice.ToUpper() == "D")
+                        {
+
+
+                            q["Answer"] = null;
+                            q["Answer"] = null;
+                            q["Answer"] = null;
+                            // Slaat het op in JSON
+                            File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
+
+                        }
+                        if (choice.ToUpper() == "Q")
+                        {
+                            running = false;
+                            Console.WriteLine("Tot ziens!");
+
+                        }
+                        Console.Clear();
+                        }
+                        running = false;
                 }
+
             }
-
-
         }
 
         public static void showInfo()
@@ -133,7 +154,7 @@ namespace contact
             {
                 string vraag = "\n";
                 string inputVraag;
-                bool runningVraag = true; 
+                bool runningVraag = true;
                 while (runningVraag)
                 {
                     inputVraag = Console.ReadLine();
