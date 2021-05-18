@@ -106,5 +106,21 @@
     "Tijd": "16:00",
     "Datum": "31/12",
     "KlantID": "3726"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "Re",
+    "TafelNummer": "2",
+    "Res_ID": 13,
+    "Tijd": "19:00",
+    "Datum": "29/12"
+  },
+  {
+    "Naam": "Pieter",
+    "Achternaam": "Jan",
+    "TafelNummer": "14",
+    "Res_ID": 14,
+    "Tijd": "13:00",
+    "Datum": "19/05"
   }
 ]
