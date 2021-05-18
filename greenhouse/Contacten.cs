@@ -128,12 +128,12 @@ namespace contact
             Console.WriteLine("U kunt op de volgende manieren contact opnemen:\n");
             // verandering van de kleur van de tekst
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("-. Wij zijn telefonisch bereikbaar via ons telefoonummer: 010-794-4000.\n");
-            Console.WriteLine("-. U kunt ook een email sturen naar: greenhouse@green.nl.\n");
-            Console.WriteLine("-. Stuur een brief of bezoek onze locatie op:");
+            Console.WriteLine("- Wij zijn telefonisch bereikbaar via ons telefoonummer: 010-794-4000.\n");
+            Console.WriteLine("- U kunt ook een email sturen naar: greenhouse@green.nl.\n");
+            Console.WriteLine("- Stuur een brief of bezoek onze locatie op:");
             Console.WriteLine("   Adres: Wijnhaven 107, 3011 WN Rotterdam");
             Console.WriteLine("   Provincie: Zuid-Holland\n");
-            Console.WriteLine("-. U kunt ons ook online vinden via:");
+            Console.WriteLine("- U kunt ons ook online vinden via:");
             Console.WriteLine("   https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107");
             Console.WriteLine();
             Console.WriteLine("1. Tenslotte kunt een chat bericht sturen naar een medewerker, dit doet u als volgt:");

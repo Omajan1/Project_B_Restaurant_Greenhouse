@@ -25,6 +25,7 @@ namespace Menu
                 Console.WriteLine("7. Vega opties");
                 Console.WriteLine("8. Alles (u kan ook 'all' typen)");
                 Console.WriteLine("9. Terug naar home");
+                Console.WriteLine("Als u naar meerdere opties wilt kijken, kunt u meerdere opties invullen.\nDoe dit als volgt: '1,2'.");
                 Console.Write("Wat zou u willen zien: ");
                 string result = Console.ReadLine();
 
@@ -88,7 +89,7 @@ namespace Menu
                     }
                     else
                     {
-                        Console.WriteLine("This is not a valid option");
+                        Console.WriteLine("Dit is geen geldige optie");
                         Console.ReadLine();
                     }
                 }
