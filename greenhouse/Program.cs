@@ -3,7 +3,8 @@ using Rules;
 using reservering;
 using Menu;
 using contact;
-
+using System.Net.Mail;
+using System.Net;
 
 namespace Greenhouse
 {
@@ -104,6 +105,34 @@ namespace Greenhouse
                         break;
                     case "9":
                         running = false;
+                        break;
+
+                    case "20":
+                        try
+                        {
+                            string Emailusername = "greenhousesuporrt@gmail.com";
+                            string Emailpassword = "kinuqemwmtfrvjfr";
+                            using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
+                            {
+                                client.EnableSsl = true;
+                                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                                client.UseDefaultCredentials = false;
+                                client.Credentials = new NetworkCredential(Emailusername, Emailpassword);
+                                MailMessage msgObj = new MailMessage();
+                                msgObj.To.Add("jayjayboeske@gmail.com");
+                                msgObj.From = new MailAddress(Emailusername);
+                                msgObj.Subject = "Greenhouse";
+                                msgObj.Body = "test";
+                                client.Send(msgObj);
+
+                            }
+
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                            Console.ReadLine();
+                        }
                         break;
                     default:
                         Console.Clear();

@@ -6,6 +6,9 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using JSON;
 using ConsoleReader;
+using System.Net.Mail;
+using System.Net;
+
 namespace reservering
 {
 
@@ -326,7 +329,10 @@ namespace reservering
 						
 						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "")
                         {
-							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum);
+							Console.WriteLine("Wat is je email?");
+							string email = Console.ReadLine();
+
+							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, email);
 
 							// Laad het json bestand naar een string
 							string initialJson = File.ReadAllText(paths.reservaring);
@@ -372,7 +378,7 @@ namespace reservering
         {
 			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
         }
-		public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum )
+		public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum, string email )
         {
 			Random r = new Random();
 			this.Naam = naam;
@@ -388,6 +394,37 @@ namespace reservering
 			var Count = JArray.Parse(innit);
 			int len = Count.Count;
 			this.Res_ID = len + 1;
+
+			try
+			{
+				string Emailusername = "greenhousesuporrt@gmail.com";
+				string Emailpassword = "kinuqemwmtfrvjfr";
+				using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
+				{
+					client.EnableSsl = true;
+					client.DeliveryMethod = SmtpDeliveryMethod.Network;
+					client.UseDefaultCredentials = false;
+					client.Credentials = new NetworkCredential(Emailusername, Emailpassword);
+					MailMessage msgObj = new MailMessage();
+					msgObj.To.Add(email);
+					msgObj.From = new MailAddress(Emailusername);
+					msgObj.Subject = "Greenhouse reservering succesvol geplaatst!";
+					msgObj.Body = $"Beste {naam},\n" +
+						$"Er is een reservering geplaatst op {datum} aan tafel {tafelnummer}, u wordt verwacht om voor {tijd} in het restaurant te zijn." +
+						$"\nMet vriendelijke groet. \n\n Team greenhouse.";
+					client.Send(msgObj);
+
+				}
+
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+
+			}
+
+
+
 
 			Console.WriteLine($"Er is succesvol een reservering geplaatst op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur met ID {this.Res_ID}");
 		}
