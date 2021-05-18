@@ -1,6 +1,6 @@
 using NUnit.Framework;
 using Login;
-using Contact;
+using contact;
 namespace Nunit3
 {
     public class Tests
@@ -11,6 +11,21 @@ namespace Nunit3
             
         }
 
+        [Test]
+        public void Test_maken_van_een_reservaring()
+        {
+            // Moet false worden
+            reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00");
+
+            Assert.AreEqual(klant.Naam, "Naam");
+            Assert.AreEqual(klant.Achternaam, "Achternaam");
+            Assert.AreEqual(klant.TafelNummer, "5");
+            Assert.AreEqual(klant.Tijd, "16:00");
+            Assert.AreEqual(klant.Datum, "00/00");
+            Assert.AreEqual(klant.Datum.Length, 5);
+
+
+        }
 
 
         [Test]

@@ -20,19 +20,29 @@ namespace Filter
             return input;
         }
 
-        static public int FilterInt(string input)
+        static public bool FilterInt(string input)
         {
-            if (!typeCheckInt(input))
+            bool running = true;
+            while (running)
             {
-                Console.WriteLine("Dit is geen nummer, probeer het opnieuw.");
                 input = Console.ReadLine();
-                FilterMain.FilterInt(input);
-            } else
-            {
-                Console.WriteLine("Gelukt!");
-                return Convert.ToInt32(input);
+                if (!typeCheckInt(input))
+                {
+                    Console.WriteLine("Dit is geen nummer, probeer het opnieuw.");
+                    
+                    FilterMain.FilterInt(input);
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("Gelukt!");
+                    return true;
+                }
+
             }
-            return Convert.ToInt32(input);
+
+            return true;
+   
         }
 
         public static bool typeCheckInt(string input)

@@ -49,11 +49,12 @@ namespace Greenhouse
                 Console.WriteLine("2. Het menu bekijken                        ");
                 Console.WriteLine("3. De regels bekijken                       ");
                 Console.WriteLine("4. Contact opnemen met Greenhouse           ");
-                Console.WriteLine("5. FAQ                                      ");
-                Console.WriteLine("6. Alle geplaatste reserveringen laten zien ");
-                if(!darkMode) Console.WriteLine("7. Zet darkmode aan                         ");
-                else Console.WriteLine("7. Zet darkmode uit                         ");
-                Console.WriteLine("8. Exit                                     ");
+                Console.WriteLine("5. Alle gestelde vragen van gebruikers      ");
+                Console.WriteLine("6. FAQ                                      ");
+                Console.WriteLine("7. Alle geplaatste reserveringen laten zien ");
+                if(!darkMode) Console.WriteLine("8. Zet darkmode aan                         ");
+                else Console.WriteLine("8. Zet darkmode uit                         ");
+                Console.WriteLine("9. Exit                                     ");
                 Console.WriteLine("Zet hieronder uw keuze neer                 ");
 
 
@@ -80,12 +81,19 @@ namespace Greenhouse
                         contact.Contact.showAnswers();
                         break;
                     case "6":
-                        ReserveringMain.showReserveringen();
+                        contact.Contact.FAQ();
+                        Console.WriteLine("Druk op enter om terug te gaan");
+                        Console.ReadLine();
                         break;
                     case "7":
+                        Console.WriteLine("Wat is je naam?");
+                        ReserveringMain.showReserveringen(Console.ReadLine());
+                        break;
+
+                    case "8":
                         darkMode = !darkMode;
                         break;
-                    case "9":
+                    case "10":
                         Console.Clear();
                         Console.WriteLine("Gebruikersnaam:");
                         string username = Console.ReadLine();
@@ -94,7 +102,7 @@ namespace Greenhouse
                         if (Login.Login.check(username, password)) contact.Contact.showVragen();
                         else Console.WriteLine("Verkeerde gegevens ");
                         break;
-                    case "8":
+                    case "9":
                         running = false;
                         break;
                     default:
