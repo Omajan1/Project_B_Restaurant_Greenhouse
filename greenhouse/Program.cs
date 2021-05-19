@@ -94,7 +94,12 @@ namespace Greenhouse
                     case "8":
                         darkMode = !darkMode;
                         break;
-                    case "10":
+
+                    case "9":
+                        running = false;
+                        break;
+
+                    case "4491":
                         Console.Clear();
                         Console.WriteLine("Gebruikersnaam:");
                         string username = Console.ReadLine();
@@ -103,37 +108,7 @@ namespace Greenhouse
                         if (Login.Login.check(username, password)) contact.Contact.showVragen();
                         else Console.WriteLine("Verkeerde gegevens ");
                         break;
-                    case "9":
-                        running = false;
-                        break;
 
-                    case "20":
-                        try
-                        {
-                            string Emailusername = "greenhousesuporrt@gmail.com";
-                            string Emailpassword = "kinuqemwmtfrvjfr";
-                            using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
-                            {
-                                client.EnableSsl = true;
-                                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                                client.UseDefaultCredentials = false;
-                                client.Credentials = new NetworkCredential(Emailusername, Emailpassword);
-                                MailMessage msgObj = new MailMessage();
-                                msgObj.To.Add("jayjayboeske@gmail.com");
-                                msgObj.From = new MailAddress(Emailusername);
-                                msgObj.Subject = "Greenhouse";
-                                msgObj.Body = "test";
-                                client.Send(msgObj);
-
-                            }
-
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e);
-                            Console.ReadLine();
-                        }
-                        break;
                     default:
                         Console.Clear();
                         break;

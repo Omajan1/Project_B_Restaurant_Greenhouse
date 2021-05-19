@@ -1,3 +1,26 @@
 [
- 
+  {
+    "Naam": "anne",
+    "Achternaam": "flaps",
+    "TafelNummer": "8",
+    "Res_ID": 1,
+    "Tijd": "13:00",
+    "Datum": "20/05"
+  },
+  {
+    "Naam": "test",
+    "Achternaam": "test2",
+    "TafelNummer": "1",
+    "Res_ID": 2,
+    "Tijd": "13:00",
+    "Datum": "29/12"
+  },
+  {
+    "Naam": "Levi",
+    "Achternaam": "teter",
+    "TafelNummer": "2",
+    "Res_ID": 3,
+    "Tijd": "13:00",
+    "Datum": "29/12"
+  }
 ]
