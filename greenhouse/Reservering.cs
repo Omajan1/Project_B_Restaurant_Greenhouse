@@ -352,9 +352,11 @@ namespace reservering
 										msgObj.To.Add(email);
 										msgObj.From = new MailAddress(Emailusername);
 										msgObj.Subject = "Greenhouse reservering succesvol geplaatst!";
-										msgObj.Body = $"Beste {naam},\n" +
+										msgObj.Body = $"Beste {naam} {achternaam},\n\n" +
 											$"Er is een reservering geplaatst op {datum} aan tafel {tafelNummer}, u wordt verwacht om voor {tijd} in het restaurant te zijn." +
-											$"\nMet vriendelijke groet. \n\n Team greenhouse.";
+											$"\nDeze reservaring is voor 3 uur, en er wordt verwacht dat u voor die tijd klaar bent met eten." +
+											$"\nVoor alle voorwaarden die aan deze reservering vastzitten kunt u naar het tabje regels in de applicatie." +
+											$"\n\nMet vriendelijke groet, \n\nTeam Greenhouse BV\nRotterdam, 3002AP";
 										client.Send(msgObj);
 										EmailNotFound = false;
 
