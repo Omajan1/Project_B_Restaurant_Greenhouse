@@ -15,7 +15,7 @@ namespace Nunit3
         public void Test_maken_van_een_reservaring()
         {
             // Moet false worden
-            reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00");
+            reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "");
 
             Assert.AreEqual(klant.Naam, "Naam");
             Assert.AreEqual(klant.Achternaam, "Achternaam");
