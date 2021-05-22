@@ -184,7 +184,7 @@ namespace reservering
 				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
 
 				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
-				Console.WriteLine(" Θ zijn de stoelen.");
+				Console.WriteLine(" Θ zijn de stoelen.\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
 
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
 
@@ -282,24 +282,23 @@ namespace reservering
 			string achternaam = "";
 			string tafelNummer = "";
 			string datum = "";
-			
+			string aantalPersonen = "";
 
             while (running)
             {
 				// 3 kan niet als 1 en 2 niet gedaan zijn
 				Console.Clear();
+				Console.WriteLine("Typ eerst het nummer van de optie die je wilt invullen en druk dan op enter, vul daarna je gegevens in : ");
 				Console.WriteLine("1. Kies een datum                      : " + datum);
 				Console.WriteLine("2. Op welk tijdstip wilt u komen eten? : " + tijd);
 				Console.WriteLine("3. Kies een tafel                      : " + tafelNummer);
 				Console.WriteLine("4. Wat is uw voornaam                  : " + naam);
 				Console.WriteLine("5. Wat is uw achternaam                : " + achternaam);
-				Console.WriteLine("6. Plaats reservering                  ");
-				Console.WriteLine("7. Terug naar het hoofdmenu            ");
+				Console.WriteLine("6. Met hoeveel mensen komt u eten?     : " + aantalPersonen);
+				Console.WriteLine("7. Plaats reservering                  ");
+				Console.WriteLine("8. Terug naar het hoofdmenu            ");
 
 				switch (Console.ReadLine()){
-					case "7":
-						running = false;
-						break;
 					case "1":
 						datum = getDate();
 						break;
@@ -326,8 +325,14 @@ namespace reservering
 						achternaam = getAchternaam();
 						break;
 					case "6":
+						aantalPersonen = Filter.FilterMain.FilterAantalPersonen();
+						break;
+					case "8":
+						running = false;
+						break;
+					case "7":
 						
-						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "")
+						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "" && aantalPersonen != "")
                         {
 
 							bool EmailNotFound = true;
@@ -373,7 +378,7 @@ namespace reservering
 
 
 
-							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum);
+							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, aantalPersonen);
 
 							// Laad het json bestand naar een string
 							string initialJson = File.ReadAllText(paths.reservaring);
@@ -410,16 +415,17 @@ namespace reservering
     {
 		public string Naam { get; set; }
 		public string Achternaam { get; set; }
-		public string TafelNummer { get; set; }		public int Res_ID { get; set; }
+		public string TafelNummer { get; set; }		
+		public int Res_ID { get; set; }
 		public string Tijd { get; set; }
 		public string Datum { get; set; }
 		
-
+		public string AantalPersonen { get; set; }
 		public void Info()
         {
 			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
         }
-		public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum)
+		public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum, string aantalPersonen)
         {
 			Random r = new Random();
 			this.Naam = naam;
@@ -427,7 +433,8 @@ namespace reservering
 			this.TafelNummer = tafelnummer;
 			this.Tijd = tijd;
 			this.Datum = datum;
-	
+			this.AantalPersonen = aantalPersonen;
+
 			// Laad het json bestand naar een string
 			string innit = File.ReadAllText(JSON.paths.reservaring);
 
@@ -435,12 +442,6 @@ namespace reservering
 			var Count = JArray.Parse(innit);
 			int len = Count.Count;
 			this.Res_ID = len + 1;
-
-
-
-
-
-
 			Console.WriteLine($"Er is succesvol een reservering geplaatst op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur met ID {this.Res_ID}");
 		}
 	}
