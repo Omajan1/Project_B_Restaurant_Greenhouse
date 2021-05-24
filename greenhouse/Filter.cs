@@ -4,6 +4,35 @@ namespace Filter
 {
     public class FilterMain
     {
+        public static string FilterAantalPersonen()
+        {
+            string userInput = "";
+            bool isNotInt = true;
+            while (isNotInt)
+            {
+                Console.WriteLine("Met hoeveel personen wilt u reserveren?\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
+                userInput = Console.ReadLine();
+                if (typeCheckInt(userInput))
+                {
+                    if (Convert.ToInt32(userInput) > 0 && Convert.ToInt32(userInput) < 7)
+                    {
+                        return userInput;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Dit is een te grote groep, reserveer via het volgende telefoon nummer : 010-794-4000");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Dit is geen geldig nummer!");
+                }
+
+            }
+            return "";
+            
+            
+        }
         static public string FilterString(string input)
         {
             if (typeCheckInt(input))
