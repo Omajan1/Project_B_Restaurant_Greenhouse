@@ -184,7 +184,7 @@ namespace reservering
 				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
 
 				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
-				Console.WriteLine(" Θ zijn de stoelen.");
+				Console.WriteLine(" Θ zijn de stoelen.\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
 
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
 
@@ -282,24 +282,23 @@ namespace reservering
 			string achternaam = "";
 			string tafelNummer = "";
 			string datum = "";
-			
+			string aantalPersonen = "";
 
             while (running)
             {
 				// 3 kan niet als 1 en 2 niet gedaan zijn
 				Console.Clear();
+				Console.WriteLine("Typ eerst het nummer van de optie die je wilt invullen en druk dan op enter, vul daarna je gegevens in : ");
 				Console.WriteLine("1. Kies een datum                      : " + datum);
 				Console.WriteLine("2. Op welk tijdstip wilt u komen eten? : " + tijd);
 				Console.WriteLine("3. Kies een tafel                      : " + tafelNummer);
 				Console.WriteLine("4. Wat is uw voornaam                  : " + naam);
 				Console.WriteLine("5. Wat is uw achternaam                : " + achternaam);
-				Console.WriteLine("6. Plaats reservering                  ");
-				Console.WriteLine("7. Terug naar het hoofdmenu            ");
+				Console.WriteLine("6. Met hoeveel mensen komt u eten?     : " + aantalPersonen);
+				Console.WriteLine("7. Plaats reservering                  ");
+				Console.WriteLine("8. Terug naar het hoofdmenu            ");
 
 				switch (Console.ReadLine()){
-					case "7":
-						running = false;
-						break;
 					case "1":
 						datum = getDate();
 						break;
@@ -326,13 +325,60 @@ namespace reservering
 						achternaam = getAchternaam();
 						break;
 					case "6":
+						aantalPersonen = Filter.FilterMain.FilterAantalPersonen();
+						break;
+					case "8":
+						running = false;
+						break;
+					case "7":
 						
-						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "")
+						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "" && aantalPersonen != "")
                         {
-							Console.WriteLine("Wat is je email?");
-							string email = Console.ReadLine();
 
-							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, email);
+							bool EmailNotFound = true;
+							string email;
+
+                            while (EmailNotFound)
+                            {
+								Console.WriteLine("Wat is je email?");
+								email = Console.ReadLine();
+								try
+								{
+
+									string Emailusername = "greenhousesuporrt@gmail.com";
+									string Emailpassword = "kinuqemwmtfrvjfr";
+									using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
+									{
+										client.EnableSsl = true;
+										client.DeliveryMethod = SmtpDeliveryMethod.Network;
+										client.UseDefaultCredentials = false;
+										client.Credentials = new NetworkCredential(Emailusername, Emailpassword);
+										MailMessage msgObj = new MailMessage();
+										msgObj.To.Add(email);
+										msgObj.From = new MailAddress(Emailusername);
+										msgObj.Subject = "Greenhouse reservering succesvol geplaatst!";
+										msgObj.Body = $"Beste {naam} {achternaam},\n\n" +
+											$"Er is een reservering geplaatst op {datum} aan tafel {tafelNummer}, u wordt verwacht om voor {tijd} in het restaurant te zijn." +
+											$"\nDeze reservaring is voor 3 uur, en er wordt verwacht dat u voor die tijd klaar bent met eten." +
+											$"\nVoor alle voorwaarden die aan deze reservering vastzitten kunt u naar het tabje regels in de applicatie." +
+											$"\n\nMet vriendelijke groet, \n\nTeam Greenhouse BV\nRotterdam, 3002AP";
+										client.Send(msgObj);
+										EmailNotFound = false;
+
+									}
+
+								}
+								catch 
+								{
+									Console.WriteLine("Dit is geen geldige email, probeer opnieuw.");
+
+								}
+							}
+
+
+
+
+							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, aantalPersonen);
 
 							// Laad het json bestand naar een string
 							string initialJson = File.ReadAllText(paths.reservaring);
@@ -369,16 +415,17 @@ namespace reservering
     {
 		public string Naam { get; set; }
 		public string Achternaam { get; set; }
-		public string TafelNummer { get; set; }		public int Res_ID { get; set; }
+		public string TafelNummer { get; set; }		
+		public int Res_ID { get; set; }
 		public string Tijd { get; set; }
 		public string Datum { get; set; }
 		
-
+		public string AantalPersonen { get; set; }
 		public void Info()
         {
 			Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
         }
-		public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum, string email )
+		public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum, string aantalPersonen)
         {
 			Random r = new Random();
 			this.Naam = naam;
@@ -386,7 +433,8 @@ namespace reservering
 			this.TafelNummer = tafelnummer;
 			this.Tijd = tijd;
 			this.Datum = datum;
-	
+			this.AantalPersonen = aantalPersonen;
+
 			// Laad het json bestand naar een string
 			string innit = File.ReadAllText(JSON.paths.reservaring);
 
@@ -394,38 +442,6 @@ namespace reservering
 			var Count = JArray.Parse(innit);
 			int len = Count.Count;
 			this.Res_ID = len + 1;
-
-			try
-			{
-				string Emailusername = "greenhousesuporrt@gmail.com";
-				string Emailpassword = "kinuqemwmtfrvjfr";
-				using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
-				{
-					client.EnableSsl = true;
-					client.DeliveryMethod = SmtpDeliveryMethod.Network;
-					client.UseDefaultCredentials = false;
-					client.Credentials = new NetworkCredential(Emailusername, Emailpassword);
-					MailMessage msgObj = new MailMessage();
-					msgObj.To.Add(email);
-					msgObj.From = new MailAddress(Emailusername);
-					msgObj.Subject = "Greenhouse reservering succesvol geplaatst!";
-					msgObj.Body = $"Beste {naam},\n" +
-						$"Er is een reservering geplaatst op {datum} aan tafel {tafelnummer}, u wordt verwacht om voor {tijd} in het restaurant te zijn." +
-						$"\nMet vriendelijke groet. \n\n Team greenhouse.";
-					client.Send(msgObj);
-
-				}
-
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e);
-
-			}
-
-
-
-
 			Console.WriteLine($"Er is succesvol een reservering geplaatst op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur met ID {this.Res_ID}");
 		}
 	}
