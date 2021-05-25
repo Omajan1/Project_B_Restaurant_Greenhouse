@@ -99,7 +99,7 @@ namespace Greenhouse
                         running = false;
                         break;
 
-                    case "4491":
+                    case "666":
                         Console.Clear();
                         Console.WriteLine("Gebruikersnaam:");
                         string username = Console.ReadLine();
