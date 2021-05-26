@@ -156,35 +156,36 @@ namespace reservering
 				//■
 				Console.WriteLine("                     -TAFEL INDELING GREENHOUSE-                                      |                   |              ");
 				Console.WriteLine("                                                                                      |                   |              ");
-				Console.WriteLine("---------------------------------------------------------------------                 |                   |              ");
+				Console.WriteLine("--------------    --------------    ---------------    --------------                 |                   |              ");
 				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("| Θ ■ 1 ■ Θ      ■ ■ ■      Θ ■ 8 ■ Θ     Θ ■ 10■ Θ      Θ ■ ■ ■ Θ  |                 |                   |              ");
-				Console.WriteLine("|   ■ ■ ■      Θ ■ 5 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("|                ■ ■ ■                                   Θ ■ 15■ Θ  |                 |                   |              ");
-				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
+				Console.WriteLine("  Θ ■ 1 ■ Θ      ■ ■ ■      Θ ■ 8 ■ Θ     Θ ■ 10■ Θ      Θ ■ ■ ■ Θ  |                 |                   |              ");
+				Console.WriteLine("    ■ ■ ■      Θ ■ 5 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
+				Console.WriteLine("|                ■ ■ ■                                   Θ ■ 15■ Θ                    |                   |              ");
+				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■                      |                   |              ");
 				Console.WriteLine("| Θ ■ 2 ■ Θ      ■ ■ ■      Θ ■ 9 ■ Θ     Θ ■ 11■ Θ      Θ ■ ■ ■ Θ  |         -----------------------------------------  ");
-				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
-				Console.WriteLine("|                ■ ■ ■                                              |         | De bar is open van 13:00 tot 01:00    |  ");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■          Θ        |         -----------------------------------------  ");
+				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |/         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
+				Console.WriteLine("                 ■ ■ ■                                       0                | De bar is open van 13:00 tot 01:00    |  ");
+				Console.WriteLine("    ■ ■ ■                                   ■ ■ ■          WC ----->          -----------------------------------------  ");
 				Console.WriteLine("| Θ ■ 3 ■ Θ      ■ ■ ■                    Θ ■ 12■ Θ       ----------|                                                    ");
 				Console.WriteLine("|   ■ ■ ■      Θ ■ 7 ■ Θ                    ■ ■ ■       Θ |         |                        ^                           ");
 				Console.WriteLine("|                ■ ■ ■                                    |         |                        |                           ");
 				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |   B     |                        |                           ");
 				Console.WriteLine("| Θ ■ ■ ■ Θ                               Θ ■ 13■ Θ       |   A     |");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |   R     |");
-				Console.WriteLine("| Θ ■ 4 ■ Θ                                               |         |");
+				Console.WriteLine("    ■ ■ ■                                   ■ ■ ■       Θ |   R     |");
+				Console.WriteLine("  Θ ■ 4 ■ Θ                                               |         |");
 				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |         |");
 				Console.WriteLine("| Θ ■ ■ ■ Θ                               Θ ■ 14■ Θ       |         |");
 				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |         |");
 				Console.WriteLine("|                             ^                           |         |");
 				Console.WriteLine("|                             |                         Θ |         |");
-				Console.WriteLine("---------------------------   |    ----------------------------------\n");
+				Console.WriteLine("---------    --------------   |    ------------    ------------------\n");
 
 				//voor 1,2,3,... komt iets waarbij hij alleen de tafels laat zien die vrij zijn
 				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
 
 				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
 				Console.WriteLine(" Θ zijn de stoelen.");
+				Console.WriteLine(" WC is aangegeven aan de rechter kant van het restaurant.");
 
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
 
