@@ -184,14 +184,11 @@ namespace reservering
 				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
 
 				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
-<<<<<<< HEAD
 				Console.WriteLine(" Θ zijn de stoelen.");
 				Console.WriteLine(" De WC is aangegeven aan de rechter kant van het restaurant.");
-=======
 				Console.WriteLine(" Θ zijn de stoelen.\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
->>>>>>> main
 
-				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
+				Console.WriteLine("Aan welke tafel wilt u eten? Vul het nummer van deze tafel in:");
 
 				// Voeg check toe voor int, het crasht als je een string invoeft
 				// int tafelNummer = Convert.ToInt32(Console.ReadLine());
@@ -263,7 +260,7 @@ namespace reservering
 						string table = item.GetValue("TafelNummer").ToString();
 						string tijd = item.GetValue("Tijd").ToString();
 
-						Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}.\n");
+						Console.WriteLine($"{name} heeft een reservering op {date} voor tafel {table} om {tijd}.\n");
 						counter += 1;
 						if (counter % 5 == 0)
 						{
