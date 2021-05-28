@@ -53,7 +53,7 @@ namespace reservering
 		public static string getDate()
         {
 			Console.WriteLine("Wanneer wilt u een reservering plaatsen? : ");
-			Console.WriteLine("In het format DD/MM, zoals dit : 29/02 of 02/05");
+			Console.WriteLine("In het format DD/MM, zoals dit: 29/02 of 02/05");
 
 			// check:
 			string dateOutput = Filter.DateCheck.Check();
@@ -217,7 +217,7 @@ namespace reservering
 						
 						if (tafelNummer == "" || Convert.ToInt32(tafelNummer) < 1 || Convert.ToInt32(tafelNummer) > 15 || table_is_in_use) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 						{
-							Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer");
+							Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer.");
 						}
 						else
 						{
@@ -263,7 +263,7 @@ namespace reservering
 						string table = item.GetValue("TafelNummer").ToString();
 						string tijd = item.GetValue("Tijd").ToString();
 
-						Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}\n");
+						Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}.\n");
 						counter += 1;
 						if (counter % 5 == 0)
 						{
@@ -318,7 +318,7 @@ namespace reservering
                         else
                         {
 							Console.Clear();
-							Console.WriteLine("Vul eerst optie 1 en 2 in : ");
+							Console.WriteLine("Vul eerst optie 1 en 2 in: ");
 							Console.ReadLine();
                         }
 						
@@ -345,7 +345,7 @@ namespace reservering
 
                             while (EmailNotFound)
                             {
-								Console.WriteLine("Wat is je email?");
+								Console.WriteLine("Wat is uw email?");
 								email = Console.ReadLine();
 								try
 								{
@@ -364,7 +364,7 @@ namespace reservering
 										msgObj.Subject = "Greenhouse reservering succesvol geplaatst!";
 										msgObj.Body = $"Beste {naam} {achternaam},\n\n" +
 											$"Er is een reservering geplaatst op {datum} aan tafel {tafelNummer}, u wordt verwacht om voor {tijd} in het restaurant te zijn." +
-											$"\nDeze reservaring is voor 3 uur, en er wordt verwacht dat u voor die tijd klaar bent met eten." +
+											$"\nDeze reservering is voor 3 uur, en er wordt verwacht dat u voor die tijd klaar bent met eten." +
 											$"\nVoor alle voorwaarden die aan deze reservering vastzitten kunt u naar het tabje regels in de applicatie." +
 											$"\n\nMet vriendelijke groet, \n\nTeam Greenhouse BV\nRotterdam, 3002AP";
 										client.Send(msgObj);

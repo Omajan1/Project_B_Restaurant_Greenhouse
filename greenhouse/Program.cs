@@ -16,7 +16,7 @@ namespace Greenhouse
             
             
             
-
+            
             Console.SetWindowSize(180, 42);
             bool darkMode = false;
             bool running = true;
@@ -41,11 +41,11 @@ namespace Greenhouse
                 Console.WriteLine("-----------Voor elke portomonee en altijd lekker!----------");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("--------|  Elke dag open, vannaf 13:00 tot 22:00  |--------");
+                Console.WriteLine("--------|  Elke dag open, vanaf 13:00 tot 22:00  |--------");
                 Console.WriteLine("---------|  De bar is open van 13:00 tot 01:00  |----------");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine();
-                Console.WriteLine("Dit zijn de opties                          ");
+                Console.WriteLine("Dit zijn de opties:                         ");
                 Console.WriteLine("1. Een reservering plaatsen                 ");
                 Console.WriteLine("2. Het menu bekijken                        ");
                 Console.WriteLine("3. De regels bekijken                       ");
@@ -87,7 +87,7 @@ namespace Greenhouse
                         Console.ReadLine();
                         break;
                     case "7":
-                        Console.WriteLine("Wat is je naam?");
+                        Console.WriteLine("Wat is uw naam?");
                         ReserveringMain.showReserveringen(Console.ReadLine());
                         break;
 
@@ -106,7 +106,7 @@ namespace Greenhouse
                         Console.WriteLine("Wachtwoord:");
                         string password = Console.ReadLine();
                         if (Login.Login.check(username, password)) contact.Contact.showVragen();
-                        else Console.WriteLine("Verkeerde gegevens ");
+                        else Console.WriteLine("Verkeerde gegevens");
                         break;
 
                     default:
