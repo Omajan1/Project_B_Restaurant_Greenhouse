@@ -48,7 +48,7 @@ namespace Greenhouse
                 Console.WriteLine("Dit zijn de opties:                         ");
                 Console.WriteLine("1. Een reservering plaatsen                 ");
                 Console.WriteLine("2. Het menu bekijken                        ");
-                Console.WriteLine("3. De regels bekijken                       ");
+                Console.WriteLine("3. De huisregels inkijken                   ");
                 Console.WriteLine("4. Contact opnemen met Greenhouse           ");
                 Console.WriteLine("5. Alle gestelde vragen van gebruikers      ");
                 Console.WriteLine("6. FAQ                                      ");
