@@ -51,7 +51,7 @@ namespace Greenhouse
                 Console.WriteLine("3. De regels bekijken                       ");
                 Console.WriteLine("4. Contact opnemen met Greenhouse           ");
                 Console.WriteLine("5. Alle gestelde vragen van gebruikers      ");
-                Console.WriteLine("6. FAQ                                      ");
+                Console.WriteLine("6. Veelgestelde vragen                      ");
                 Console.WriteLine("7. Alle geplaatste reserveringen laten zien ");
                 if(!darkMode) Console.WriteLine("8. Zet darkmode aan                         ");
                 else Console.WriteLine("8. Zet darkmode uit                         ");
