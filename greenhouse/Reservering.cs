@@ -163,7 +163,7 @@ namespace reservering
 				Console.WriteLine("|                ■ ■ ■                                   Θ ■ 15■ Θ                    |                   |              ");
 				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■                      |                   |              ");
 				Console.WriteLine("| Θ ■ 2 ■ Θ      ■ ■ ■      Θ ■ 9 ■ Θ     Θ ■ 11■ Θ      Θ ■ ■ ■ Θ  |         -----------------------------------------  ");
-				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |/         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
+				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
 				Console.WriteLine("                 ■ ■ ■                                       0                | De bar is open van 13:00 tot 01:00    |  ");
 				Console.WriteLine("    ■ ■ ■                                   ■ ■ ■          WC ----->          -----------------------------------------  ");
 				Console.WriteLine("| Θ ■ 3 ■ Θ      ■ ■ ■                    Θ ■ 12■ Θ       ----------|                                                    ");
@@ -185,7 +185,6 @@ namespace reservering
 
 				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
 
-				Console.WriteLine(" Θ zijn de stoelen.");
 				Console.WriteLine(" WC is aangegeven aan de rechter kant van het restaurant.");
 
 				Console.WriteLine(" Θ zijn de stoelen.\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
@@ -202,6 +201,7 @@ namespace reservering
 				while (r)
                 {
 					tafelNummer = Console.ReadLine();
+
 					var isTableInt = Filter.FilterMain.typeCheckInt(tafelNummer);
 					if (isTableInt)
 					{
@@ -300,7 +300,7 @@ namespace reservering
 				Console.WriteLine("4. Wat is uw voornaam                  : " + naam);
 				Console.WriteLine("5. Wat is uw achternaam                : " + achternaam);
 				Console.WriteLine("6. Met hoeveel mensen komt u eten?     : " + aantalPersonen);
-				Console.WriteLine("7. Plaats reservering                  ");
+				Console.WriteLine("\n7. Plaats reservering                ");
 				Console.WriteLine("8. Terug naar het hoofdmenu            ");
 
 				switch (Console.ReadLine()){

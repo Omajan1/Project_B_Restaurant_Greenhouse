@@ -51,12 +51,12 @@ namespace Greenhouse
                 Console.WriteLine("3. De huisregels inkijken                   ");
                 Console.WriteLine("4. Contact opnemen met Greenhouse           ");
                 Console.WriteLine("5. Alle gestelde vragen van gebruikers      ");
-                Console.WriteLine("6. FAQ                                      ");
-                Console.WriteLine("7. Alle geplaatste reserveringen laten zien ");
+                Console.WriteLine("6. FAQ (Veel gestelde vragen)               ");
+                Console.WriteLine("7. Alle geplaatste reserveringen van u laten zien ");
                 if(!darkMode) Console.WriteLine("8. Zet darkmode aan                         ");
                 else Console.WriteLine("8. Zet darkmode uit                         ");
                 Console.WriteLine("9. Exit                                     ");
-                Console.WriteLine("Zet hieronder uw keuze neer                 ");
+                Console.WriteLine("Zet hieronder uw keuze neer:                ");
 
 
                 // Pakt keuze van user
