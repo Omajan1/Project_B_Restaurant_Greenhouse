@@ -76,8 +76,8 @@ namespace contact
                         string vraag = q.GetValue("Text").ToString();
                         string naam = q.GetValue("Name").ToString();
 
-                        Console.WriteLine($"\n{naam} stelde de vraag : \t" + vraag + "\n");
-                        Console.WriteLine("Wil je deze vraag beantwoorden:\n \nY = Beantwoorden\nD = Delete \nENTER = Volgende vraag\n");
+                        Console.WriteLine($"\n{naam} stelde de vraag: \t" + vraag + "\n");
+                        Console.WriteLine("Wilt u deze vraag beantwoorden:\n \nY = Beantwoorden\nD = Delete \nENTER = Volgende vraag\n");
 
 
                         string choice = Console.ReadLine();
@@ -86,7 +86,7 @@ namespace contact
                         if (choice.ToUpper() == "Y")
                         {
 
-                            Console.WriteLine("Wat is je antwoord op de vraag: \n");
+                            Console.WriteLine("Wat is uw antwoord op de vraag: \n");
                             string antwoord = Console.ReadLine();
                             // Voegt Answer toe aan het element
                             q["Answer"] = antwoord;
