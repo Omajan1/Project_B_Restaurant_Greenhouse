@@ -360,9 +360,9 @@ namespace reservering
 										msgObj.From = new MailAddress(Emailusername);
 										msgObj.Subject = "Greenhouse reservering succesvol geplaatst!";
 										msgObj.Body = $"Beste {naam} {achternaam},\n\n" +
-											$"Er is een reservering geplaatst op {datum} aan tafel {tafelNummer}, u wordt verwacht om voor {tijd} in het restaurant te zijn." +
+											$"Er is een reservering geplaatst op {datum} aan tafel {tafelNummer}, u wordt verwacht voor {tijd} in het restaurant te zijn." +
 											$"\nDeze reservering is voor 3 uur, en er wordt verwacht dat u voor die tijd klaar bent met eten." +
-											$"\nVoor alle voorwaarden die aan deze reservering vastzitten kunt u naar het tabje regels in de applicatie." +
+											$"\nVoor alle voorwaarden die aan deze reservering vastzitten kunt u naar het tabje 'regels' in de applicatie." +
 											$"\n\nMet vriendelijke groet, \n\nTeam Greenhouse BV\nRotterdam, 3002AP";
 										client.Send(msgObj);
 										EmailNotFound = false;
@@ -372,7 +372,7 @@ namespace reservering
 								}
 								catch 
 								{
-									Console.WriteLine("Dit is geen geldige email, probeer opnieuw.");
+									Console.WriteLine("Dit is geen geldige email, probeer het opnieuw.");
 
 								}
 							}
@@ -404,7 +404,7 @@ namespace reservering
                         else
                         {
 							Console.Clear();
-							Console.WriteLine("De reservering is nog niet compleet, vul hem aub aan : ");
+							Console.WriteLine("De reservering is nog niet compleet, vul hem a.u.b. aan : ");
 							Console.ReadLine();
 							break;
                         }
