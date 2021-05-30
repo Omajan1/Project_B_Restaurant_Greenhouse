@@ -111,7 +111,12 @@ namespace Nunit3
             Assert.AreEqual(s, "a");
         }
 
-
+        [Test]
+        public void TypecheckInt_geeft_false_bij_string()
+        {
+            bool b = Filter.FilterMain.typeCheckInt("a");
+            Assert.AreEqual(b, false);
+        }
 
     }
 }
