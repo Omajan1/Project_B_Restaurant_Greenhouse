@@ -104,6 +104,12 @@ namespace Nunit3
             Assert.AreEqual(contact.Text, "textTest");
         }
 
+        [Test]
+        public void Filterstring_test()
+        {
+            string s = Filter.FilterMain.FilterString("a");
+            Assert.AreEqual(s, "a");
+        }
 
 
 

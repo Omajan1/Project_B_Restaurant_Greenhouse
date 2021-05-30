@@ -163,8 +163,8 @@ namespace reservering
 				Console.WriteLine("|                ■ ■ ■                                   Θ ■ 15■ Θ                    |                   |              ");
 				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■                      |                   |              ");
 				Console.WriteLine("| Θ ■ 2 ■ Θ      ■ ■ ■      Θ ■ 9 ■ Θ     Θ ■ 11■ Θ      Θ ■ ■ ■ Θ  |         -----------------------------------------  ");
-				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
-				Console.WriteLine("                 ■ ■ ■                                       0                | De bar is open van 13:00 tot 01:00    |  ");
+				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vanaf 13:00 tot 22:00  |  ");
+				Console.WriteLine("                 ■ ■ ■                                       0                | De bar is open vanaf 13:00 tot 01:00  |  ");
 				Console.WriteLine("    ■ ■ ■                                   ■ ■ ■          WC ----->          -----------------------------------------  ");
 				Console.WriteLine("| Θ ■ 3 ■ Θ      ■ ■ ■                    Θ ■ 12■ Θ       ----------|                                                    ");
 				Console.WriteLine("|   ■ ■ ■      Θ ■ 7 ■ Θ                    ■ ■ ■       Θ |         |                        ^                           ");
@@ -184,13 +184,9 @@ namespace reservering
 				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
 
 				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
-
-				Console.WriteLine(" WC is aangegeven aan de rechter kant van het restaurant.");
-
+				Console.WriteLine("De WC is aangegeven aan de rechter kant van het restaurant.");
 				Console.WriteLine(" Θ zijn de stoelen.\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
-
-
-				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
+				Console.WriteLine("Aan welke tafel wilt u eten? Vul het nummer van deze tafel in:");
 
 				// Voeg check toe voor int, het crasht als je een string invoeft
 				// int tafelNummer = Convert.ToInt32(Console.ReadLine());
@@ -263,7 +259,7 @@ namespace reservering
 						string table = item.GetValue("TafelNummer").ToString();
 						string tijd = item.GetValue("Tijd").ToString();
 
-						Console.WriteLine($"{name} heeft een reservering op {date} bij tafel {table} om {tijd}.\n");
+						Console.WriteLine($"{name} heeft een reservering op {date} voor tafel {table} om {tijd}.\n");
 						counter += 1;
 						if (counter % 5 == 0)
 						{
@@ -379,9 +375,9 @@ namespace reservering
 										msgObj.From = new MailAddress(Emailusername);
 										msgObj.Subject = "Greenhouse reservering succesvol geplaatst!";
 										msgObj.Body = $"Beste {naam} {achternaam},\n\n" +
-											$"Er is een reservering geplaatst op {datum} aan tafel {tafelNummer}, u wordt verwacht om voor {tijd} in het restaurant te zijn." +
+											$"Er is een reservering geplaatst op {datum} aan tafel {tafelNummer}, u wordt verwacht voor {tijd} in het restaurant te zijn." +
 											$"\nDeze reservering is voor 3 uur, en er wordt verwacht dat u voor die tijd klaar bent met eten." +
-											$"\nVoor alle voorwaarden die aan deze reservering vastzitten kunt u naar het tabje regels in de applicatie." +
+											$"\nVoor alle voorwaarden die aan deze reservering vastzitten kunt u naar het tabje 'regels' in de applicatie." +
 											$"\n\nMet vriendelijke groet, \n\nTeam Greenhouse BV\nRotterdam, 3002AP";
 										client.Send(msgObj);
 										EmailNotFound = false;
@@ -391,7 +387,7 @@ namespace reservering
 								}
 								catch 
 								{
-									Console.WriteLine("Dit is geen geldige email, probeer opnieuw.");
+									Console.WriteLine("Dit is geen geldige email, probeer het opnieuw.");
 
 								}
 							}
@@ -429,7 +425,7 @@ namespace reservering
                         else
                         {
 							Console.Clear();
-							Console.WriteLine("De reservering is nog niet compleet, vul hem aub aan : ");
+							Console.WriteLine("De reservering is nog niet compleet, vul hem a.u.b. aan : ");
 							Console.ReadLine();
 							break;
                         }
