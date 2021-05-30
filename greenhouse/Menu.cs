@@ -109,10 +109,11 @@ namespace Menu
                     string info = item.GetValue("info").ToString();
                     string price = item.GetValue("price").ToString();
                     string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (soortgerecht == "voorgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -131,10 +132,11 @@ namespace Menu
                     string info = item.GetValue("info").ToString();
                     string price = item.GetValue("price").ToString();
                     string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (soortgerecht == "hoofdgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -153,11 +155,12 @@ namespace Menu
                     string info = item.GetValue("info").ToString();
                     string price = item.GetValue("price").ToString();
                     string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string id = item.GetValue("id").ToString();
 
 
                     if (soortgerecht == "Nagerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
                 }
             }
@@ -175,11 +178,12 @@ namespace Menu
                     string info = item.GetValue("info").ToString();
                     string price = item.GetValue("price").ToString();
                     string soortgerecht = item.GetValue("soortgerecht").ToString();
+                    string id = item.GetValue("id").ToString();
 
 
                     if (soortgerecht == "Extra's")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
                 }
             }
@@ -202,10 +206,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vis == "ja" && soortgerecht == "voorgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -221,10 +226,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vis == "ja" && soortgerecht == "hoofdgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -249,10 +255,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vegan == "ja" && soortgerecht =="voorgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -268,10 +275,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vegan == "ja" && soortgerecht == "hoofdgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -287,10 +295,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vegan == "ja" && soortgerecht == "Nagerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -306,10 +315,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vegan == "ja" && soortgerecht == "Extra's")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -333,10 +343,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vega == "ja" && soortgerecht == "voorgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -352,10 +363,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vega == "ja" && soortgerecht == "hoofdgerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -371,10 +383,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vega == "ja" && soortgerecht == "Nagerecht")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
@@ -390,10 +403,11 @@ namespace Menu
                     string vegan = item.GetValue("vegan").ToString();
                     string vega = item.GetValue("vega").ToString();
                     string vis = item.GetValue("vis").ToString();
+                    string id = item.GetValue("id").ToString();
 
                     if (vega == "ja" && soortgerecht == "Extra's")
                     {
-                        Console.WriteLine($"{name}\n{info}\n-{price}\n");
+                        Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
 
                 }
