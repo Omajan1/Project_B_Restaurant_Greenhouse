@@ -48,15 +48,15 @@ namespace Greenhouse
                 Console.WriteLine("Dit zijn de opties:                         ");
                 Console.WriteLine("1. Een reservering plaatsen                 ");
                 Console.WriteLine("2. Het menu bekijken                        ");
-                Console.WriteLine("3. De regels bekijken                       ");
+                Console.WriteLine("3. De huisregels inkijken                   ");
                 Console.WriteLine("4. Contact opnemen met Greenhouse           ");
                 Console.WriteLine("5. Alle gestelde vragen van gebruikers      ");
-                Console.WriteLine("6. Veelgestelde vragen                      ");
-                Console.WriteLine("7. Alle geplaatste reserveringen laten zien ");
+                Console.WriteLine("6. FAQ (Veelgestelde vragen)               ");
+                Console.WriteLine("7. Alle geplaatste reserveringen van u laten zien ");
                 if(!darkMode) Console.WriteLine("8. Zet darkmode aan                         ");
                 else Console.WriteLine("8. Zet darkmode uit                         ");
                 Console.WriteLine("9. Exit                                     ");
-                Console.WriteLine("Zet hieronder uw keuze neer                 ");
+                Console.WriteLine("Zet hieronder uw keuze neer:                ");
 
 
                 // Pakt keuze van user
@@ -99,7 +99,7 @@ namespace Greenhouse
                         running = false;
                         break;
 
-                    case "4491":
+                    case "666":
                         Console.Clear();
                         Console.WriteLine("Gebruikersnaam:");
                         string username = Console.ReadLine();

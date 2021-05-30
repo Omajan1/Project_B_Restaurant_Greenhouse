@@ -7,5 +7,14 @@
     "Tijd": "16:00",
     "Datum": "29/05",
     "AantalPersonen": "4"
+  },
+  {
+    "Naam": "LOL",
+    "Achternaam": "HAHAHHA",
+    "TafelNummer": "4",
+    "Res_ID": 2,
+    "Tijd": "16:00",
+    "Datum": "29/12",
+    "AantalPersonen": "1"
   }
 ]

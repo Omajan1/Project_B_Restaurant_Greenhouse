@@ -163,7 +163,7 @@ namespace reservering
 				Console.WriteLine("|                ■ ■ ■                                   Θ ■ 15■ Θ                    |                   |              ");
 				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■                      |                   |              ");
 				Console.WriteLine("| Θ ■ 2 ■ Θ      ■ ■ ■      Θ ■ 9 ■ Θ     Θ ■ 11■ Θ      Θ ■ ■ ■ Θ  |         -----------------------------------------  ");
-				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |/        | Elke dag open, vanaf 13:00 tot 22:00  |  ");
+				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vanaf 13:00 tot 22:00  |  ");
 				Console.WriteLine("                 ■ ■ ■                                       0                | De bar is open vanaf 13:00 tot 01:00  |  ");
 				Console.WriteLine("    ■ ■ ■                                   ■ ■ ■          WC ----->          -----------------------------------------  ");
 				Console.WriteLine("| Θ ■ 3 ■ Θ      ■ ■ ■                    Θ ■ 12■ Θ       ----------|                                                    ");
@@ -184,10 +184,8 @@ namespace reservering
 				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
 
 				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
-				Console.WriteLine(" Θ zijn de stoelen.");
-				Console.WriteLine(" De WC is aangegeven aan de rechter kant van het restaurant.");
+				Console.WriteLine("De WC is aangegeven aan de rechter kant van het restaurant.");
 				Console.WriteLine(" Θ zijn de stoelen.\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
-
 				Console.WriteLine("Aan welke tafel wilt u eten? Vul het nummer van deze tafel in:");
 
 				// Voeg check toe voor int, het crasht als je een string invoeft
@@ -199,6 +197,7 @@ namespace reservering
 				while (r)
                 {
 					tafelNummer = Console.ReadLine();
+
 					var isTableInt = Filter.FilterMain.typeCheckInt(tafelNummer);
 					if (isTableInt)
 					{
@@ -297,7 +296,7 @@ namespace reservering
 				Console.WriteLine("4. Wat is uw voornaam                  : " + naam);
 				Console.WriteLine("5. Wat is uw achternaam                : " + achternaam);
 				Console.WriteLine("6. Met hoeveel mensen komt u eten?     : " + aantalPersonen);
-				Console.WriteLine("7. Plaats reservering                  ");
+				Console.WriteLine("\n7. Plaats reservering                ");
 				Console.WriteLine("8. Terug naar het hoofdmenu            ");
 
 				switch (Console.ReadLine()){
@@ -337,6 +336,22 @@ namespace reservering
 						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "" && aantalPersonen != "")
                         {
 
+
+
+
+
+
+
+
+
+							Console.WriteLine("Weet u zeker dat u deze reservering wilt plaatsen? ");
+							Console.WriteLine("Typ ja en druk op enter om door te gaan met deze reservering. ");
+							Console.WriteLine("Als u wilt annuleren typ dan niks en druk op enter.");
+							string confirm = Console.ReadLine();
+							if(confirm.ToUpper() == "JA")
+                            {
+
+                            
 							bool EmailNotFound = true;
 							string email;
 
@@ -377,7 +392,7 @@ namespace reservering
 								}
 							}
 
-
+							
 
 
 							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, aantalPersonen);
@@ -400,6 +415,12 @@ namespace reservering
 							Console.WriteLine("Druk op enter om terug te gaan");
 							Console.ReadLine();
 							break;
+							}
+                            else
+                            {
+								Console.WriteLine("Lees of bewerk de reservering nog eens goed.");
+								break;
+                            }
 						}
                         else
                         {
