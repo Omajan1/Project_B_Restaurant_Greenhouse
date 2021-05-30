@@ -340,6 +340,22 @@ namespace reservering
 						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "" && aantalPersonen != "")
                         {
 
+
+
+
+
+
+
+
+
+							Console.WriteLine("Weet u zeker dat u deze reservering wilt plaatsen? ");
+							Console.WriteLine("Typ ja en druk op enter om door te gaan met deze reservering. ");
+							Console.WriteLine("Als u wilt annuleren typ dan niks en druk op enter.");
+							string confirm = Console.ReadLine();
+							if(confirm.ToUpper() == "JA")
+                            {
+
+                            
 							bool EmailNotFound = true;
 							string email;
 
@@ -380,7 +396,7 @@ namespace reservering
 								}
 							}
 
-
+							
 
 
 							Reservering klant = new Reservering(naam, achternaam, tafelNummer, tijd, datum, aantalPersonen);
@@ -403,6 +419,12 @@ namespace reservering
 							Console.WriteLine("Druk op enter om terug te gaan");
 							Console.ReadLine();
 							break;
+							}
+                            else
+                            {
+								Console.WriteLine("Lees of bewerk de reservering nog eens goed.");
+								break;
+                            }
 						}
                         else
                         {
