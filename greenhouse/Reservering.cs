@@ -185,7 +185,6 @@ namespace reservering
 
 				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
 
-				Console.WriteLine(" Θ zijn de stoelen.");
 				Console.WriteLine(" WC is aangegeven aan de rechter kant van het restaurant.");
 
 				Console.WriteLine(" Θ zijn de stoelen.\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
@@ -301,7 +300,7 @@ namespace reservering
 				Console.WriteLine("4. Wat is uw voornaam                  : " + naam);
 				Console.WriteLine("5. Wat is uw achternaam                : " + achternaam);
 				Console.WriteLine("6. Met hoeveel mensen komt u eten?     : " + aantalPersonen);
-				Console.WriteLine("7. Plaats reservering                  ");
+				Console.WriteLine("\n7. Plaats reservering                ");
 				Console.WriteLine("8. Terug naar het hoofdmenu            ");
 
 				switch (Console.ReadLine()){
