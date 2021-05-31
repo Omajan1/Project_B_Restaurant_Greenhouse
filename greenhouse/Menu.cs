@@ -51,42 +51,49 @@ namespace Menu
                         Voorgerechten();
                         Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
+                        Console.Clear();
                     }
                     else if (option == "2")
                     {
                         Hoofdgerechten();
                         Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
+                        Console.Clear();
                     }
                     else if (option == "3")
                     {
                         Nagerechten();
                         Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
+                        Console.Clear();
                     }
                     else if (option == "4")
                     {
                         Extra();
                         Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
+                        Console.Clear();
                     }
                     else if (option == "5")
                     {
                         Visgerechten();
                         Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
+                        Console.Clear();
                     }
                     else if (option == "6")
                     {
                         Vegan();
                         Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
+                        Console.Clear();
                     }
                     else if (option == "7")
                     {
                         Vega();
                         Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
+                        Console.Clear();
                     }
                     else if (option == "9")
                     {
@@ -237,7 +244,10 @@ namespace Menu
                     }
 
                 }
+                Console.ReadLine();
+                Console.Clear();
 
+                Console.WriteLine("Visgerechten\n--------------------------------------------------------------------------\n");
                 Console.WriteLine("\n\nHoofdgerechten:\n");
 
                 foreach (JObject item in Count)
@@ -286,7 +296,10 @@ namespace Menu
                     }
 
                 }
+                Console.ReadLine();
+                Console.Clear();
 
+                Console.WriteLine("Vegan opties\n--------------------------------------------------------------------------\n");
                 Console.WriteLine("\n\nHoofdgerechten:\n");
 
                 foreach (JObject item in Count)
@@ -306,7 +319,10 @@ namespace Menu
                     }
 
                 }
+                Console.ReadLine();
+                Console.Clear();
 
+                Console.WriteLine("Vegan opties\n--------------------------------------------------------------------------\n");
                 Console.WriteLine("\n\nNagerechten:\n");
 
                 foreach (JObject item in Count)
@@ -326,6 +342,8 @@ namespace Menu
                     }
 
                 }
+                Console.ReadLine();
+                Console.Clear();
 
                 Console.WriteLine("\n\nExtra:\n");
 
@@ -374,7 +392,10 @@ namespace Menu
                     }
 
                 }
+                Console.ReadLine();
+                Console.Clear();
 
+                Console.WriteLine("Vega opties\n--------------------------------------------------------------------------\n");
                 Console.WriteLine("\n\nHoofdgerechten:\n");
 
                 foreach (JObject item in Count)
@@ -394,7 +415,11 @@ namespace Menu
                     }
 
                 }
+                Console.ReadLine();
+                Console.Clear();
 
+
+                Console.WriteLine("Vega opties\n--------------------------------------------------------------------------\n");
                 Console.WriteLine("\n\nNagerechten:\n");
 
                 foreach (JObject item in Count)
@@ -414,7 +439,10 @@ namespace Menu
                     }
 
                 }
+                Console.ReadLine();
+                Console.Clear();
 
+                Console.WriteLine("Vega opties\n--------------------------------------------------------------------------\n");
                 Console.WriteLine("\n\nExtra:\n");
 
                 foreach (JObject item in Count)
@@ -443,17 +471,31 @@ namespace Menu
             {
                 Voorgerechten();
                 Console.WriteLine("\n\n");
+                Console.ReadLine();
+                Console.Clear();
                 Hoofdgerechten();
                 Console.WriteLine("\n\n");
+                Console.ReadLine();
+                Console.Clear();
                 Nagerechten();
                 Console.WriteLine("\n\n");
+                Console.ReadLine();
+                Console.Clear();
                 Extra();
                 Console.WriteLine("\n\n");
+                Console.ReadLine();
+                Console.Clear();
                 Visgerechten();
                 Console.WriteLine("\n\n");
+                Console.ReadLine();
+                Console.Clear();
                 Vegan();
                 Console.WriteLine("\n\n");
+                Console.ReadLine();
+                Console.Clear();
                 Vega();
+                Console.ReadLine();
+                Console.Clear();
             }
 
         }
