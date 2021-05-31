@@ -8,6 +8,7 @@ namespace JSON
         public static string reservaring = @"../../../../data/reservering.json";
         public static string login = @"../../../../data/login.json";
         public static string gerechten = @"../../../../data/Gerechten.json";
+        public static string leveranciers = @"../../../../data/leveranciers.json";
     }
 }
 
