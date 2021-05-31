@@ -24,7 +24,8 @@ namespace Menu
                 Console.WriteLine("6. Vegan opties");
                 Console.WriteLine("7. Vega opties");
                 Console.WriteLine("8. Alles (u kan ook 'all' typen)");
-                Console.WriteLine("9. Terug naar home");
+                Console.WriteLine("9. Leveranciers");
+                Console.WriteLine("10. Terug naar home");
                 Console.WriteLine("Als u naar meerdere opties wilt kijken, kunt u meerdere opties invullen.\nDoe dit als volgt: '1,2'.");
                 Console.Write("Wat zou u willen zien: ");
                 string result = Console.ReadLine();
@@ -40,7 +41,7 @@ namespace Menu
                         Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
                     }
-                    else if (option == "9")
+                    else if (option == "10")
                     {
                         running = false;
                         break;
@@ -93,6 +94,12 @@ namespace Menu
                         Console.Write("Druk op enter om terug te gaan");
                         Console.ReadLine();
                         Console.Clear();
+                    }
+                    else if (option == "9")
+                    {
+                        Leveranciers();
+                        Console.Write("Druk op enter om terug te gaan");
+                        Console.ReadLine();
                     }
                     else
                     {
@@ -192,6 +199,22 @@ namespace Menu
                     {
                         Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
+                }
+            }
+
+            static void Leveranciers()
+            {
+                Console.WriteLine("Leveranciers\n--------------------------------------------------------------------------\n");
+
+                string innit = File.ReadAllText(paths.leveranciers);
+                var Count = JArray.Parse(innit);
+
+                foreach (JObject item in Count)
+                {
+                    string name = item.GetValue("name").ToString();
+                    string info = item.GetValue("info").ToString();
+                
+                    Console.WriteLine($"{name}\n{info}\n\n");
                 }
             }
 
