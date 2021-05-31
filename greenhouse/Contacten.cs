@@ -123,11 +123,12 @@ namespace contact
         {
 
 
-            Console.Clear();
+            Console.Clear();            
+            // verandering van de kleur van de tekst
+            Console.ForegroundColor = ConsoleColor.Blue;
+
             Console.WriteLine("Contact Opnemen?\n");
             Console.WriteLine("U kunt op de volgende manieren contact opnemen:\n");
-            // verandering van de kleur van de tekst
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("- Wij zijn telefonisch bereikbaar via ons telefoonummer: 010-794-4000.\n");
             Console.WriteLine("- U kunt ook een email sturen naar: greenhouse@green.nl.\n");
             Console.WriteLine("- Stuur een brief of bezoek onze locatie op:");
@@ -140,7 +141,6 @@ namespace contact
             Console.WriteLine("   -  Typ hieronder een 1.");
             Console.WriteLine("   -  Druk daarna op enter.");
             Console.WriteLine("   -  Vul vervolgens uw vraag in zodat u een antwoord kunt ontvangen.\n\n");
-            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Als u terug naar het hoofdmenu wilt, typ dan niks en druk op enter.");
 
 
