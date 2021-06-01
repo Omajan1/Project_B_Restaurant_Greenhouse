@@ -242,11 +242,9 @@ namespace reservering
 
 			// Loopt door alle reserveringen
 			var running = true;
-			int counter = 0;
 			Console.Clear();
 			while (running)
 			{
-
 
 				foreach (JObject item in Count)
 				{
