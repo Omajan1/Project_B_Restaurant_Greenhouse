@@ -1,10 +1,7 @@
-﻿using System;
-using Rules;
+﻿using Menu;
 using reservering;
-using Menu;
-using contact;
-using System.Net.Mail;
-using System.Net;
+using Rules;
+using System;
 
 namespace Greenhouse
 {
@@ -13,10 +10,10 @@ namespace Greenhouse
         static void Main(string[] args)
         {
             // Console settings
-            
-            
-            
-            
+
+
+
+
             Console.SetWindowSize(180, 42);
             bool darkMode = false;
             bool running = true;
@@ -53,7 +50,7 @@ namespace Greenhouse
                 Console.WriteLine("5. Alle gestelde vragen van gebruikers      ");
                 Console.WriteLine("6. FAQ (Veelgestelde vragen)               ");
                 Console.WriteLine("7. Alle geplaatste reserveringen van u laten zien ");
-                if(!darkMode) Console.WriteLine("8. Zet darkmode aan                         ");
+                if (!darkMode) Console.WriteLine("8. Zet darkmode aan                         ");
                 else Console.WriteLine("8. Zet darkmode uit                         ");
                 Console.WriteLine("9. Exit                                     ");
                 Console.WriteLine("Zet hieronder uw keuze neer:                ");
@@ -88,6 +85,7 @@ namespace Greenhouse
                         break;
                     case "7":
                         Console.WriteLine("Wat is uw achternaam?");
+                    
                         ReserveringMain.showReserveringen(Console.ReadLine());
                         break;
 

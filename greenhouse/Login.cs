@@ -1,9 +1,7 @@
-﻿using System;
-using System.IO;
-using Newtonsoft.Json;
+﻿using JSON;
 using Newtonsoft.Json.Linq;
-using JSON;
-namespace Login
+using System.IO;
+namespace login
 {
     public class Login
     {

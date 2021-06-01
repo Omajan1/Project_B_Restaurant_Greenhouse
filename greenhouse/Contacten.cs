@@ -1,9 +1,8 @@
-using System;
-using System.IO;
+using JSON;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using JSON;
-using Login;
+using System;
+using System.IO;
 namespace contact
 {
 
@@ -64,57 +63,57 @@ namespace contact
             bool running = true;
             while (running)
             {
-                if(array == null)
-                foreach (JObject q in array)
-                {
-                    // Kijkt of het antwoord al is ingevuld
-                    JToken isFull = q["Answer"];
-
-                    if (isFull == null)
+                if (array == null)
+                    foreach (JObject q in array)
                     {
-                        // Pakt values Text en Name van de JSON file
-                        string vraag = q.GetValue("Text").ToString();
-                        string naam = q.GetValue("Name").ToString();
+                        // Kijkt of het antwoord al is ingevuld
+                        JToken isFull = q["Answer"];
 
-                        Console.WriteLine($"\n{naam} stelde de vraag: \t" + vraag + "\n");
-                        Console.WriteLine("Wilt u deze vraag beantwoorden:\n \nY = Beantwoorden\nD = Delete \nENTER = Volgende vraag\n");
-
-
-                        string choice = Console.ReadLine();
-                        choice = choice.ToUpper();
-
-                        if (choice.ToUpper() == "Y")
+                        if (isFull == null)
                         {
+                            // Pakt values Text en Name van de JSON file
+                            string vraag = q.GetValue("Text").ToString();
+                            string naam = q.GetValue("Name").ToString();
 
-                            Console.WriteLine("Wat is uw antwoord op de vraag: \n");
-                            string antwoord = Console.ReadLine();
-                            // Voegt Answer toe aan het element
-                            q["Answer"] = antwoord;
-                            // Slaat het op in JSON
-                            File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
-
-                        }
-                        if (choice.ToUpper() == "D")
-                        {
+                            Console.WriteLine($"\n{naam} stelde de vraag: \t" + vraag + "\n");
+                            Console.WriteLine("Wilt u deze vraag beantwoorden:\n \nY = Beantwoorden\nD = Delete \nENTER = Volgende vraag\n");
 
 
-                            q["Answer"] = null;
-                            q["Answer"] = null;
-                            q["Answer"] = null;
-                            // Slaat het op in JSON
-                            File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
+                            string choice = Console.ReadLine();
+                            choice = choice.ToUpper();
 
-                        }
-                        if (choice.ToUpper() == "Q")
-                        {
-                            running = false;
-                            Console.WriteLine("Tot ziens!");
+                            if (choice.ToUpper() == "Y")
+                            {
 
-                        }
-                        Console.Clear();
+                                Console.WriteLine("Wat is uw antwoord op de vraag: \n");
+                                string antwoord = Console.ReadLine();
+                                // Voegt Answer toe aan het element
+                                q["Answer"] = antwoord;
+                                // Slaat het op in JSON
+                                File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
+
+                            }
+                            if (choice.ToUpper() == "D")
+                            {
+
+
+                                q["Answer"] = null;
+                                q["Answer"] = null;
+                                q["Answer"] = null;
+                                // Slaat het op in JSON
+                                File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
+
+                            }
+                            if (choice.ToUpper() == "Q")
+                            {
+                                running = false;
+                                Console.WriteLine("Tot ziens!");
+
+                            }
+                            Console.Clear();
                         }
                         running = false;
-                }
+                    }
 
             }
         }
@@ -124,10 +123,11 @@ namespace contact
 
 
             Console.Clear();
+            // verandering van de kleur van de tekst
+            Console.ForegroundColor = ConsoleColor.Blue;
+
             Console.WriteLine("Contact Opnemen?\n");
             Console.WriteLine("U kunt op de volgende manieren contact opnemen:\n");
-            // verandering van de kleur van de tekst
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("- Wij zijn telefonisch bereikbaar via ons telefoonummer: 010-794-4000.\n");
             Console.WriteLine("- U kunt ook een email sturen naar: greenhouse@green.nl.\n");
             Console.WriteLine("- Stuur een brief of bezoek onze locatie op:");
@@ -140,7 +140,6 @@ namespace contact
             Console.WriteLine("   -  Typ hieronder een 1.");
             Console.WriteLine("   -  Druk daarna op enter.");
             Console.WriteLine("   -  Vul vervolgens uw vraag in zodat u een antwoord kunt ontvangen.\n\n");
-            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Als u terug naar het hoofdmenu wilt, typ dan niks en druk op enter.");
 
 

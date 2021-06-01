@@ -4,7 +4,7 @@ namespace Filter
 {
     public class FilterMain
     {
-        public static string FilterAantalPersonen()
+        public static string FilterAantalPersonen(int PersonenAanTafel)
         {
             string userInput = "";
             bool isNotInt = true;
@@ -12,11 +12,19 @@ namespace Filter
             {
                 Console.WriteLine("Met hoeveel personen wilt u reserveren?\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
                 userInput = Console.ReadLine();
+
                 if (typeCheckInt(userInput))
                 {
-                    if (Convert.ToInt32(userInput) > 0 && Convert.ToInt32(userInput) < 7)
+                    //omzetten naar int zodat je niet steeds convert.toint hoeft te typen
+                    int a = Convert.ToInt32(userInput);
+
+                    if ((a > 0 && a < 7) && (a == PersonenAanTafel))
                     {
                         return userInput;
+                    }
+                    else if(a> 0 && a < 7)
+                    {
+                        Console.WriteLine("Dit is een te grote groep voor de tafel die u gekozen heeft");
                     }
                     else
                     {
