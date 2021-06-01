@@ -239,43 +239,35 @@ namespace reservering
             // zet de string naar een array
             var Count = JArray.Parse(innit);
 
-            // Loopt door alle reserveringen
-            var running = true;
-            int counter = 0;
-            Console.Clear();
-            while (running)
-            {
+			// Loopt door alle reserveringen
+			var running = true;
+			Console.Clear();
+			while (running)
+			{
 
+				foreach (JObject item in Count)
+				{
+					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
 
-                foreach (JObject item in Count)
-                {
-                    // Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
-
-                    if (naamVanKlant == item.GetValue("Naam").ToString())
+					if (naamVanKlant == item.GetValue("Achternaam").ToString())
                     {
-                        string date = item.GetValue("Datum").ToString();
-                        string name = item.GetValue("Naam").ToString();
-                        string table = item.GetValue("TafelNummer").ToString();
-                        string tijd = item.GetValue("Tijd").ToString();
+						string date = item.GetValue("Datum").ToString();
+						string name = item.GetValue("Naam").ToString();
+						string table = item.GetValue("TafelNummer").ToString();
+						string tijd = item.GetValue("Tijd").ToString();
 
-                        Console.WriteLine($"{name} heeft een reservering op {date} voor tafel {table} om {tijd}.\n");
-                        counter += 1;
-                        if (counter % 5 == 0)
-                        {
-                            Console.WriteLine($"Pagina {(counter / 5)}");
-                            Console.ReadLine();
-                            Console.Clear();
-                        }
-                    }
+						Console.WriteLine($"{name} heeft een reservering op {date} voor tafel {table} om {tijd}.\n");
+					}
+				}
+				running = false;
+				Console.WriteLine("Druk op enter om weer terug te gaan.");
+				Console.ReadLine();
+			}
+		}
+		public static void makeReservation()
+		{
+			bool running = true;
 
-
-                }
-                running = false;
-            }
-        }
-        public static void makeReservation()
-        {
-            bool running = true;
 
             string tijd = "";
             string naam = "";
