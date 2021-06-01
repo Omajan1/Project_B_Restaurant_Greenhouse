@@ -244,11 +244,9 @@ namespace Menu
                     }
 
                 }
-                Console.ReadLine();
-                Console.Clear();
-
-                Console.WriteLine("Visgerechten\n--------------------------------------------------------------------------\n");
-                Console.WriteLine("\n\nHoofdgerechten:\n");
+                Console.WriteLine("--------------------------------------------------------------------------");
+                
+                Console.WriteLine("\nHoofdgerechten:\n");
 
                 foreach (JObject item in Count)
                 {
@@ -296,6 +294,8 @@ namespace Menu
                     }
 
                 }
+                Console.Write("Druk op enter om verder te gaan");
+
                 Console.ReadLine();
                 Console.Clear();
 
@@ -319,6 +319,7 @@ namespace Menu
                     }
 
                 }
+                Console.Write("Druk op enter om verder te gaan.\n");
                 Console.ReadLine();
                 Console.Clear();
 
@@ -342,9 +343,11 @@ namespace Menu
                     }
 
                 }
+                Console.Write("Druk op enter om verder te gaan.\n");
                 Console.ReadLine();
                 Console.Clear();
 
+                Console.WriteLine("Vegan opties\n--------------------------------------------------------------------------\n");
                 Console.WriteLine("\n\nExtra:\n");
 
                 foreach (JObject item in Count)
@@ -392,6 +395,7 @@ namespace Menu
                     }
 
                 }
+                Console.Write("Druk op enter om verder te gaan.\n");
                 Console.ReadLine();
                 Console.Clear();
 
@@ -415,6 +419,7 @@ namespace Menu
                     }
 
                 }
+                Console.Write("Druk op enter om verder te gaan.\n");
                 Console.ReadLine();
                 Console.Clear();
 
@@ -439,6 +444,7 @@ namespace Menu
                     }
 
                 }
+                Console.Write("Druk op enter om verder te gaan.\n");
                 Console.ReadLine();
                 Console.Clear();
 
@@ -470,27 +476,27 @@ namespace Menu
             static void Alles()
             {
                 Voorgerechten();
-                Console.WriteLine("\n\n");
+                Console.Write("Druk op enter om verder te gaan.\n");
                 Console.ReadLine();
                 Console.Clear();
                 Hoofdgerechten();
-                Console.WriteLine("\n\n");
+                Console.Write("Druk op enter om verder te gaan."); 
                 Console.ReadLine();
                 Console.Clear();
                 Nagerechten();
-                Console.WriteLine("\n\n");
+                Console.Write("Druk op enter om verder te gaan.\n"); 
                 Console.ReadLine();
                 Console.Clear();
                 Extra();
-                Console.WriteLine("\n\n");
+                Console.Write("Druk op enter om verder te gaan.\n"); 
                 Console.ReadLine();
                 Console.Clear();
                 Visgerechten();
-                Console.WriteLine("\n\n");
+                Console.Write("Druk op enter om verder te gaan.\n"); 
                 Console.ReadLine();
                 Console.Clear();
                 Vegan();
-                Console.WriteLine("\n\n");
+                Console.WriteLine("\n");
                 Console.ReadLine();
                 Console.Clear();
                 Vega();
