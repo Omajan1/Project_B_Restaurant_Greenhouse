@@ -326,7 +326,25 @@ namespace reservering
 						achternaam = getAchternaam();
 						break;
 					case "6":
-						aantalPersonen = Filter.FilterMain.FilterAantalPersonen();
+						if(tafelNummer != "")
+                        {
+							if(tafelNummer == "4" || tafelNummer == "15")
+                            {
+								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(6);
+                            }
+                            else
+                            {
+								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(2);
+                            }
+							
+                        }
+                        else
+                        {
+							Console.Clear();
+							Console.WriteLine("Vul eerst optie 3 in a.u.b.");
+							Console.ReadLine();
+                        }
+						
 						break;
 					case "8":
 						running = false;

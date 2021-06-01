@@ -4,7 +4,7 @@ namespace Filter
 {
     public class FilterMain
     {
-        public static string FilterAantalPersonen()
+        public static string FilterAantalPersonen(int PersonenAanTafel)
         {
             string userInput = "";
             bool isNotInt = true;
@@ -18,9 +18,13 @@ namespace Filter
                     //omzetten naar int zodat je niet steeds convert.toint hoeft te typen
                     int a = Convert.ToInt32(userInput);
 
-                    if (a > 0 && a < 7)
+                    if ((a > 0 && a < 7) && (a == PersonenAanTafel))
                     {
                         return userInput;
+                    }
+                    else if(a> 0 && a < 7)
+                    {
+                        Console.WriteLine("Dit is een te grote groep voor de tafel die u gekozen heeft");
                     }
                     else
                     {

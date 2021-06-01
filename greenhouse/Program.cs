@@ -87,7 +87,7 @@ namespace Greenhouse
                         Console.ReadLine();
                         break;
                     case "7":
-                        Console.WriteLine("Wat is uw naam?");
+                        Console.WriteLine("Wat is uw voornaam?");
                         ReserveringMain.showReserveringen(Console.ReadLine());
                         break;
 
