@@ -11,16 +11,12 @@ namespace Nunit3
         {
 
         }
-
         [Test]
         public void Test()
         {
             // Moet false worden
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
-
-            Assert.AreEqual(klant.Naam, "lalala");
-
-
+            Assert.AreNotEqual(klant.Naam, "");
         }
 
         [Test]
@@ -60,23 +56,6 @@ namespace Nunit3
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         [Test]
         public void Login_Geeft_False_Bij_Verkeerd_Wachtwoord_En_Username()
         {
@@ -95,25 +74,20 @@ namespace Nunit3
             Assert.AreEqual(s, true);
         }
 
-
-
-
         [Test]
         public void Contact_naam_staat_goed()
         {
-            // Moet false worden
-            Comment contact = new Comment("textTest", "nameTest", true);
-
+            Comment contact = new Comment("textTest", "nameTest");
             Assert.AreEqual(contact.Name, "nameTest");
+            contact.deleteComment("textTest");
         }
 
         [Test]
         public void Contact_text_staat_goed()
         {
-            // Moet false worden
-            Comment contact = new Comment("textTest", "nameTest", true);
-
+            Comment contact = new Comment("textTest", "nameTest");
             Assert.AreEqual(contact.Text, "textTest");
+            contact.deleteComment("textTest");
         }
 
         [Test]

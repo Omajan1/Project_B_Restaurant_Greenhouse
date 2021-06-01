@@ -16,5 +16,23 @@
     "Tijd": "16:00",
     "Datum": "29/12",
     "AantalPersonen": "1"
+  },
+  {
+    "Naam": "nathan",
+    "Achternaam": "samijo",
+    "TafelNummer": "15",
+    "Res_ID": 3,
+    "Tijd": "13:00",
+    "Datum": "15/08",
+    "AantalPersonen": "6"
+  },
+  {
+    "Naam": "nathan",
+    "Achternaam": "NATHAN",
+    "TafelNummer": "14",
+    "Res_ID": 4,
+    "Tijd": "13:00",
+    "Datum": "15/08",
+    "AantalPersonen": "2"
   }
 ]
