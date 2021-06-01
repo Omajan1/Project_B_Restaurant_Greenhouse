@@ -1,6 +1,7 @@
-using NUnit.Framework;
-using Login;
 using contact;
+using Filter;
+using login;
+using NUnit.Framework;
 namespace Nunit3
 {
     public class Tests
@@ -8,7 +9,18 @@ namespace Nunit3
         [SetUp]
         public void Setup()
         {
-            
+
+        }
+
+        [Test]
+        public void Test()
+        {
+            // Moet false worden
+            reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
+
+            Assert.AreEqual(klant.Naam, "lalala");
+
+
         }
 
         [Test]
@@ -69,7 +81,7 @@ namespace Nunit3
         public void Login_Geeft_False_Bij_Verkeerd_Wachtwoord_En_Username()
         {
             // Moet false worden
-            bool s = Login.Login.check("", "");
+            bool s = Login.check("", "");
 
             Assert.AreEqual(s, false);
         }
@@ -78,7 +90,7 @@ namespace Nunit3
         public void Login_Geeft_True_Bij_Goed_Wachtwoord_En_Username()
         {
             // Moet false worden
-            bool s = Login.Login.check("123", "456");
+            bool s = Login.check("123", "456");
 
             Assert.AreEqual(s, true);
         }
@@ -107,14 +119,14 @@ namespace Nunit3
         [Test]
         public void Filterstring_test()
         {
-            string s = Filter.FilterMain.FilterString("a");
+            string s = FilterMain.FilterString("a");
             Assert.AreEqual(s, "a");
         }
 
         [Test]
         public void TypecheckInt_geeft_false_bij_string()
         {
-            bool b = Filter.FilterMain.typeCheckInt("a");
+            bool b = FilterMain.typeCheckInt("a");
             Assert.AreEqual(b, false);
         }
 

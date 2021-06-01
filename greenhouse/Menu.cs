@@ -1,13 +1,12 @@
-﻿using System;
-using System.IO;
-using Newtonsoft.Json;
+﻿using JSON;
 using Newtonsoft.Json.Linq;
-using JSON;
+using System;
+using System.IO;
 namespace Menu
 {
     public class menu
     {
-        public static void show() 
+        public static void show()
         {
             bool running = true;
             while (running)
@@ -213,7 +212,7 @@ namespace Menu
                 {
                     string name = item.GetValue("name").ToString();
                     string info = item.GetValue("info").ToString();
-                
+
                     Console.WriteLine($"{name}\n{info}\n\n");
                 }
             }
@@ -290,7 +289,7 @@ namespace Menu
                     string vis = item.GetValue("vis").ToString();
                     string id = item.GetValue("id").ToString();
 
-                    if (vegan == "ja" && soortgerecht =="voorgerecht")
+                    if (vegan == "ja" && soortgerecht == "voorgerecht")
                     {
                         Console.WriteLine($"{id}. {name}\n{info}\n-{price}\n");
                     }
@@ -464,7 +463,7 @@ namespace Menu
                 }
 
             }
-            
+
 
 
             static void Alles()
