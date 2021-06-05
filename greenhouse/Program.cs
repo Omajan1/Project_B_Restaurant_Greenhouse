@@ -70,7 +70,14 @@ namespace Greenhouse
                         menu.show();
                         break;
                     case "3":
-                        rules.show();
+                        var AlleRegels = rules.show();
+                        Console.Clear();
+                        foreach(var regel in AlleRegels)
+                        {
+                            Console.WriteLine(regel);
+                        }
+                        Console.WriteLine("\t\t\t---Druk op enter om terug te gaan.---\n");
+                        Console.ReadLine();
                         break;
                     case "4":
                         contact.Contact.showInfo();

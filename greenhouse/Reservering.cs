@@ -14,38 +14,45 @@ namespace reservering
     public class ReserveringMain
     {
 
-        public static string getTime()
+        public static string getTime(bool x)
         {
-            // Geeft de 3 timeslots aan en laat de user pas doorgaan als een keuze is gemaakt.
-            bool running = true;
-            while (running)
+            if (x)
             {
-
-                Console.WriteLine("Welk tijdslot wilt u reserveren voor deze dag?");
-                Console.WriteLine("1. Van 13:00 tot 16:00");
-                Console.WriteLine("2. Van 16:00 tot 19:00");
-                Console.WriteLine("3. Van 19:00 tot 22:00");
-                Console.WriteLine("4. Terug naar het menu");
-
-                
-
-                switch (Console.ReadLine())
+                // Geeft de 3 timeslots aan en laat de user pas doorgaan als een keuze is gemaakt.
+                bool running = true;
+                while (running)
                 {
-                    case "1":
-                        return "13:00";
-                    case "2":
-                        return "16:00";
-                    case "3":
-                        return "19:00";
-                    case "4":
-                        running = false;
-                        return "";
-                    default:
-                        Console.WriteLine("Geef een geldige keuze : ");
-                        break;
+
+                    Console.WriteLine("Welk tijdslot wilt u reserveren voor deze dag?");
+                    Console.WriteLine("1. Van 13:00 tot 16:00");
+                    Console.WriteLine("2. Van 16:00 tot 19:00");
+                    Console.WriteLine("3. Van 19:00 tot 22:00");
+                    Console.WriteLine("4. Terug naar het menu");
+
+
+
+                    switch (Console.ReadLine())
+                    {
+                        case "1":
+                            return "13:00";
+                        case "2":
+                            return "16:00";
+                        case "3":
+                            return "19:00";
+                        case "4":
+                            running = false;
+                            return "";
+                        default:
+                            Console.WriteLine("Geef een geldige keuze : ");
+                            break;
+                    }
                 }
+                return "";
             }
-            return "";
+            else
+            {
+                return "test";
+            }
         }
 
 
@@ -239,34 +246,34 @@ namespace reservering
             // zet de string naar een array
             var Count = JArray.Parse(innit);
 
-			// Loopt door alle reserveringen
-			var running = true;
-			Console.Clear();
-			while (running)
-			{
+            // Loopt door alle reserveringen
+            var running = true;
+            Console.Clear();
+            while (running)
+            {
 
-				foreach (JObject item in Count)
-				{
-					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
+                foreach (JObject item in Count)
+                {
+                    // Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
 
-					if (naamVanKlant == item.GetValue("Achternaam").ToString())
+                    if (naamVanKlant == item.GetValue("Achternaam").ToString())
                     {
-						string date = item.GetValue("Datum").ToString();
-						string name = item.GetValue("Naam").ToString();
-						string table = item.GetValue("TafelNummer").ToString();
-						string tijd = item.GetValue("Tijd").ToString();
+                        string date = item.GetValue("Datum").ToString();
+                        string name = item.GetValue("Naam").ToString();
+                        string table = item.GetValue("TafelNummer").ToString();
+                        string tijd = item.GetValue("Tijd").ToString();
 
-						Console.WriteLine($"{name} heeft een reservering op {date} voor tafel {table} om {tijd}.\n");
-					}
-				}
-				running = false;
-				Console.WriteLine("Druk op enter om weer terug te gaan.");
-				Console.ReadLine();
-			}
-		}
-		public static void makeReservation()
-		{
-			bool running = true;
+                        Console.WriteLine($"{name} heeft een reservering op {date} voor tafel {table} om {tijd}.\n");
+                    }
+                }
+                running = false;
+                Console.WriteLine("Druk op enter om weer terug te gaan.");
+                Console.ReadLine();
+            }
+        }
+        public static void makeReservation()
+        {
+            bool running = true;
 
 
             string tijd = "";
@@ -296,7 +303,7 @@ namespace reservering
                         datum = getDate();
                         break;
                     case "2":
-                        tijd = getTime();
+                        tijd = getTime(true);
                         break;
                     case "3":
                         if (tijd != "" && datum != "")
@@ -309,41 +316,41 @@ namespace reservering
                             Console.WriteLine("Vul eerst optie 1 en 2 in: ");
                             Console.ReadLine();
                         }
-						
-						break;
-					case "4":
-						naam = getVoornaam();
-						break;
-					case "5":
-						achternaam = getAchternaam();
-						break;
-					case "6":
-						if(tafelNummer != "")
+
+                        break;
+                    case "4":
+                        naam = getVoornaam();
+                        break;
+                    case "5":
+                        achternaam = getAchternaam();
+                        break;
+                    case "6":
+                        if (tafelNummer != "")
                         {
-							if(tafelNummer == "4" || tafelNummer == "15")
+                            if (tafelNummer == "4" || tafelNummer == "15")
                             {
-								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(6);
+                                aantalPersonen = Filter.FilterMain.FilterAantalPersonen(6);
                             }
                             else
                             {
-								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(2);
+                                aantalPersonen = Filter.FilterMain.FilterAantalPersonen(2);
                             }
-							
+
                         }
                         else
                         {
-							Console.Clear();
-							Console.WriteLine("Vul eerst optie 3 in a.u.b.");
-							Console.ReadLine();
+                            Console.Clear();
+                            Console.WriteLine("Vul eerst optie 3 in a.u.b.");
+                            Console.ReadLine();
                         }
-						
-						break;
-					case "8":
-						running = false;
-						break;
-					case "7":
-						
-						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "" && aantalPersonen != "")
+
+                        break;
+                    case "8":
+                        running = false;
+                        break;
+                    case "7":
+
+                        if (naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "" && aantalPersonen != "")
                         {
 
 
@@ -454,13 +461,13 @@ namespace reservering
         public string Datum { get; set; }
 
         public string AantalPersonen { get; set; }
-        public void Info()
+        public string Info()
         {
-            Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
+            return $"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur";
         }
         public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum, string aantalPersonen)
         {
-            Random r = new Random();
+
             this.Naam = naam;
             this.Achternaam = achternaam;
             this.TafelNummer = tafelnummer;

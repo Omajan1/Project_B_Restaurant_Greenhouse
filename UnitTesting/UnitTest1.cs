@@ -1,6 +1,8 @@
 using contact;
 using Filter;
 using login;
+using Rules;
+using reservering;
 using NUnit.Framework;
 namespace Nunit3
 {
@@ -11,6 +13,19 @@ namespace Nunit3
         {
 
         }
+        [Test]
+        public void Regel_4()
+        {
+            var x = rules.show();
+            Assert.AreEqual(x[4], "4. Voor baby’s zijn er babystoelen.\n");
+        }
+        [Test]
+        public void Reservering_Tijd()
+        {
+            var x = ReserveringMain.getTime(false);
+            Assert.AreEqual(x, "test");
+        }
+        
         [Test]
         public void Test()
         {
@@ -42,7 +57,19 @@ namespace Nunit3
 
 
         }
+        [Test]
+        public void Test_maken_van_een_reservaring_info()
+        {
 
+            Reservering klant = new Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
+
+
+            Assert.AreEqual(klant.Info(), "Er staat een reservering op de naam Naam Achternaam op 00/00 om 16:00 uur");
+
+
+
+        }
+        
         [Test]
         public void Test_maken_van_een_reservaring_tafelnummer()
         {
