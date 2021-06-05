@@ -2,7 +2,7 @@
 using reservering;
 using Rules;
 using System;
-
+using login;
 namespace Greenhouse
 {
     class Program
@@ -103,7 +103,7 @@ namespace Greenhouse
                         string username = Console.ReadLine();
                         Console.WriteLine("Wachtwoord:");
                         string password = Console.ReadLine();
-                        if (login.Login.check(username, password)) contact.Contact.showVragen();
+                        if (Login.check(username, password)) contact.Contact.showVragen();
                         else Console.WriteLine("Verkeerde gegevens");
                         break;
 

@@ -27,9 +27,9 @@ namespace reservering
                 Console.WriteLine("3. Van 19:00 tot 22:00");
                 Console.WriteLine("4. Terug naar het menu");
 
-                string reader =  Console.ReadLine();
+                
 
-                switch (reader)
+                switch (Console.ReadLine())
                 {
                     case "1":
                         return "13:00";
