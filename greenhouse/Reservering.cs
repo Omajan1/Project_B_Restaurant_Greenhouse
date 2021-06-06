@@ -14,45 +14,38 @@ namespace reservering
     public class ReserveringMain
     {
 
-        public static string getTime(bool x)
+        public static string getTime()
         {
-            if (x)
+            // Geeft de 3 timeslots aan en laat de user pas doorgaan als een keuze is gemaakt.
+            bool running = true;
+            while (running)
             {
-                // Geeft de 3 timeslots aan en laat de user pas doorgaan als een keuze is gemaakt.
-                bool running = true;
-                while (running)
+
+                Console.WriteLine("Welk tijdslot wilt u reserveren voor deze dag?");
+                Console.WriteLine("1. Van 13:00 tot 16:00");
+                Console.WriteLine("2. Van 16:00 tot 19:00");
+                Console.WriteLine("3. Van 19:00 tot 22:00");
+                Console.WriteLine("4. Terug naar het menu");
+
+                string reader = Console.ReadLine();
+
+                switch (reader)
                 {
-
-                    Console.WriteLine("Welk tijdslot wilt u reserveren voor deze dag?");
-                    Console.WriteLine("1. Van 13:00 tot 16:00");
-                    Console.WriteLine("2. Van 16:00 tot 19:00");
-                    Console.WriteLine("3. Van 19:00 tot 22:00");
-                    Console.WriteLine("4. Terug naar het menu");
-
-
-
-                    switch (Console.ReadLine())
-                    {
-                        case "1":
-                            return "13:00";
-                        case "2":
-                            return "16:00";
-                        case "3":
-                            return "19:00";
-                        case "4":
-                            running = false;
-                            return "";
-                        default:
-                            Console.WriteLine("Geef een geldige keuze : ");
-                            break;
-                    }
+                    case "1":
+                        return "13:00";
+                    case "2":
+                        return "16:00";
+                    case "3":
+                        return "19:00";
+                    case "4":
+                        running = false;
+                        return "";
+                    default:
+                        Console.WriteLine("Geef een geldige keuze : ");
+                        break;
                 }
-                return "";
             }
-            else
-            {
-                return "test";
-            }
+            return "";
         }
 
 
@@ -125,7 +118,6 @@ namespace reservering
                 //voegt alle tafelnummers toe die gebruikt worden op die dag op dat tijdstip
                 foreach (JObject item in FinalUsableObjects)
                 {
-<<<<<<< HEAD
                     string TableInUse = item.GetValue("TafelNummer").ToString();
                     TableNumbersInUse.Add(TableInUse);
                 }
@@ -155,41 +147,10 @@ namespace reservering
                 string TafelsVrij_string = "";
 
                 foreach (string tafel in result)
-=======
-					string TableInUse = item.GetValue("TafelNummer").ToString();
-					TableNumbersInUse.Add(TableInUse);
-				}
-
-				List<string> TafelsVrij = new List<string>();
-
-				//vul tafelsvrij met alle mogelijke tafels
-				TafelsVrij.Add("1");
-				TafelsVrij.Add("2");
-				TafelsVrij.Add("3");
-				TafelsVrij.Add("4");
-				TafelsVrij.Add("5");
-				TafelsVrij.Add("6");
-				TafelsVrij.Add("7");
-				TafelsVrij.Add("8");
-				TafelsVrij.Add("9");
-				TafelsVrij.Add("10");
-				TafelsVrij.Add("11");
-				TafelsVrij.Add("12");
-				TafelsVrij.Add("13");
-				TafelsVrij.Add("14");
-				TafelsVrij.Add("15");
-
-				List<string> result = TafelsVrij.Except(TableNumbersInUse).ToList();
-
-				string TafelsVrij_string = "";
-
-				foreach (string tafel in result)
->>>>>>> aman_branch
                 {
                     TafelsVrij_string += tafel + ",";
                 }
 
-<<<<<<< HEAD
                 Console.Clear();
                 //■
                 Console.WriteLine("                     -TAFEL INDELING GREENHOUSE-                                      |                   |              ");
@@ -233,54 +194,6 @@ namespace reservering
                 string tafelNummer;
 
                 while (r)
-=======
-				Console.Clear();
-				//■
-				Console.WriteLine("                     -TAFEL INDELING GREENHOUSE-                                      |                   |              ");
-				Console.WriteLine("                                                                                      |                   |              ");
-				Console.WriteLine("--------------    --------------    ---------------    --------------                 |                   |              ");
-				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("  Θ ■ 1 ■ Θ      ■ ■ ■      Θ ■ 8 ■ Θ     Θ ■ 10■ Θ      Θ ■ ■ ■ Θ  |                 |                   |              ");
-				Console.WriteLine("    ■ ■ ■      Θ ■ 5 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |                 |                   |              ");
-				Console.WriteLine("|                ■ ■ ■                                   Θ ■ 15■ Θ                    |                   |              ");
-				Console.WriteLine("|   ■ ■ ■                     ■ ■ ■         ■ ■ ■          ■ ■ ■                      |                   |              ");
-				Console.WriteLine("| Θ ■ 2 ■ Θ      ■ ■ ■      Θ ■ 9 ■ Θ     Θ ■ 11■ Θ      Θ ■ ■ ■ Θ  |         -----------------------------------------  ");
-				Console.WriteLine("|   ■ ■ ■      Θ ■ 6 ■ Θ      ■ ■ ■         ■ ■ ■          ■ ■ ■    |         | Elke dag open, vannaf 13:00 tot 22:00 |  ");
-				Console.WriteLine("                 ■ ■ ■                                       0                | De bar is open van 13:00 tot 01:00    |  ");
-				Console.WriteLine("    ■ ■ ■                                   ■ ■ ■          WC ----->          -----------------------------------------  ");
-				Console.WriteLine("| Θ ■ 3 ■ Θ      ■ ■ ■                    Θ ■ 12■ Θ       ----------|                                                    ");
-				Console.WriteLine("|   ■ ■ ■      Θ ■ 7 ■ Θ                    ■ ■ ■       Θ |         |                        ^                           ");
-				Console.WriteLine("|                ■ ■ ■                                    |         |                        |                           ");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |   B     |                        |                           ");
-				Console.WriteLine("| Θ ■ ■ ■ Θ                               Θ ■ 13■ Θ       |   A     |");
-				Console.WriteLine("    ■ ■ ■                                   ■ ■ ■       Θ |   R     |");
-				Console.WriteLine("  Θ ■ 4 ■ Θ                                               |         |");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |         |");
-				Console.WriteLine("| Θ ■ ■ ■ Θ                               Θ ■ 14■ Θ       |         |");
-				Console.WriteLine("|   ■ ■ ■                                   ■ ■ ■       Θ |         |");
-				Console.WriteLine("|                             ^                           |         |");
-				Console.WriteLine("|                             |                         Θ |         |");
-				Console.WriteLine("---------    --------------   |    ------------    ------------------\n");
-
-				//voor 1,2,3,... komt iets waarbij hij alleen de tafels laat zien die vrij zijn
-				// Hier wordt op de datum en tijd van de reservering gekeken welke tafels er nog niet gereserveerd zijn.
-
-				Console.WriteLine("Tafel: " + TafelsVrij_string + " zijn nog beschikbaar.\n");
-
-				Console.WriteLine(" WC is aangegeven aan de rechter kant van het restaurant.");
-
-				Console.WriteLine(" Θ zijn de stoelen.\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
-
-				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
-
-				// Voeg check toe voor int, het crasht als je een string invoeft
-				// int tafelNummer = Convert.ToInt32(Console.ReadLine());
-				// Hier moet laten een int van gemaakt worden, maar het cracht nu als je dat invult
-				bool r = true;
-				string tafelNummer;
-
-				while (r)
->>>>>>> aman_branch
                 {
                     tafelNummer = Console.ReadLine();
 
@@ -296,30 +209,6 @@ namespace reservering
                                 table_is_in_use = true;
                             }
                         }
-<<<<<<< HEAD
-=======
-						if (tafelNummer == "" || Convert.ToInt32(tafelNummer) < 1 || Convert.ToInt32(tafelNummer) > 15 || table_is_in_use) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
-						{
-							Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer.");
-						}
-						else
-						{
-							return tafelNummer.ToString();
-						}
-						r = false;
-					}
-					else
-					{
-						Console.WriteLine("");
-					}
-				}
-			}
-		}
-		public static void showReserveringen(string naamVanKlant)
-        {
-			// Laad het json bestand naar een string
-			string innit = File.ReadAllText(paths.reservaring);
->>>>>>> aman_branch
 
                         if (tafelNummer == "" || Convert.ToInt32(tafelNummer) < 1 || Convert.ToInt32(tafelNummer) > 15 || table_is_in_use) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
                         {
@@ -338,7 +227,6 @@ namespace reservering
                 }
 
 
-<<<<<<< HEAD
 
 
             }
@@ -360,17 +248,6 @@ namespace reservering
                 foreach (JObject item in Count)
                 {
                     // Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
-=======
-			// Loopt door alle reserveringen
-			var running = true;
-			int counter = 0;
-			Console.Clear();
-			while (running)
-			{
-				foreach (JObject item in Count)
-				{
-					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
->>>>>>> aman_branch
 
                     if (naamVanKlant == item.GetValue("Achternaam").ToString())
                     {
@@ -419,7 +296,7 @@ namespace reservering
                         datum = getDate();
                         break;
                     case "2":
-                        tijd = getTime(true);
+                        tijd = getTime();
                         break;
                     case "3":
                         if (tijd != "" && datum != "")
@@ -577,13 +454,13 @@ namespace reservering
         public string Datum { get; set; }
 
         public string AantalPersonen { get; set; }
-        public string Info()
+        public void Info()
         {
-            return $"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur";
+            Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
         }
         public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum, string aantalPersonen)
         {
-
+            Random r = new Random();
             this.Naam = naam;
             this.Achternaam = achternaam;
             this.TafelNummer = tafelnummer;
