@@ -323,11 +323,11 @@ namespace reservering
                         {
 							if(tafelNummer == "4" || tafelNummer == "15")
                             {
-								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(6);
+								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(6, false);
                             }
                             else
                             {
-								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(2);
+								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(2, false);
                             }
 							
                         }

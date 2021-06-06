@@ -14,7 +14,7 @@ namespace Nunit3
         }
 
         [Test]
-        public void Test()
+        public void False_Test()
         {
             // Moet false worden
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
@@ -140,12 +140,13 @@ namespace Nunit3
         public void FilterAantalPersonen_test()
         {
             string s = Filter.FilterMain.FilterAantalPersonen(6, true);
-            Assert.AreEqual(s, "");
+            Assert.AreEqual(s, "6");
         }
 
         [Test]
         public void DateCheck_unit_test()
         {
+            string s;
             bool smaller = false;
             int Month = DateTime.Now.Month;
             int Day = DateTime.Now.Day;
@@ -159,15 +160,16 @@ namespace Nunit3
 
             if (smaller)
             {
+                s = Filter.DateCheck.Check($"0{thisDay}/{thisMonth}");
+                Assert.AreEqual(s, $"0{thisDay}/{thisMonth}");
 
             }
             else
             {
-                Filter.DateCheck.Check(DateInput);
+                s = Filter.DateCheck.Check($"{thisDay}/{thisMonth}");
+                Assert.AreEqual(s, $"{thisDay}/{thisMonth}");
+
             }
-
-            Assert.AreEqual()
-
         }
 
     }

@@ -131,7 +131,7 @@ namespace Filter
     }
 
 
-    class DateCheck
+    public class DateCheck
     {
     
         public static string Check(string DateInput)
