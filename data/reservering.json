@@ -16,5 +16,14 @@
     "Tijd": "16:00",
     "Datum": "29/12",
     "AantalPersonen": "1"
+  },
+  {
+    "Naam": "Mar",
+    "Achternaam": "Hoi",
+    "TafelNummer": "4",
+    "Res_ID": 3,
+    "Tijd": "13:00",
+    "Datum": "02/06",
+    "AantalPersonen": "6"
   }
 ]
