@@ -12,15 +12,6 @@ namespace contact
     {
         public string Text = "";
         public string Name = "";
-
-
-        public Comment(string text, string name, bool x)
-        {
-            this.Text = text;
-            this.Name = name;
-        }
-
-
         public Comment(string text, string name)
         {
             this.Text = text;
@@ -39,6 +30,23 @@ namespace contact
             array.Add(jsonObject);
 
             // Slaat het op in JSON
+            File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
+        }
+        public void deleteComment(string text)
+        {
+            string initialJson = File.ReadAllText(paths.vragen);
+
+            var array = JArray.Parse(initialJson);
+            foreach(JToken i in array)
+            {
+                string question = i["Text"].ToString();
+                if (question == text)
+                {
+                    i["Text"] = null;
+                    i["Name"] = null;
+                    
+                }
+            }
             File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
         }
     }

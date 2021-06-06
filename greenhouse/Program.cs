@@ -2,7 +2,7 @@
 using reservering;
 using Rules;
 using System;
-
+using login;
 namespace Greenhouse
 {
     class Program
@@ -70,7 +70,14 @@ namespace Greenhouse
                         menu.show();
                         break;
                     case "3":
-                        rules.show();
+                        var AlleRegels = rules.show();
+                        Console.Clear();
+                        foreach(var regel in AlleRegels)
+                        {
+                            Console.WriteLine(regel);
+                        }
+                        Console.WriteLine("\t\t\t---Druk op enter om terug te gaan.---\n");
+                        Console.ReadLine();
                         break;
                     case "4":
                         contact.Contact.showInfo();
@@ -103,6 +110,7 @@ namespace Greenhouse
                         string username = Console.ReadLine();
                         Console.WriteLine("Wachtwoord:");
                         string password = Console.ReadLine();
+
                         if (login.Login.check(username, password)) contact.Contact.showVragen();
                         else Console.WriteLine("Verkeerde gegevens");
                         break;

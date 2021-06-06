@@ -27,7 +27,8 @@ namespace reservering
                 Console.WriteLine("3. Van 19:00 tot 22:00");
                 Console.WriteLine("4. Terug naar het menu");
 
-                string reader =  Console.ReadLine();
+
+                string reader = Console.ReadLine();
 
                 switch (reader)
                 {
@@ -240,34 +241,34 @@ namespace reservering
             // zet de string naar een array
             var Count = JArray.Parse(innit);
 
-			// Loopt door alle reserveringen
-			var running = true;
-			Console.Clear();
-			while (running)
-			{
+            // Loopt door alle reserveringen
+            var running = true;
+            Console.Clear();
+            while (running)
+            {
 
-				foreach (JObject item in Count)
-				{
-					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
+                foreach (JObject item in Count)
+                {
+                    // Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
 
-					if (naamVanKlant == item.GetValue("Achternaam").ToString())
+                    if (naamVanKlant == item.GetValue("Achternaam").ToString())
                     {
-						string date = item.GetValue("Datum").ToString();
-						string name = item.GetValue("Naam").ToString();
-						string table = item.GetValue("TafelNummer").ToString();
-						string tijd = item.GetValue("Tijd").ToString();
+                        string date = item.GetValue("Datum").ToString();
+                        string name = item.GetValue("Naam").ToString();
+                        string table = item.GetValue("TafelNummer").ToString();
+                        string tijd = item.GetValue("Tijd").ToString();
 
-						Console.WriteLine($"{name} heeft een reservering op {date} voor tafel {table} om {tijd}.\n");
-					}
-				}
-				running = false;
-				Console.WriteLine("Druk op enter om weer terug te gaan.");
-				Console.ReadLine();
-			}
-		}
-		public static void makeReservation()
-		{
-			bool running = true;
+                        Console.WriteLine($"{name} heeft een reservering op {date} voor tafel {table} om {tijd}.\n");
+                    }
+                }
+                running = false;
+                Console.WriteLine("Druk op enter om weer terug te gaan.");
+                Console.ReadLine();
+            }
+        }
+        public static void makeReservation()
+        {
+            bool running = true;
 
 
             string tijd = "";
@@ -310,41 +311,41 @@ namespace reservering
                             Console.WriteLine("Vul eerst optie 1 en 2 in: ");
                             Console.ReadLine();
                         }
-						
-						break;
-					case "4":
-						naam = getVoornaam();
-						break;
-					case "5":
-						achternaam = getAchternaam();
-						break;
-					case "6":
-						if(tafelNummer != "")
+
+                        break;
+                    case "4":
+                        naam = getVoornaam();
+                        break;
+                    case "5":
+                        achternaam = getAchternaam();
+                        break;
+                    case "6":
+                        if (tafelNummer != "")
                         {
-							if(tafelNummer == "4" || tafelNummer == "15")
+                            if (tafelNummer == "4" || tafelNummer == "15")
                             {
-								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(6, false);
+                                aantalPersonen = Filter.FilterMain.FilterAantalPersonen(6, false);
                             }
                             else
                             {
-								aantalPersonen = Filter.FilterMain.FilterAantalPersonen(2, false);
+                                aantalPersonen = Filter.FilterMain.FilterAantalPersonen(2, false);
                             }
-							
+
                         }
                         else
                         {
-							Console.Clear();
-							Console.WriteLine("Vul eerst optie 3 in a.u.b.");
-							Console.ReadLine();
+                            Console.Clear();
+                            Console.WriteLine("Vul eerst optie 3 in a.u.b.");
+                            Console.ReadLine();
                         }
-						
-						break;
-					case "8":
-						running = false;
-						break;
-					case "7":
-						
-						if(naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "" && aantalPersonen != "")
+
+                        break;
+                    case "8":
+                        running = false;
+                        break;
+                    case "7":
+
+                        if (naam != "" && achternaam != "" && tafelNummer != "" && tijd != "" && datum != "" && aantalPersonen != "")
                         {
 
 
@@ -480,4 +481,5 @@ namespace reservering
         }
     }
 }
+
 
