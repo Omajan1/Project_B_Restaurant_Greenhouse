@@ -1,11 +1,11 @@
 using contact;
-<<<<<<< HEAD
+
 using Filter;
 using login;
 using Rules;
 using reservering;
 using NUnit.Framework;
-=======
+
 using reservering;
 using System;
 using System.IO;
@@ -18,7 +18,7 @@ using ConsoleReader;
 using System.Net.Mail;
 using System.Net;
 
->>>>>>> aman_branch
+
 namespace Nunit3
 {
     public class Tests
@@ -53,11 +53,11 @@ namespace Nunit3
         public void Test_maken_van_een_reservaring_naam()
         {
             // Moet false worden
-<<<<<<< HEAD
+
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
 =======
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "2");
->>>>>>> aman_branch
+
 
             Assert.AreEqual(klant.Naam, "Naam");
 
@@ -72,7 +72,7 @@ namespace Nunit3
 
 
             Assert.AreEqual(klant.Achternaam, "Achternaam");
-<<<<<<< HEAD
+
 
 
 
@@ -88,13 +88,13 @@ namespace Nunit3
 
 
 
-=======
+
             Assert.AreEqual(klant.TafelNummer, "5");
             Assert.AreEqual(klant.Tijd, "16:00");
             Assert.AreEqual(klant.Datum, "00/00");
             Assert.AreEqual(klant.Datum.Length, 5);
             Assert.AreEqual(klant.AantalPersonen, "2");
->>>>>>> aman_branch
+
         }
         
         [Test]
@@ -219,7 +219,7 @@ namespace Nunit3
             Assert.AreEqual(contact.Text, "textTest");
             contact.deleteComment("textTest");
         }
-<<<<<<< HEAD
+
 
         [Test]
         public void Filterstring_test()
@@ -235,7 +235,6 @@ namespace Nunit3
             Assert.AreEqual(b, false);
         }
 
-=======
->>>>>>> aman_branch
+
     }
 }
