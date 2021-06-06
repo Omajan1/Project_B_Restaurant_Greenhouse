@@ -1,3 +1,4 @@
+using System;
 using contact;
 using Filter;
 using login;
@@ -25,7 +26,7 @@ namespace Nunit3
         public void Regel_4()
         {
             var x = rules.show();
-            Assert.AreEqual(x[4], "4. Voor baby’s zijn er babystoelen.\n");
+            Assert.AreEqual(x[4], "4. Voor babyâ€™s zijn er babystoelen.\n");
         }
         [Test]
         public void Reservering_Tijd()
@@ -35,12 +36,12 @@ namespace Nunit3
         }
         
         [Test]
-        public void Test()
+        public void False_Test()
         {
             // Moet false worden
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
-            Assert.AreNotEqual(klant.Naam, "");
-        }
+            Assert.AreEqual(klant.Naam, "Naam");
+
 
         [Test]
         public void Test_maken_van_een_reservaring_naam()
@@ -211,6 +212,10 @@ namespace Nunit3
         }
 
 
+      //Filtertests
+
+
+
         [Test]
         public void Filterstring_test()
         {
@@ -225,6 +230,42 @@ namespace Nunit3
             Assert.AreEqual(b, false);
         }
 
+          
+        [Test]
+        public void FilterAantalPersonen_test()
+        {
+            string s = Filter.FilterMain.FilterAantalPersonen(6, true);
+            Assert.AreEqual(s, "6");
+        }
+
+        [Test]
+        public void DateCheck_unit_test()
+        {
+            string s;
+            bool smaller = false;
+            int Month = DateTime.Now.Month;
+            int Day = DateTime.Now.Day;
+            int thisMonth = Convert.ToInt32(Month);
+            int thisDay = Convert.ToInt32(Day);
+            thisDay += 1;
+            if(thisDay < 10)
+            {
+                smaller = true;
+            }
+
+            if (smaller)
+            {
+                s = Filter.DateCheck.Check($"0{thisDay}/{thisMonth}");
+                Assert.AreEqual(s, $"0{thisDay}/{thisMonth}");
+
+            }
+            else
+            {
+                s = Filter.DateCheck.Check($"{thisDay}/{thisMonth}");
+                Assert.AreEqual(s, $"{thisDay}/{thisMonth}");
+
+            }
+        }
 
     }
 }

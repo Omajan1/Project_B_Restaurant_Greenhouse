@@ -4,40 +4,81 @@ namespace Filter
 {
     public class FilterMain
     {
-        public static string FilterAantalPersonen(int PersonenAanTafel)
+        public static string FilterAantalPersonen(int PersonenAanTafel, bool Test)
         {
-            string userInput = "";
-            bool isNotInt = true;
-            while (isNotInt)
+            if (Test)
             {
-                Console.WriteLine("Met hoeveel personen wilt u reserveren?\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
-                userInput = Console.ReadLine();
-
-                if (typeCheckInt(userInput))
+                string userInput = "";
+                bool isNotInt = true;
+                while (isNotInt)
                 {
-                    //omzetten naar int zodat je niet steeds convert.toint hoeft te typen
-                    int a = Convert.ToInt32(userInput);
+                    Console.WriteLine("Met hoeveel personen wilt u reserveren?\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
+                    userInput = "6";
 
-                    if ((a > 0 && a < 7) && (a == PersonenAanTafel))
+                    if (typeCheckInt(userInput))
                     {
-                        return userInput;
-                    }
-                    else if(a> 0 && a < 7)
-                    {
-                        Console.WriteLine("Dit is een te grote groep voor de tafel die u gekozen heeft");
+                        //omzetten naar int zodat je niet steeds convert.toint hoeft te typen
+                        int a = Convert.ToInt32(userInput);
+
+                        if ((a > 0 && a < 7) && (a <= PersonenAanTafel))
+                        {
+                            return userInput;
+                        }
+                        else if (a > 0 && a < 7)
+                        {
+                            Console.WriteLine("Dit is een te grote groep voor de tafel die u gekozen heeft");
+                            userInput = Console.ReadLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Dit is een te grote groep, reserveer via het volgende telefoon nummer : 010-794-4000");
+                            userInput = Console.ReadLine();
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Dit is een te grote groep, reserveer via het volgende telefoon nummer : 010-794-4000");
+                        Console.WriteLine("Dit is geen geldig nummer!");
+                        userInput = Console.ReadLine();
                     }
-                }
-                else
-                {
-                    Console.WriteLine("Dit is geen geldig nummer!");
-                }
 
+                }
+                return "";
             }
-            return "";
+            else
+            {
+                string userInput = "";
+                bool isNotInt = true;
+                while (isNotInt)
+                {
+                    Console.WriteLine("Met hoeveel personen wilt u reserveren?\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
+                    userInput = Console.ReadLine();
+
+                    if (typeCheckInt(userInput))
+                    {
+                        //omzetten naar int zodat je niet steeds convert.toint hoeft te typen
+                        int a = Convert.ToInt32(userInput);
+
+                        if ((a > 0 && a < 7) && (a <= PersonenAanTafel))
+                        {
+                            return userInput;
+                        }
+                        else if (a > 0 && a < 7)
+                        {
+                            Console.WriteLine("Dit is een te grote groep voor de tafel die u gekozen heeft");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Dit is een te grote groep, reserveer via het volgende telefoon nummer : 010-794-4000");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Dit is geen geldig nummer!");
+                    }
+
+                }
+                return "";
+            }
             
             
         }
@@ -90,16 +131,16 @@ namespace Filter
     }
 
 
-    class DateCheck
+    public class DateCheck
     {
     
-        public static string Check()
+        public static string Check(string DateInput)
         {
 
             bool running = true;
             while (running)
             {
-                string DateInput = Console.ReadLine();
+                //string DateInput = Console.ReadLine();
                 bool Boolian = DateInput.Contains("/");
                 string[] DayMonthList = DateInput.Split('/');
                 if (DateInput.Length != 5 || !Boolian || DayMonthList[0].Length != 2 || DayMonthList[1].Length != 2)
@@ -137,6 +178,7 @@ namespace Filter
                                 else
                                 {
                                     Console.WriteLine("Niet beschikbaar");
+                                    DateInput = Console.ReadLine();
                                 }
                                 
                             }
@@ -145,6 +187,7 @@ namespace Filter
                         else
                         {
                             Console.WriteLine("Deze datum is niet beschikbaar, probeer het nog eens.\n");
+                            DateInput = Console.ReadLine();
                         }
 
                         
@@ -153,6 +196,7 @@ namespace Filter
                     else
                     {
                         Console.WriteLine("Deze datum is niet beschikbaar, probeer het nog eens.\n");
+                        DateInput = Console.ReadLine();
 
                     }
 

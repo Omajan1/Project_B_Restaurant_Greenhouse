@@ -27,6 +27,7 @@ namespace reservering
                 Console.WriteLine("3. Van 19:00 tot 22:00");
                 Console.WriteLine("4. Terug naar het menu");
 
+
                 string reader = Console.ReadLine();
 
                 switch (reader)
@@ -55,7 +56,8 @@ namespace reservering
             Console.WriteLine("In het format DD/MM, zoals dit: 29/02 of 02/05");
 
             // check:
-            string dateOutput = Filter.DateCheck.Check();
+            string DateInput = Console.ReadLine();
+            string dateOutput = Filter.DateCheck.Check(DateInput);
             return dateOutput;
         }
 
@@ -322,11 +324,11 @@ namespace reservering
                         {
                             if (tafelNummer == "4" || tafelNummer == "15")
                             {
-                                aantalPersonen = Filter.FilterMain.FilterAantalPersonen(6);
+                                aantalPersonen = Filter.FilterMain.FilterAantalPersonen(6, false);
                             }
                             else
                             {
-                                aantalPersonen = Filter.FilterMain.FilterAantalPersonen(2);
+                                aantalPersonen = Filter.FilterMain.FilterAantalPersonen(2, false);
                             }
 
                         }
