@@ -1,3 +1,4 @@
+using System;
 using contact;
 using Filter;
 using login;
@@ -116,6 +117,11 @@ namespace Nunit3
             Assert.AreEqual(contact.Text, "textTest");
         }
 
+
+
+        //Filtertests
+
+
         [Test]
         public void Filterstring_test()
         {
@@ -133,6 +139,34 @@ namespace Nunit3
         [Test]
         public void FilterAantalPersonen_test()
         {
+            string s = Filter.FilterMain.FilterAantalPersonen(6, true);
+            Assert.AreEqual(s, "");
+        }
+
+        [Test]
+        public void DateCheck_unit_test()
+        {
+            bool smaller = false;
+            int Month = DateTime.Now.Month;
+            int Day = DateTime.Now.Day;
+            int thisMonth = Convert.ToInt32(Month);
+            int thisDay = Convert.ToInt32(Day);
+            thisDay += 1;
+            if(thisDay < 10)
+            {
+                smaller = true;
+            }
+
+            if (smaller)
+            {
+
+            }
+            else
+            {
+                Filter.DateCheck.Check(DateInput);
+            }
+
+            Assert.AreEqual()
 
         }
 

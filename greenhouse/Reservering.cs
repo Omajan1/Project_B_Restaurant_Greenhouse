@@ -55,7 +55,8 @@ namespace reservering
             Console.WriteLine("In het format DD/MM, zoals dit: 29/02 of 02/05");
 
             // check:
-            string dateOutput = Filter.DateCheck.Check();
+            string DateInput = Console.ReadLine();
+            string dateOutput = Filter.DateCheck.Check(DateInput);
             return dateOutput;
         }
 
