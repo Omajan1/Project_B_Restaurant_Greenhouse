@@ -142,7 +142,6 @@ namespace reservering
 				TafelsVrij.Add("14");
 				TafelsVrij.Add("15");
 
-
 				List<string> result = TafelsVrij.Except(TableNumbersInUse).ToList();
 
 				string TafelsVrij_string = "";
@@ -189,7 +188,6 @@ namespace reservering
 
 				Console.WriteLine(" Θ zijn de stoelen.\nHet personeel is altijd in staat om uw tafel te wijzigen als dat beter uitkomt voor de rest van de gasten.");
 
-
 				Console.WriteLine("Aan welke tafel wilt u eten? Typ het nummer van deze tafel in:");
 
 				// Voeg check toe voor int, het crasht als je een string invoeft
@@ -214,7 +212,6 @@ namespace reservering
 								table_is_in_use = true;
                             }
                         }
-						
 						if (tafelNummer == "" || Convert.ToInt32(tafelNummer) < 1 || Convert.ToInt32(tafelNummer) > 15 || table_is_in_use) // We kunnen hier toevoegen dat als een tafel bezet is hij niet meer gereserveerd kan worden
 						{
 							Console.WriteLine("Dit tafelnummer is niet beschikbaar, probeer een ander tafelnummer.");
@@ -230,10 +227,6 @@ namespace reservering
 						Console.WriteLine("");
 					}
 				}
-
-
-
-
 			}
 		}
 		public static void showReserveringen(string naamVanKlant)
@@ -250,8 +243,6 @@ namespace reservering
 			Console.Clear();
 			while (running)
 			{
-
-
 				foreach (JObject item in Count)
 				{
 					// Loopt door alle objecten in het JSON bestand, en laat zien welke reserveringen er zijn.
