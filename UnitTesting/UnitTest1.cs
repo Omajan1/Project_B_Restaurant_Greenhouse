@@ -19,7 +19,7 @@ namespace Nunit3
             // Moet false worden
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
 
-            Assert.AreEqual(klant.Naam, "lalala");
+            Assert.AreEqual(klant.Naam, "Naam");
 
 
         }
