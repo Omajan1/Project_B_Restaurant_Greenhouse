@@ -1,22 +1,15 @@
 using contact;
-
 using Filter;
 using login;
 using Rules;
 using reservering;
 using NUnit.Framework;
-
-using reservering;
-using System;
 using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using JSON;
-using ConsoleReader;
-using System.Net.Mail;
-using System.Net;
+
 
 
 namespace Nunit3
@@ -55,7 +48,7 @@ namespace Nunit3
             // Moet false worden
 
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
-=======
+
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "2");
 
 
@@ -96,7 +89,7 @@ namespace Nunit3
             Assert.AreEqual(klant.AantalPersonen, "2");
 
         }
-        
+
         [Test]
         public void Test_maken_van_een_reservaring_tafelnummer()
         {
@@ -105,6 +98,7 @@ namespace Nunit3
 
 
             Assert.AreEqual(klant.TafelNummer, "5");
+        }
 
         [Test]
         public void Tafel_String_checken()
@@ -181,8 +175,6 @@ namespace Nunit3
 
             //check
             Assert.AreEqual(TafelsVrij_string, "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,");
-        }
-
 
         }
 
