@@ -47,8 +47,6 @@ namespace Nunit3
         {
             // Moet false worden
 
-            reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
-
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "2");
 
 
