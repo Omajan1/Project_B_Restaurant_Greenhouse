@@ -240,30 +240,13 @@ namespace Nunit3
             Assert.AreEqual(s, "6");
         }
 
-        /*
+        
         [Test]
         public void DateCheck_unit_test()
         {
-            string s;
-            int Month = DateTime.Now.Month;
-            int Day = DateTime.Now.Day;
-            int thisMonth = Convert.ToInt32(Month);
-            int thisDay = Convert.ToInt32(Day);
-            thisDay += 1;
-           
-            if (thisDay < 10)
-            {
-                s = Filter.DateCheck.Check($"0{thisDay}/{thisMonth}");
-                Assert.AreEqual(s, $"0{thisDay}/{thisMonth}");
-
-            }
-            else
-            {
-                s = Filter.DateCheck.Check($"{thisDay}/{thisMonth}");
-                Assert.AreEqual(s, $"{thisDay}/{thisMonth}");
-
-            }
+            string s = Filter.DateCheck.Check("31/12");
+            Assert.AreEqual(s, "31/12");
         }
-        */
+        
     }
 }
