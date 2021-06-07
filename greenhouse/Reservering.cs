@@ -456,9 +456,9 @@ namespace reservering
         public string Datum { get; set; }
 
         public string AantalPersonen { get; set; }
-        public void Info()
+        public string Info()
         {
-            Console.WriteLine($"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur");
+            return $"Er staat een reservering op de naam {this.Naam} {this.Achternaam} op {this.Datum} om {this.Tijd} uur";
         }
         public Reservering(string naam, string achternaam, string tafelnummer, string tijd, string datum, string aantalPersonen)
         {
