@@ -38,7 +38,7 @@ namespace Greenhouse
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("----Welkom bij de Reserverings Applicatie van GreenHouse---");
                 Console.WriteLine("--Duurzaamheid en Sustainability met Lokale Leveranciers!--");
-                Console.WriteLine("-----------Voor elke portomonee en altijd lekker!----------");
+                Console.WriteLine("-----------Voor elke portemonnee en altijd lekker!----------");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("--------|  Elke dag open, vanaf 13:00 tot 22:00   |--------");

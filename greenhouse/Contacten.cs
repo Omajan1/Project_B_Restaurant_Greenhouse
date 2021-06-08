@@ -158,7 +158,7 @@ namespace contact
 
 
             // Als input niet leeg is 
-            Console.WriteLine("Typ STOP om te stoppen met typen van een bericht.");
+            Console.WriteLine("Type STOP om te stoppen met typen van een bericht.");
             if (input == "1")
             {
                 string vraag = "\n";
@@ -207,6 +207,13 @@ namespace contact
             Console.WriteLine("Welk merk cola wordt er geserveerd?");
             Console.WriteLine("We serveren alleen Coca Cola, geen Pepsi.");
             Console.WriteLine("--------------------------------------------------------------------\n");
+
+            Console.WriteLine("--------------------------------------------------------------------");
+            Console.WriteLine("Wat zijn de openingstijden?");
+            Console.WriteLine("We zijn van zondag t/m zaterdag open van 13:00 tot ");
+            Console.WriteLine("--------------------------------------------------------------------\n");
+
+
         }
         public static void showAnswers()
         {
