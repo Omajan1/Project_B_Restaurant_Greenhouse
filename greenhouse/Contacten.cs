@@ -209,10 +209,19 @@ namespace contact
             Console.WriteLine("--------------------------------------------------------------------\n");
 
             Console.WriteLine("--------------------------------------------------------------------");
-            Console.WriteLine("Wat zijn de openingstijden?");
-            Console.WriteLine("We zijn van zondag t/m zaterdag open van 13:00 tot ");
+            Console.WriteLine("Hebben jullie nog meer faciliteiten op andere plekken?");
+            Console.WriteLine("Nee, we hebben ons restaurant nog maar op 1 plek staan.");
             Console.WriteLine("--------------------------------------------------------------------\n");
 
+            Console.WriteLine("--------------------------------------------------------------------");
+            Console.WriteLine("Hebben jullie wifi?");
+            Console.WriteLine("Ja, we hebben gratis wifi voor onze gasten.");
+            Console.WriteLine("--------------------------------------------------------------------\n");
+
+            Console.WriteLine("--------------------------------------------------------------------");
+            Console.WriteLine("Hebben jullie een kinderhoek?");
+            Console.WriteLine("We hebben geen kinderhoek, maar we kunnen de kinderen wel een tekening aanbieden.");
+            Console.WriteLine("--------------------------------------------------------------------\n");
 
         }
         public static void showAnswers()
