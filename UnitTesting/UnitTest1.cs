@@ -29,15 +29,6 @@ namespace Nunit3
             Assert.AreEqual(x[4], "4. Voor baby’s zijn er babystoelen.\n");
         }
 
-        //Reserveringtests
-
-
-        //[Test]
-        //public void Reservering_Tijd()
-        //{
-        //    var x = ReserveringMain.getTime();
-        //    Assert.AreEqual(x, "test");
-        //}
 
         [Test]
         public void False_Test()
@@ -46,6 +37,9 @@ namespace Nunit3
             reservering.Reservering klant = new reservering.Reservering("Naam", "Achternaam", "5", "16:00", "00/00", "0");
             Assert.AreEqual(klant.Naam, "Naam");
         }
+
+
+        //Reserveringtests
 
         [Test]
 
