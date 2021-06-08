@@ -2,10 +2,15 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
+using System.Diagnostics.CodeAnalysis;
+
 namespace Menu
+    
 {
+    [ExcludeFromCodeCoverage]
     public class menu
     {
+        [ExcludeFromCodeCoverage]
         public static void show()
         {
             bool running = true;

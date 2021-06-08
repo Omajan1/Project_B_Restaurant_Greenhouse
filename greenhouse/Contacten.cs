@@ -3,11 +3,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
+using System.Diagnostics.CodeAnalysis;
 namespace contact
 {
 
 
-
+    
     public class Comment
     {
         public string Text = "";
@@ -50,6 +51,7 @@ namespace contact
             File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
         }
     }
+    [ExcludeFromCodeCoverage]
     public class Contact
     {
         // Dit laat de vragen zien en geeft je de optie om ze te beantwoorden

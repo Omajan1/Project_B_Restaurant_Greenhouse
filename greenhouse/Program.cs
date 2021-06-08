@@ -3,10 +3,13 @@ using reservering;
 using Rules;
 using System;
 using login;
+using System.Diagnostics.CodeAnalysis;
 namespace Greenhouse
 {
+    [ExcludeFromCodeCoverage]
     class Program
     {
+
         static void Main(string[] args)
         {
             // Console settings

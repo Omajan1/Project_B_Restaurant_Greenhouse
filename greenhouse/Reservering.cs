@@ -7,10 +7,10 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-
+using System.Diagnostics.CodeAnalysis;
 namespace reservering
 {
-
+    [ExcludeFromCodeCoverage]
     public class ReserveringMain
     {
 
