@@ -41,7 +41,7 @@ namespace Greenhouse
                 Console.WriteLine("-----------Voor elke portomonee en altijd lekker!----------");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("--------|  Elke dag open, vanaf 13:00 tot 22:00  |--------");
+                Console.WriteLine("--------|  Elke dag open, vanaf 13:00 tot 22:00   |--------");
                 Console.WriteLine("---------|  De bar is open van 13:00 tot 01:00  |----------");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine();
