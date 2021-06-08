@@ -171,7 +171,7 @@ namespace Filter
                             }
                             else
                             {
-                                if(thisDay < day && day > 0 && day < daysinmonth)
+                                if(thisDay < day && day > 0 && day <= daysinmonth)
                                 {
                                     return DateInput;
                                 }
