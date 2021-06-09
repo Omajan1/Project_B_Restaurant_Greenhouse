@@ -238,13 +238,16 @@ namespace Nunit3
         [Test]
         public void DateCheck_unit_test()
         {
-            string s = Filter.DateCheck.Check(@"01/01
-32/01
-31/12
-");
+            string s = Filter.DateCheck.Check("31/12");
 
             Assert.AreEqual(s, "31/12");
         }
         
+        [Test]
+        public void Validate_unit_test()
+        {
+            int daysInMonth = Filter.DateCheck.Validate(6);
+            Assert.AreEqual(daysInMonth, 30);
+        }
     }
 }
