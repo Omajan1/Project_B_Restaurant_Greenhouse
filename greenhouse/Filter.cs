@@ -1,9 +1,10 @@
 ﻿using System;
-
+using System.Diagnostics.CodeAnalysis;
 namespace Filter
 {
     public class FilterMain
     {
+        [ExcludeFromCodeCoverage]
         public static string FilterAantalPersonen(int PersonenAanTafel, bool Test)
         {
             if (Test)
@@ -82,6 +83,7 @@ namespace Filter
             
             
         }
+        [ExcludeFromCodeCoverage]
         static public string FilterString(string input)
         {
             if (typeCheckInt(input))
@@ -97,7 +99,7 @@ namespace Filter
             }
             return input;
         }
-
+        [ExcludeFromCodeCoverage]
         static public bool FilterInt(string input)
         {
             bool running = true;
@@ -133,7 +135,7 @@ namespace Filter
 
     public class DateCheck
     {
-    
+        [ExcludeFromCodeCoverage]
         public static string Check(string DateInput)
         {
 
