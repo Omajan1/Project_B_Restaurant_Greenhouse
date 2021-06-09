@@ -62,7 +62,7 @@ namespace contact
 
 
             Console.Clear();
-
+            
             // Laad het json bestand naar een string
             string initialJson = File.ReadAllText(paths.vragen);
 
@@ -73,19 +73,20 @@ namespace contact
             bool running = true;
             while (running)
             {
-                if (array == null)
+                if (array != null)
                     foreach (JObject q in array)
                     {
                         // Kijkt of het antwoord al is ingevuld
                         JToken isFull = q["Answer"];
-
-                        if (isFull == null)
+                        string b = q.GetValue("Text").ToString();
+                        Console.WriteLine(b); 
+                        if (isFull == null && b != null)
                         {
                             // Pakt values Text en Name van de JSON file
                             string vraag = q.GetValue("Text").ToString();
                             string naam = q.GetValue("Name").ToString();
 
-                            Console.WriteLine($"\n{naam} stelde de vraag: \t" + vraag + "\n");
+                            Console.WriteLine($"\n{naam} stelde de vraag: \t" + b + "\n");
                             Console.WriteLine("Wilt u deze vraag beantwoorden:\n \nY = Beantwoorden\nD = Delete \nENTER = Volgende vraag\n");
 
 

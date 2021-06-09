@@ -114,7 +114,7 @@ namespace Greenhouse
                         Console.WriteLine("Wachtwoord:");
                         string password = Console.ReadLine();
 
-                        if (login.Login.check(username, password)) contact.Contact.showVragen();
+                        if (Login.check(username, password)) contact.Contact.showVragen();
                         else Console.WriteLine("Verkeerde gegevens");
                         break;
 
