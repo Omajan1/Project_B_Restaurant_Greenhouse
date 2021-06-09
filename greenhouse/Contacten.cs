@@ -3,11 +3,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
+using System.Diagnostics.CodeAnalysis;
 namespace contact
 {
 
 
-
+    
     public class Comment
     {
         public string Text = "";
@@ -50,6 +51,7 @@ namespace contact
             File.WriteAllText(paths.vragen, JsonConvert.SerializeObject(array, Formatting.Indented));
         }
     }
+    [ExcludeFromCodeCoverage]
     public class Contact
     {
         // Dit laat de vragen zien en geeft je de optie om ze te beantwoorden
@@ -156,7 +158,7 @@ namespace contact
 
 
             // Als input niet leeg is 
-            Console.WriteLine("Typ STOP om te stoppen met typen van een bericht.");
+            Console.WriteLine("Type STOP om te stoppen met typen van een bericht.");
             if (input == "1")
             {
                 string vraag = "\n";
@@ -205,6 +207,22 @@ namespace contact
             Console.WriteLine("Welk merk cola wordt er geserveerd?");
             Console.WriteLine("We serveren alleen Coca Cola, geen Pepsi.");
             Console.WriteLine("--------------------------------------------------------------------\n");
+
+            Console.WriteLine("--------------------------------------------------------------------");
+            Console.WriteLine("Hebben jullie nog meer faciliteiten op andere plekken?");
+            Console.WriteLine("Nee, we hebben ons restaurant nog maar op 1 plek staan.");
+            Console.WriteLine("--------------------------------------------------------------------\n");
+
+            Console.WriteLine("--------------------------------------------------------------------");
+            Console.WriteLine("Hebben jullie wifi?");
+            Console.WriteLine("Ja, we hebben gratis wifi voor onze gasten.");
+            Console.WriteLine("--------------------------------------------------------------------\n");
+
+            Console.WriteLine("--------------------------------------------------------------------");
+            Console.WriteLine("Hebben jullie een kinderhoek?");
+            Console.WriteLine("We hebben geen kinderhoek, maar we kunnen de kinderen wel een tekening aanbieden.");
+            Console.WriteLine("--------------------------------------------------------------------\n");
+
         }
         public static void showAnswers()
         {

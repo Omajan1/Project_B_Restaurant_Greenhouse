@@ -3,10 +3,13 @@ using reservering;
 using Rules;
 using System;
 using login;
+using System.Diagnostics.CodeAnalysis;
 namespace Greenhouse
 {
+    [ExcludeFromCodeCoverage]
     class Program
     {
+
         static void Main(string[] args)
         {
             // Console settings
@@ -35,10 +38,10 @@ namespace Greenhouse
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("----Welkom bij de Reserverings Applicatie van GreenHouse---");
                 Console.WriteLine("--Duurzaamheid en Sustainability met Lokale Leveranciers!--");
-                Console.WriteLine("-----------Voor elke portomonee en altijd lekker!----------");
+                Console.WriteLine("-----------Voor elke portemonnee en altijd lekker!----------");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("--------|  Elke dag open, vanaf 13:00 tot 22:00  |--------");
+                Console.WriteLine("--------|  Elke dag open, vanaf 13:00 tot 22:00   |--------");
                 Console.WriteLine("---------|  De bar is open van 13:00 tot 01:00  |----------");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine();

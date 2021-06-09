@@ -7,10 +7,10 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-
+using System.Diagnostics.CodeAnalysis;
 namespace reservering
 {
-
+    [ExcludeFromCodeCoverage]
     public class ReserveringMain
     {
 
@@ -282,7 +282,7 @@ namespace reservering
             {
                 // 3 kan niet als 1 en 2 niet gedaan zijn
                 Console.Clear();
-                Console.WriteLine("Typ eerst het nummer van de optie die je wilt invullen en druk dan op enter, vul daarna je gegevens in : ");
+                Console.WriteLine("Type eerst het nummer van de optie die je wilt invullen en druk dan op enter, vul daarna je gegevens in : ");
                 Console.WriteLine("1. Kies een datum                      : " + datum);
                 Console.WriteLine("2. Op welk tijdstip wilt u komen eten? : " + tijd);
                 Console.WriteLine("3. Kies een tafel                      : " + tafelNummer);
@@ -357,8 +357,8 @@ namespace reservering
 
 
                             Console.WriteLine("Weet u zeker dat u deze reservering wilt plaatsen? ");
-                            Console.WriteLine("Typ ja en druk op enter om door te gaan met deze reservering. ");
-                            Console.WriteLine("Als u wilt annuleren typ dan niks en druk op enter.");
+                            Console.WriteLine("Type ja en druk op enter om door te gaan met deze reservering. ");
+                            Console.WriteLine("Als u wilt annuleren type dan niks en druk op enter.");
                             string confirm = Console.ReadLine();
                             if (confirm.ToUpper() == "JA")
                             {
